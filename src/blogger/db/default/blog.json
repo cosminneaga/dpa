@@ -1,0 +1,52 @@
+[
+    {
+        "title": "How to deal with a bear",
+        "description": "Consectetur irure consequat consectetur amet voluptate amet magna proident amet anim occaecat ipsum culpa.",
+        "image": {
+            "src": "https: //images.unsplash.com/photo-1657299143020-4f4bbf05174d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1167&q=80",
+            "alt": "picnic",
+            "title": "picnic"
+        },
+        "date": "28-09-2022",
+        "author": {
+            "name": "Cosmin Neaga",
+            "links": [
+                {
+                    "git-hub": ""
+                },
+                {
+                    "git-gists": []
+                },
+                {
+                    "others": []
+                }
+            ]
+        },
+        "content": [
+            {
+                "type": "text",
+                "style": [
+                    {
+                        "type": "text-align",
+                        "action": "center"
+                    }
+                ],
+                "content": "Aute sunt do sit ipsum esse nisi culpa fugiat sit exercitation. Esse et minim eu ullamco esse occaecat excepteur id velit elit culpa. In irure cillum cupidatat nisi velit enim ad adipisicing ut quis consectetur et fugiat magna. Ullamco reprehenderit ullamco nisi officia magna mollit irure mollit culpa. Veniam veniam ea aliquip elit ad id ipsum ex nulla amet incididunt eu aliqua. Aute id cupidatat nostrud nisi est aute et ullamco irure."
+            },
+            {
+                "type": "image",
+                "style": [
+                    {
+                        "type": "text-align",
+                        "action": "center"
+                    }
+                ],
+                "content": {
+                    "src": "https: //images.unsplash.com/photo-1657299143020-4f4bbf05174d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1167&q=80",
+                    "alt": "picnic",
+                    "title": "picnic"
+                }
+            }
+        ]
+    }
+]

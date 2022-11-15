@@ -1,0 +1,69 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-width: 360px;
+}
+
+nav {
+    padding: 10px 0px;
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(8px) !important;
+
+    & .brand {
+        display: flex;
+        align-items: center;
+        height: 80px;
+        width: 140px;
+       & a {
+        padding: 0;
+        height: fit-content;
+        & img {
+            max-width: 100%!important;
+            max-height: 100%!important;
+        }
+       }
+    }
+
+    & .mobile {
+        background-color: #fff!important;
+    }
+}
+
+.hero {
+    position: relative;
+    height: 450px;
+    overflow: hidden;
+
+    & .content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba($color: #000000, $alpha: .6);
+        color: white;
+        padding: 0 50px;
+        white-space: nowrap;
+        text-align: center;
+    }
+
+    & img {
+        width: 100%;
+        min-height: 450px;
+        object-fit: none;
+    }
+
+    @media screen and (max-width: 730px){
+        & .content {
+            white-space: normal;
+        }
+    }
+}
+
+
+.form-item {
+    & label, & input::placeholder {
+        font-size: 15px!important;
+    }
+}

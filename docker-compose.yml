@@ -1,0 +1,27 @@
+version: '3.9'
+
+services:
+  app:
+    build: .
+    command: python3 -u app.py
+    ports:
+      - 8080:8080
+    volumes:
+      - .:/app
+    networks:
+      - dpaNetwork
+
+  db:
+    image: mongo:latest
+    hostname: dpaDBServer
+    environment:
+      - MONGO_INITDB_DATABASE=blogger
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=example
+    ports:
+      - 8090:27017
+    networks:
+      - dpaNetwork
+
+networks:
+  dpaNetwork:

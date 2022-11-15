@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Panel</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{url_for('static', filename='blogger/main/main.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='blogger/style/panel.css')}}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="left">
+            <div class="menu">
+                <button type="button" class="drawer-button" onclick="toggleDrawer()">
+                    <i class="material-icons">menu</i>
+                </button>
+            </div>
+            <div class="brand">
+                <img src="{{url_for('static', filename='blogger/img/logo-orange.png')}}" alt="">
+            </div>
+        </div>
+        <div class="right">
+            <ul>
+                <li>user@gmail.com</li>
+                <li></li>
+                <li><span class="badge xl">2</span></li>
+            </ul>
+        </div>
+    </nav>
+
+    <nav class="drawer">
+        <div class="header">
+            <img src="{{url_for('static', filename='blogger/img/logo-orange.png')}}" alt="">
+        </div>
+
+        <!--        <ul>
+            <li>
+                <a href="#">
+                    Create
+                    <i class="material-icons">create</i>
+                </a>
+
+            </li>
+            <li>
+                <a href="#">
+                    Edit
+                    <i class="material-icons">view_array</i>
+                </a>
+
+            </li>
+            <li>
+                <a href="#">
+                    List
+                    <i class="material-icons">list</i>
+                </a>
+
+            </li>
+        </ul>
+
+        <hr> -->
+
+        <ul>
+            <li>
+                <a href="#">
+                    Settings
+                    <i class="material-icons">settings</i>
+                </a>
+            </li>
+
+            <!-- <li> -->
+            <!-- <a href="#"> -->
+            <!-- API -->
+            <!-- <i class="material-icons">web_asset</i> -->
+            <!-- </a> -->
+            <!-- </li> -->
+        </ul>
+    </nav>
+
+    <div class="container lg my-5">
+        <div id="editorjs"></div>
+        <div onclick="save()" class="btn">Save</div>
+    </div>
+
+
+
+    <div class="container lg my-5">
+        <div class="table rounded-md shadow-sm" padding="2" table-hover="true" table-striped="true">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Date</th>
+                        <th>Author</th>
+                    </tr>
+                </thead>
+                <tbody class="blogs"></tbody>
+            </table>
+        </div>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/editorjs@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/header@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/delimiter@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/paragraph@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/embed@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/simple-image@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/link@latest"></script>
+
+    <script src="{{url_for('static', filename='blogger/js/app.js')}}"></script>
+    <script src="{{url_for('static', filename='blogger/js/panel.js')}}"></script>
+</body>
+
+</html>

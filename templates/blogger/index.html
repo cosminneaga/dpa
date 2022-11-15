@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Blogger</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{url_for('static', filename='blogger/main/main.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='blogger/style/index.css')}}">
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+
+
+    <nav class="nav lg light color-primary mobile-fullscreen sticky around">
+
+        <div class="brand">
+            <a href="/blogger">
+                <img src="{{url_for('static', filename='blogger/img/logo.png')}}" alt="logo" />
+            </a>
+        </div>
+
+        <div class="menu" id="nav-menu">
+            <div class="hamburger"></div>
+        </div>
+
+        <!-- LINKS -->
+        <ul class="nav-list">
+            <li> <a href="#" class="nav-link">Home</a> </li>
+            <li> <a href="#login" class="nav-link">Login</a> </li>
+            <li> <a href="#register" class="nav-link">Register</a> </li>
+            <li> <a href="#" class="nav-link">About</a> </li>
+        </ul>
+
+        <!-- MOBILE NAVIGATION -->
+        <div class="mobile">
+
+            <div class="header">
+                <a href="#" class="brand">Brand</a>
+            </div>
+
+            <!-- LINKS -->
+            <ul class="mobile-list">
+
+                <li> <a href="#" class="nav-link">Home</a> </li>
+                <li> <a href="#login" class="nav-link">Login</a> </li>
+                <li> <a href="#register" class="nav-link">Register</a> </li>
+                <li> <a href="#" class="nav-link">About</a> </li>
+
+            </ul>
+            <!-- LINKS -->
+
+            <div class="footer">
+                <p>Blogger API 2022</p>
+            </div>
+
+        </div>
+        <!-- MOBILE NAVIGATION -->
+
+    </nav>
+
+
+    <div class="container xxl">
+        <div class="hero">
+            <div class="content rounded-sm">
+                <span class="text responsive xxl bold center">Welcome to Blogger App</span>
+            </div>
+            <img src="{{url_for('static', filename='blogger/img/hero.jpg')}}" alt="" />
+        </div>
+    </div>
+
+
+    <div class="container regular mt-5 px-3">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium eius tenetur quae in cupiditate atque
+        inventore. Culpa iste ea quasi est harum officiis consectetur ipsum quis nam, architecto sequi consequuntur rem
+        quidem aspernatur facere atque quae blanditiis soluta, dolor, qui molestiae. Ab vel quae soluta nisi a
+        reprehenderit ducimus rem vitae quia aliquid eligendi eaque, pariatur, quos fuga voluptatum omnis rerum nihil
+        nam quidem totam veritatis voluptas molestiae sed cum. Esse commodi laudantium iusto ex eaque fugiat? Tempora,
+    </div>
+
+    <div class="container xl py-5 px-3" id="login">
+        <div class="container sm">
+            <span class="text lg">Login to Blogger</span>
+            <form class="form-group lg form-rounded" id="login-form">
+                <div class="form-item">
+                    <label>Email</label>
+                    <input type="email" name="email" placeholder="Your Email address..." value="user@gmail.com" />
+                </div>
+
+                <div class="form-item">
+                    <label>Password</label>
+                    <input id="password-field-one" type="password" name="password" placeholder="Your password..."
+                        value="password" />
+                </div>
+
+            </form>
+
+            <div class="form-item sm">
+                <div class="check-box">
+                    <input type="checkbox" onchange="toggleShowPassword(['#password-field-one'])" />
+                    <label>Show password</label>
+                </div>
+            </div>
+
+            <button class="btn md" onclick="login('login-form')">Login</button>
+        </div>
+    </div>
+
+    <div class="container regular mb-5 px-3">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium eius tenetur quae in cupiditate atque
+        inventore. Culpa iste ea quasi est harum officiis consectetur ipsum quis nam, architecto sequi consequuntur rem
+        quidem aspernatur facere atque quae blanditiis soluta, dolor, qui molestiae. Ab vel quae soluta nisi a
+        reprehenderit ducimus rem vitae quia aliquid eligendi eaque, pariatur, quos fuga voluptatum omnis rerum nihil
+        nam quidem totam veritatis voluptas molestiae sed cum. Esse commodi laudantium iusto ex eaque fugiat? Tempora,
+    </div>
+
+    <div class="container xl py-5 px-3" id="register">
+        <div class="container sm">
+            <span class="text lg">Register to Blogger</span>
+            <form action="" class="form-group lg form-rounded">
+                <div class="form-item">
+                    <label>First name</label>
+                    <input type="email" placeholder="Your first name..." />
+                </div>
+
+                <div class="form-item">
+                    <label>Last name</label>
+                    <input type="email" placeholder="Your last name..." />
+                </div>
+
+                <div class="form-item">
+                    <label>Email</label>
+                    <input type="email" placeholder="Your Email address..." />
+                </div>
+
+                <div class="form-item">
+                    <label>Password</label>
+                    <input id="password-field-two" type="password" placeholder="Your password..." />
+                </div>
+
+                <div class="form-item">
+                    <label>Password check</label>
+                    <input id="password-field-three" type="password" placeholder="Your password..." />
+                </div>
+
+
+
+            </form>
+
+            <div class="form-item sm">
+                <div class="check-box">
+                    <input type="checkbox"
+                        onchange="toggleShowPassword(['#password-field-two', '#password-field-three'])" />
+                    <label>Show password</label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <footer class="container fluid dark">
+
+        <div class="p-3 text-center">
+            <span>&copy; Blogger 2022</span>
+        </div>
+
+    </footer>
+
+
+
+    <script src="{{url_for('static', filename='blogger/js/nav.js')}}" async defer></script>
+    <script src="{{url_for('static', filename='blogger/js/app.js')}}"></script>
+
+</body>
+
+</html>
