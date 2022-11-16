@@ -16,21 +16,24 @@ services:
 
   backend:
     build: ./backend
-    command: python3 -u app.py
     ports:
       - 8080:8080
     volumes:
       - .:/DPA_VOLUMES
     networks:
       - dpaNetwork
+    depends_on:
+      - db
 
-  frontend:
-    build: ./frontend
-    command: npm run dev
+  blogger-front:
+    build: ./frontend/blogger
     ports: 
       - 80:3000
     networks:
       - dpaNetwork
+    depends_on:
+      - db
+      - backend
 
 
 

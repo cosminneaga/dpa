@@ -1,2 +1,2 @@
 docker compose down --volumes
-docker rmi dpa-apis
+docker rmi dpa-backend dpa-blogger-front
