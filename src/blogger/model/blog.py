@@ -38,7 +38,7 @@ class BlogModel:
             'blocks': fields.String('Array of Objects containing data to form HTML elements')
         })
     
-    # BLOG
+    # MODEL
     def toCreateBlog(self):
         return self.__ns.model(
             'CreateBlog', {
