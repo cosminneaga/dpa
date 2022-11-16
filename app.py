@@ -26,7 +26,7 @@ api = Api(
     version='1.0',
     title='Array of Python APIs',
     description='This is an array of Python APIs',
-    doc='/api-doc' if app.config['ENV'] == 'development' else False,
+    doc='/docs' if app.config['ENV'] == 'development' else False,
     ordered=True,
 )
 
@@ -40,6 +40,11 @@ api.add_namespace(exampleNS, path='/api/example')
 class Favicon(Resource):
     def get(self):
         return send_file('assets/img/api.png', mimetype='image/gif')
+
+@api.route('/hello')
+class Home(Resource):
+    def get(self):
+        return "Welcome to Array of APIS written in Python 3.8"
 
 
 if __name__ == '__main__' and app.config['ENV'] == 'development':
