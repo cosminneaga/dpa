@@ -20,6 +20,13 @@
                 }
             ]
         },
+        "category": "Computers",
+        "tags": [
+            "containers",
+            "docker",
+            "Google Cloud",
+            "Ubuntu Pro"
+        ],
         "content": {
             "time": 1668604917430,
             "blocks": [

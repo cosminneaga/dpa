@@ -15,7 +15,7 @@ class BlogModel:
             }
         )
 
-    # IMAGE
+    # AUTHOR
     def toAuthor(self):
         return self.__ns.model('BlogAuthor', {
             'name': fields.String('author-name'),
@@ -46,6 +46,8 @@ class BlogModel:
                 'description': fields.String('description'),
                 'image': fields.Nested(self.toBlogImage()),
                 'author': fields.Nested(self.toAuthor()),
+                'category': fields.String('category'),
+                'tags': fields.List(fields.String('tags')),
                 'content': fields.Nested(self.toContent()),
                 'created_at': fields.DateTime(),
                 'updated_at': fields.DateTime(),
