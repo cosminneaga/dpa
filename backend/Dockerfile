@@ -1,7 +1,7 @@
 FROM ubuntu:20.04
 
-ADD . /app
-WORKDIR /app
+ADD . /backend
+WORKDIR /backend
 
 RUN apt-get update && apt-get install -y \
   # curl \

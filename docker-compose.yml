@@ -1,15 +1,6 @@
 version: '3.9'
 
 services:
-  apis:
-    build: .
-    command: python3 -u app.py
-    ports:
-      - 8080:8080
-    volumes:
-      - .:/app
-    networks:
-      - dpaNetwork
 
   db:
     image: mongo:latest
@@ -22,6 +13,26 @@ services:
       - 8100:27017
     networks:
       - dpaNetwork
+
+  backend:
+    build: ./backend
+    command: python3 -u app.py
+    ports:
+      - 8080:8080
+    volumes:
+      - .:/DPA_VOLUMES
+    networks:
+      - dpaNetwork
+
+  frontend:
+    build: ./frontend
+    command: npm run dev -- -o
+    ports: 
+      - 80:3000
+    networks:
+      - dpaNetwork
+
+
 
 networks:
   dpaNetwork:
