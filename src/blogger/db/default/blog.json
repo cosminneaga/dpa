@@ -7,46 +7,39 @@
             "alt": "picnic",
             "title": "picnic"
         },
-        "date": "28-09-2022",
+        "created_at": "28-09-2022 10:00",
+        "updated_at": "29-09-2022 12:34",
         "author": {
             "name": "Cosmin Neaga",
             "links": [
                 {
-                    "git-hub": ""
-                },
-                {
-                    "git-gists": []
-                },
-                {
-                    "others": []
+                    "text": "Link text",
+                    "url": "https://www.example.com",
+                    "logo": "https://www.example.com/logo",
+                    "image": "https://www.example.com/image"
                 }
             ]
         },
-        "content": [
-            {
-                "type": "text",
-                "style": [
-                    {
-                        "type": "text-align",
-                        "action": "center"
+        "content": {
+            "time": 1668604917430,
+            "blocks": [
+                {
+                    "id": "oB_FvQdVE6",
+                    "type": "header",
+                    "data": {
+                        "text": "Hello World",
+                        "level": 2
                     }
-                ],
-                "content": "Aute sunt do sit ipsum esse nisi culpa fugiat sit exercitation. Esse et minim eu ullamco esse occaecat excepteur id velit elit culpa. In irure cillum cupidatat nisi velit enim ad adipisicing ut quis consectetur et fugiat magna. Ullamco reprehenderit ullamco nisi officia magna mollit irure mollit culpa. Veniam veniam ea aliquip elit ad id ipsum ex nulla amet incididunt eu aliqua. Aute id cupidatat nostrud nisi est aute et ullamco irure."
-            },
-            {
-                "type": "image",
-                "style": [
-                    {
-                        "type": "text-align",
-                        "action": "center"
+                },
+                {
+                    "id": "R4e9gjC_Xy",
+                    "type": "paragraph",
+                    "data": {
+                        "text": "Hey guys"
                     }
-                ],
-                "content": {
-                    "src": "https: //images.unsplash.com/photo-1657299143020-4f4bbf05174d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1167&q=80",
-                    "alt": "picnic",
-                    "title": "picnic"
                 }
-            }
-        ]
+            ],
+            "version": "2.25.0"
+        }
     }
 ]

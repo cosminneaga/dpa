@@ -44,11 +44,10 @@ class Favicon(Resource):
 @api.route('/hello')
 class Home(Resource):
     def get(self):
-        app.logger.info('HELLO ROUTE ACCESSED')
         return "Welcome to Array of APIS written in Python 3.8"
 
 
 if __name__ == '__main__' and app.config['ENV'] == 'development':
     app.run(host='0.0.0.0', port=8080, debug=True)
 else:
-    app.run(host='0.0.0.0', port=80, debug=False)
+    app.run(host='0.0.0.0', port=8080, debug=False)

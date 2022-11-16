@@ -98,8 +98,8 @@ for (const child of drawer.children) {
     }
 }
 
-// getMe()
-getBlogs()
+getMe()
+// getBlogs()
 
 
 
