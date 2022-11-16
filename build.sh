@@ -9,5 +9,3 @@ else
 fi
 
 docker compose up -d --build
-
-docker compose run apis npm install
