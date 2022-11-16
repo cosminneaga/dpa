@@ -44,6 +44,7 @@ class Favicon(Resource):
 @api.route('/hello')
 class Home(Resource):
     def get(self):
+        app.logger.info('HELLO ROUTE ACCESSED')
         return "Welcome to Array of APIS written in Python 3.8"
 
 

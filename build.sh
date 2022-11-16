@@ -8,4 +8,4 @@ else
     cp example.env .env
 fi
 
-docker-compose up -d --build
+docker compose up -d --build
