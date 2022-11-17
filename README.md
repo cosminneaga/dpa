@@ -2,7 +2,7 @@
 
 ## Install Docker
 > Check this repository to install Docker on Linux
-`https://github.com/cosminneaga/helpers/tree/main/bash_scripts`
+https://github.com/cosminneaga/helpers/tree/main/bash_scripts
 
 ## Local Setup
 
