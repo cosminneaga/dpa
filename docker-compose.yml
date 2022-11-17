@@ -3,7 +3,7 @@ version: '3.9'
 services:
 
   db:
-    image: mongo:latest
+    image: mongo:6.0.3
     hostname: dpaDBServer
     environment:
       - MONGO_INITDB_DATABASE=blogger
@@ -19,7 +19,7 @@ services:
     ports:
       - 8080:8080
     volumes:
-      - .:/DPA_VOLUMES
+      - ./backend:/DPA_VOLUME/backend
     networks:
       - dpaNetwork
     depends_on:
@@ -29,6 +29,8 @@ services:
     build: ./frontend/blogger
     ports: 
       - 80:3000
+    volumes:
+      - ./frontend/blogger:/DPA_VOLUME/frontend/blogger
     networks:
       - dpaNetwork
     depends_on:
@@ -39,3 +41,6 @@ services:
 
 networks:
   dpaNetwork:
+
+volumes:
+  DPA_VOLUME:
