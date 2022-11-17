@@ -1,5 +1,9 @@
 # Docker Python APIS
 
+## Install Docker
+> Check this repository to install Docker on Linux
+`https://github.com/cosminneaga/helpers/tree/main/bash_scripts`
+
 ## Local Setup
 
 1. `bash build.sh`
