@@ -17,18 +17,50 @@
                         label="E-Mail"
                         type="email"
                         variant="outlined"
+                        v-model="email"
                     ></v-text-field>
 
                     <v-text-field
                         label="Password"
                         type="password"
                         variant="outlined"
+                        v-model="password"
                     ></v-text-field>
 
-                    <v-btn color="blue">Login</v-btn>
+                    <v-btn
+                        color="blue"
+                        @click="login"
+                    >Login</v-btn>
                 </v-form>
             </template>
 
         </v-card>
     </NuxtLayout>
 </template>
+
+<script>
+export default {
+    data: () => ({
+        email: "user@gmail.com",
+        password: "password",
+    }),
+    methods: {
+        async login() {
+            const d = {
+                email: this.email,
+                password: this.password,
+            };
+
+            const res = await $fetch(
+                "http://localhost:8080/api/blogger/login",
+                {
+                    method: "POST",
+                    body: d,
+                }
+            );
+
+            localStorage.setItem("blogger", JSON.stringify(res.data));
+        },
+    },
+};
+</script>

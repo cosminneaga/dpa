@@ -25,6 +25,10 @@
                         <nuxt-link to="/register">Register</nuxt-link>
                     </v-btn>
 
+                    <v-btn variant="plain">
+                        <nuxt-link to="/user/home">UserHome</nuxt-link>
+                    </v-btn>
+
                 </v-row>
             </div>
 
