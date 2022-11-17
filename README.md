@@ -7,6 +7,7 @@ https://github.com/cosminneaga/helpers/tree/main/bash_scripts
 ## Local Setup
 
 1. `bash build.sh`
+2. `cd frontend/blogger` `npm install` `npm run dev`
 
 
 | Name             | Url                                                     |
