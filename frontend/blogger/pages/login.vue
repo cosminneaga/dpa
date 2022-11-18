@@ -59,7 +59,10 @@ export default {
                 }
             );
 
+            console.log(res);
+
             localStorage.setItem("blogger", JSON.stringify(res.data));
+            this.$router.push("/user/home");
         },
     },
 };

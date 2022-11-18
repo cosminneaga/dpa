@@ -2,7 +2,7 @@
 
     <v-app :theme="theme">
 
-        <v-container>
+        <v-container style="max-width: 1200px;">
             <div class="mt-2 pa-5 rounded-shaped elevation-3">
                 <v-row class="align-center">
 

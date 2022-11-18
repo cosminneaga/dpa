@@ -19,7 +19,7 @@ services:
     ports:
       - 8080:8080
     volumes:
-      - ./backend:/DPA_VOLUME/backend
+      - ./backend:/backend
     networks:
       - dpaNetwork
     depends_on:
@@ -30,7 +30,7 @@ services:
     ports: 
       - 80:3000
     volumes:
-      - ./frontend/blogger:/DPA_VOLUME/frontend/blogger
+      - ./frontend/blogger:/frontend/blogger
     networks:
       - dpaNetwork
     depends_on:
