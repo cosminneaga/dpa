@@ -14,4 +14,5 @@ if [ ! -f $ENV ]; then
     cp ./frontend/blogger/example.env $ENV
 fi
 
+
 docker compose up -d --build

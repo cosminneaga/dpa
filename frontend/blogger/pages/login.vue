@@ -51,18 +51,22 @@ export default {
                 password: this.password,
             };
 
-            const res = await $fetch(
-                "http://localhost:8080/api/blogger/login",
-                {
-                    method: "POST",
-                    body: d,
-                }
-            );
+            try {
+                const res = await $fetch(
+                    "http://localhost:8080/api/blogger/login",
+                    {
+                        method: "POST",
+                        body: d,
+                    }
+                );
 
-            console.log(res);
+                console.log(res);
 
-            localStorage.setItem("blogger", JSON.stringify(res.data));
-            this.$router.push("/user/home");
+                localStorage.setItem("blogger", JSON.stringify(res.data));
+                this.$router.push("/user/home");
+            } catch (e) {
+                console.log(e.response);
+            }
         },
     },
 };
