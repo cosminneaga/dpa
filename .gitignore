@@ -139,3 +139,4 @@ dmypy.json
 .output
 .env
 dist
+**/.DS_Store
