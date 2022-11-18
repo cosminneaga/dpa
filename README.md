@@ -10,8 +10,8 @@ https://github.com/cosminneaga/helpers/tree/main/bash_scripts
 2. `cd frontend/blogger` `npm install` `npm run dev`
 
 
-| Name             | Url                                                     |
-| ---------------- | ------------------------------------------------------- |
-| Database         | Compass<br>dev: `mongodb://root:example@localhost:8100` |
-| Backend          | docker: `localhost:8000`                                |
-| Frontend Blogger | docker: `localhost`<br> dev: `localhost:3000`           |
+| Name             | Url                                                |
+| ---------------- | -------------------------------------------------- |
+| Database         | Compass<br>`mongodb://root:example@localhost:8100` |
+| Backend          | `localhost:8080/hello`                             |
+| Frontend Blogger | preview: `localhost`<br> dev: `localhost:3000`     |
