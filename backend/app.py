@@ -11,6 +11,7 @@ from src.example.namespace import api as exampleNS
 app = Flask(__name__)
 CORS(app)
 app.config['ENV'] = 'development'
+RESTX_ERROR_404_HELP=False
 
 authorizations = {
     'api_key': {

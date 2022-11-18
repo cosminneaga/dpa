@@ -37,13 +37,13 @@
         </v-card>
     </NuxtLayout>
 </template>
-
 <script>
 export default {
     data: () => ({
         email: "user@gmail.com",
         password: "password",
     }),
+
     methods: {
         async login() {
             const d = {
@@ -66,6 +66,7 @@ export default {
                 this.$router.push("/user/home");
             } catch (e) {
                 console.log(e.response);
+                this.$toast.error(e.response._data.message);
             }
         },
     },
