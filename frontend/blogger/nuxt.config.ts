@@ -12,5 +12,10 @@ export default defineNuxtConfig({
             'process.env.DEBUG': false
         }
     },
-    ssr: false,
+    runtimeConfig: {
+        public: {
+            apiBase: 'http://localhost:8080/api/blogger/'
+        },
+    },
+    ssr: false
 })
