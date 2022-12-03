@@ -4,12 +4,14 @@ import Footer from "@/components/Navigation/Footer.vue";
 </script>
 
 <template>
-    <v-container class="elevation-1">
+    <v-container class="elevation-1 pa-0" style="max-width: 1400px; min-width: 600px;">
         <Header></Header>
         
         <div class="my-10"></div>
 
-        <slot></slot>
+        <v-container>
+            <slot></slot>
+        </v-container>
 
         <div class="my-10"></div>
 

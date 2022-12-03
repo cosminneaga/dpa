@@ -1,7 +1,7 @@
 <template>
   <default-layout>
 
-    <v-img class="bg-white" width="100%" :aspect-ratio="(4 / 3)" src="/img/hero.jpg"></v-img>
+    <v-img class="bg-white" width="100%" max-height="700" :aspect-ratio="(4 / 3)" src="/img/hero.jpg"></v-img>
 
     <v-container class="my-10">
 

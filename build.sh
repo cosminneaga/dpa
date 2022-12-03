@@ -14,7 +14,7 @@ if [ ! -f $ENV ]; then
     cp ./blogger/example.env $ENV
 fi
 
-
+echo "DELETING ./blogger/node_modules... PLEASE WAIT"
 rm -r ./blogger/node_modules
 
 docker compose up -d --build
