@@ -1,5 +1,5 @@
 <template>
-  <UserLayout>
+  <default-layout>
     <h1>About Page</h1>
-  </UserLayout>
+  </default-layout>
 </template>

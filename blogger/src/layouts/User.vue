@@ -1,7 +1,9 @@
 <template>
-  <section>
-    <h1>User Layout</h1>
+  <div>
+      USER LAYOUT TOP
 
-    <slot></slot>
-  </section>
+      <slot></slot>
+
+      USER LAYOUT BOTTOM
+  </div>
 </template>
