@@ -4,7 +4,7 @@ import Footer from "@/components/Navigation/Footer.vue";
 </script>
 
 <template>
-    <v-container class="elevation-1 pa-0" style="max-width: 1400px; min-width: 600px;">
+    <v-container style="max-width: 1400px; min-width: 600px;">
         <Header></Header>
         
         <div class="my-10"></div>
@@ -18,3 +18,10 @@ import Footer from "@/components/Navigation/Footer.vue";
         <Footer></Footer>
     </v-container>
 </template>
+
+<style lang="scss" scoped>
+.v-container {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+</style>
