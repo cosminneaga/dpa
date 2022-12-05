@@ -19,6 +19,17 @@ import Footer from "@/components/Navigation/Footer.vue";
     </v-container>
 </template>
 
+<script lang="ts">
+export default {
+    async mounted() {
+        const res = await this.axios.get('/api/hello');
+
+        console.log(res);     
+                
+    }
+}
+</script>
+
 <style lang="scss" scoped>
 .v-container {
     margin-top: 50px;

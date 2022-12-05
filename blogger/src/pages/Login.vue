@@ -16,16 +16,19 @@
                         label="E-Mail"
                         type="email"
                         variant="outlined"
+                        v-model="email"
                     ></v-text-field>
 
                     <v-text-field
                         label="Password"
                         type="password"
                         variant="outlined"
+                        v-model="password"
                     ></v-text-field>
 
                     <v-btn
                         color="blue"
+                        @click="login"
                     >Login</v-btn>
                 </v-form>
             </template>
@@ -33,6 +36,33 @@
         </v-card>
     </default-layout>
 </template>
+
+<script lang="ts">
+export default {
+    data: () => ({
+        email: "user@gmail.com",
+        password: "password",
+    }),
+
+    methods: {
+        async login() {
+            try {
+                const req = await this.axios.post('/api/login', {
+                email: this.email,
+                password: this.password
+            })
+
+            console.log(req);
+            // localStorage.setItem('blogger-v-1.0', JSON.stringify(req.data.data))
+            this.$router.push('/user/home')
+            } catch(e) {
+                this.$toast.error('An error has arised from ashes!')
+            }
+            
+        }
+    },
+}
+</script>
 
 <!--
 <script>
