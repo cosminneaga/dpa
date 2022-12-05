@@ -13,8 +13,6 @@
 </template>
 
 <script lang="ts">
-import counter from '@/mixins/counter';
-
 export default {
 
     async mounted() {
@@ -30,15 +28,9 @@ export default {
     },
 
     methods: {
-        handleSubmit() {
-            console.log(this.$refs.editor);
-            
-
-
+        handleSubmit() {       
             const content = this.$refs.editor.getContents()
-
             console.log(content);
-            
         }
     },
 }

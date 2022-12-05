@@ -91,12 +91,12 @@ app
 .component("user-layout", User)
 .component("QuillEditor", QuillEditor);
 
-axios.interceptors.response.use(function (response) {
+axios.interceptors.response.use(function (response: any) {
   if (response.data.status === 401) {
     toaster.error('Not Authorized.')
   }
   return response;
-}, function (error) {
+}, function (error: any) {
   console.warn(error.code, error.message);
 });
 

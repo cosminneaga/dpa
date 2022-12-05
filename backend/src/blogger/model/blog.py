@@ -31,12 +31,14 @@ class BlogModel:
         })
 
     # CONTENT
-    def toContent(self):
-        return self.__ns.model('BlogContent', {
-            'time': fields.String('timestamp'),
-            'version': fields.String('EDITORJS VERSION'),
-            'blocks': fields.String('Array of Objects containing data to form HTML elements')
-        })
+    # def toContent(self):
+    #     return self.__ns.model('BlogContent', {
+    #         # 'time': fields.String('timestamp'),
+    #         # 'version': fields.String('EDITORJS VERSION'),
+    #         # 'blocks': fields.String('Array of Objects containing data to form HTML elements')
+    #         "insert": fields.String('sample insert text'),
+    #         "attributes": fields.Nested(fields.String('sample'))
+    #     })
     
     # MODEL
     def toCreateBlog(self):
@@ -48,7 +50,7 @@ class BlogModel:
                 'author': fields.Nested(self.toAuthor()),
                 'category': fields.String('category'),
                 'tags': fields.List(fields.String('tags')),
-                'content': fields.Nested(self.toContent()),
+                # 'content': [],
                 'created_at': fields.DateTime(),
                 'updated_at': fields.DateTime(),
             }

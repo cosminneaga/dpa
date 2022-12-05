@@ -20,8 +20,10 @@
 FROM node:18.12.1-alpine3.15
 
 WORKDIR /app
+# RUN chown node:node ./
 COPY . .
-RUN npm install && npm run build
+RUN npm install
+RUN npm run build
 CMD npm run preview -- --port=3000
 
 
