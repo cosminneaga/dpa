@@ -70,9 +70,6 @@ class Login(Resource, Database):
         resp = make_response(response('Login', {
             'token': token,
             'user': user,
-            'server': {
-                'IP': request.headers.get('host')
-            }
         }))
         resp.set_cookie('X-Access-Token', token)
         return resp
@@ -153,3 +150,8 @@ class BlogCreate(Resource, Database):
         blog = self.createBlog(userId, api.payload)
         return response('Blog created', blog)
     
+
+@api.route('/hello')
+class Hello(Resource):
+    def get(self):
+        return response('Welcome from Blogger v1.0')

@@ -25,12 +25,16 @@ services:
     depends_on:
       - db
 
-  blogger-front:
-    build: ./frontend/blogger
+  blogger:
+    build: ./blogger
+    user: root
     ports: 
       - 80:3000
-    # volumes:
-    #   - ./frontend/blogger:/DPA_VOLUME
+    tty: true
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - ./blogger:/vlt
     networks:
       - dpaNetwork
     depends_on:
@@ -43,4 +47,4 @@ networks:
   dpaNetwork:
 
 volumes:
-  DPA_VOLUME:
+  npm-cache:
