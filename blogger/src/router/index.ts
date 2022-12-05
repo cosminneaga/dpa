@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
+import {authGuard} from '@/middleware/auth';
 
 import Home from "@/pages/Home.vue";
 import About from "@/pages/About.vue";
@@ -9,6 +10,8 @@ import NotFound from "@/pages/NotFound.vue";
 import Error from "@/pages/Error.vue";
 
 import UserIndex from "@/pages/User/Index.vue";
+
+
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -37,9 +40,7 @@ const router = createRouter({
     {
       path: '/user/home',
       component: UserIndex,
-      meta: {
-        requiresAuth: true
-      }
+      beforeEnter: [authGuard]
     },
     {
       path: '/:pathMatch(.*)*',

@@ -40,3 +40,15 @@ npm run preview
 ```
 
 Checkout the [deployment documentation](https://v3.nuxtjs.org/guide/deploy/presets) for more information.
+
+
+## Dependencies
+
+Vue Toaster
+https://github.com/MeForma/vue-toaster
+https://meforma.github.io/vue-toaster/
+
+Quill
+https://vueup.github.io/vue-quill/guide/installation.html#cdn
+https://www.npmjs.com/package/quill
+https://quilljs.com/docs/quickstart/
