@@ -15,11 +15,13 @@
                             label="Title"
                             density="comfortable"
                             variant="outlined"
+                            v-model="meta.title"
                         ></v-text-field>
                         <v-textarea
                             label="Description"
                             density="comfortable"
                             variant="outlined"
+                            v-model="meta.description"
                         ></v-textarea>
 
                         <!-- IMAGE -->
@@ -29,17 +31,20 @@
                                 variant="outlined"
                                 density="compact"
                                 label="alt"
+                                v-model="meta.image.alt"
                             ></v-text-field>
                             <v-text-field
                                 variant="outlined"
                                 density="compact"
                                 label="title"
+                                v-model="meta.image.title"
                             ></v-text-field>
                         </section>
                         <v-text-field
                             variant="outlined"
                             density="compact"
                             label="src"
+                            v-model="meta.image.src"
                         ></v-text-field>
 
                         <!-- AUTHOR -->
@@ -48,6 +53,7 @@
                             variant="outlined"
                             density="comfortable"
                             label="Full Name"
+                            v-model="meta.author.name"
                         ></v-text-field>
 
                         <!-- AUTHOR LINKS -->
@@ -226,14 +232,21 @@ export default {
         tag: "",
     }),
 
-    // watch: {
-    //     meta: {
-    //         handler(value) {
-    //             console.log(value);
-    //         },
-    //         deep: true,
-    //     },
-    // },
+    watch: {
+        meta: {
+            handler(value) {
+                localStorage.setItem("blog-create", JSON.stringify(value));
+            },
+            deep: true,
+        },
+    },
+
+    beforeCreate() {
+        const savedContent = localStorage.getItem("blog-create");
+
+        if (savedContent) {
+        }
+    },
 
     methods: {
         handleSubmit() {
