@@ -26,7 +26,6 @@ class BlogModel:
         return self.__ns.model('authorLinks', {
             'text': fields.String('link display text'),
             'url': fields.String('link url'),
-            'logo': fields.String('link logo'),
             'image': fields.String('link image')
         })
 
