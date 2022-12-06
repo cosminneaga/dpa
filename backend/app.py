@@ -12,6 +12,8 @@ CORS(app)
 app.config['ENV'] = 'development'
 RESTX_ERROR_404_HELP=False
 
+app.config.SWAGGER_UI_DOC_EXPANSION = 'list'
+
 authorizations = {
     'api_key': {
         'type': 'apiKey',
