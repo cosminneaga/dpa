@@ -4,7 +4,6 @@ from utils.env import env_val
 from flask_cors import CORS
 
 from src.blogger.namespace import api as bloggerNS
-from src.blogger.pages.namespace import api as bloggerPagesNS
 from src.example.namespace import api as exampleNS
 
 
@@ -33,7 +32,6 @@ api = Api(
 
 
 api.add_namespace(bloggerNS, path='/api/blogger')
-api.add_namespace(bloggerPagesNS, path='/blogger')
 api.add_namespace(exampleNS, path='/api/example')
 
 
