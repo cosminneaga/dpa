@@ -50,7 +50,5 @@ class BlogModel:
                 'category': fields.String('category'),
                 'tags': fields.List(fields.String('tags')),
                 # 'content': [],
-                'created_at': fields.DateTime(),
-                'updated_at': fields.DateTime(),
             }
         )

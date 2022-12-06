@@ -1,7 +1,15 @@
 <template>
     <div>
         <v-app-bar :elevation="2">
-            <v-app-bar-title>Blogger</v-app-bar-title>
+
+            <v-app-bar-title>
+                <span>Blogger</span>
+                <br>
+                <span
+                    class="text-caption"
+                    v-if="user"
+                >Hello {{user.first_name}} {{user.last_name}}</span>
+            </v-app-bar-title>
 
             <template #append>
                 <v-menu open-on-click>
@@ -43,7 +51,9 @@ export default {
         items: [
             { title: "Home", to: "/user/home" },
             { title: "Create new Blog", to: "/user/blog/create" },
+            { title: "Logout", to: "/logout" },
         ],
+        user: null,
     }),
 
     async mounted() {
@@ -52,8 +62,7 @@ export default {
                 "x-access-token": this.$cookies.get("X-Access-Token"),
             },
         });
-
-        console.log(req);
+        this.user = req.data.data;
     },
 };
 </script>

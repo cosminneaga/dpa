@@ -209,8 +209,8 @@ interface ComponentData {
 export default {
     data: () => ({
         meta: {
-            title: "",
-            description: "",
+            title: "Title",
+            description: "Description",
             image: {
                 src: "",
                 alt: "",
@@ -249,10 +249,40 @@ export default {
     },
 
     methods: {
-        handleSubmit() {
-            this.meta.content = this.$refs.editor.getContents().ops;
+        async handleSubmit() {
+            this.meta.content = this.$refs.editor.getHTML();
 
-            console.log(this.meta);
+            try {
+                const req = await this.axios.post("/api/blog", this.meta, {
+                    headers: {
+                        "x-access-token": this.$cookies.get("X-Access-Token"),
+                    },
+                });
+
+                console.log(req);
+
+                this.meta = {
+                    title: "",
+                    description: "",
+                    image: {
+                        src: "",
+                        alt: "",
+                        title: "",
+                    },
+                    author: {
+                        name: "",
+                        links: [],
+                    },
+                    category: "",
+                    tags: [],
+                    content: null,
+                };
+                this.$refs.editor.setContents([{ insert: "\n" }]);
+
+                this.$toast.success("Blog created successfully.");
+            } catch (error) {
+                console.error(error);
+            }
         },
 
         addAuthorLink() {

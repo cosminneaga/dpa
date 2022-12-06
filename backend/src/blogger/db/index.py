@@ -1,5 +1,6 @@
 import json
 import jwt
+import datetime
 from flask import abort
 from bson.objectid import ObjectId
 from py_console import console
@@ -151,6 +152,10 @@ class Database(DB, Validator):
             self.isUser({
                 '_id': ObjectId(userId)
             }, 'if-exists')
+
+            blogData['created_at'] = str(datetime.datetime.utcnow())
+            blogData['updated_at'] = str(datetime.datetime.utcnow())
+
             collection = self.database['blog.'+userId]
             insert = collection.insert_one(blogData)
             _id = insert.inserted_id
@@ -170,6 +175,9 @@ class Database(DB, Validator):
             self.isUser({
                 '_id': ObjectId(userId)
             }, 'if-exists')
+
+            blogData['updated_at'] = str(datetime.datetime.utcnow())
+
             collection = self.database['blog.'+userId]
             update = collection.update_one({
                 '_id': ObjectId(blogId)

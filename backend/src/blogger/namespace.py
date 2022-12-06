@@ -97,6 +97,7 @@ class Blogs(Resource, Database):
 
     def __init__(self, *args, **kwargs):
         Database.__init__(self)
+        self.secret = env_val('BLOGGER_JWT_SECRET')
 
     @protect
     def get(self):
