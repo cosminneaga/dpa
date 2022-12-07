@@ -66,7 +66,10 @@
 
             <div class="my-5"></div>
 
-            <div v-html="blog.content"></div>
+            <div
+                class="blog-content"
+                v-html="blog.content"
+            ></div>
 
             <v-btn
                 color="red"
@@ -104,7 +107,13 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 @import "https://cdn.quilljs.com/1.3.6/quill.snow.css";
 @import "https://cdn.quilljs.com/1.3.6/quill.bubble.css";
+
+.blog-content {
+    img {
+        max-width: 100%;
+    }
+}
 </style>
