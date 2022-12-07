@@ -12,6 +12,8 @@ import Error from "@/pages/Error.vue";
 
 import UserIndex from "@/pages/User/Index.vue";
 import UserBlogCreate from "@/pages/User/Blog/Create.vue";
+import UserBlogUpdate from "@/pages/User/Blog/Update.vue";
+import UserBlogView from "@/pages/User/Blog/View.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -46,6 +48,16 @@ const router = createRouter({
     {
       path: "/user/blog/create",
       component: UserBlogCreate,
+      beforeEnter: [authGuard],
+    },
+    {
+      path: "/user/blog/update/:blogID",
+      component: UserBlogUpdate,
+      beforeEnter: [authGuard],
+    },
+    {
+      path: "/user/blog/view/:blogID",
+      component: UserBlogView,
       beforeEnter: [authGuard],
     },
     {

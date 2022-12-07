@@ -1,14 +1,35 @@
 <template>
     <user-layout>
 
-        <v-list lines="one">
-            <v-list-item
+        <v-container
+            fluid
+            class="d-flex"
+            style="gap:20px;"
+        >
+            <router-link
                 v-for="(item, i) in blogs"
                 :key="i"
+                :to="`/user/blog/view/${item._id}`"
+                style="text-decoration: none;"
             >
-                <div v-html="item.content"></div>
-            </v-list-item>
-        </v-list>
+                <v-card
+                    width="400"
+                    :title="item.title"
+                    :subtitle="item.description"
+                    ripple
+                    variant="outlined"
+                    link
+                    color="blue"
+                >
+                    <template v-slot:text>
+                        <div
+                            class="card-content"
+                            v-html="item.content"
+                        ></div>
+                    </template>
+                </v-card>
+            </router-link>
+        </v-container>
     </user-layout>
 </template>
 
@@ -19,19 +40,26 @@ export default {
     }),
 
     async mounted() {
-        try {
-            const req = await this.axios.get("/api/blogs", {
-                headers: {
-                    "x-access-token": this.$cookies.get("X-Access-Token"),
-                },
-            });
+        const req = await this.axios.get("/api/blogs", {
+            headers: {
+                "x-access-token": this.$cookies.get("X-Access-Token"),
+            },
+        });
 
-            console.log(req);
+        console.log(req);
 
-            this.blogs = req.data.data;
-        } catch (error) {
-            console.error(error);
-        }
+        this.blogs = req.data.data;
     },
 };
 </script>
+
+<style lang="scss" scoped>
+.card-content {
+    display: inline-block;
+    width: 100%;
+    height: 100px;
+    white-space: nowrap;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+}
+</style>

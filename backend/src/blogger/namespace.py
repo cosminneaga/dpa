@@ -105,7 +105,7 @@ class Blogs(Resource, Database):
 
 
 
-@api.route('/blog')
+@api.route('/blog/<string:blogId>')
 class Blog(Resource, Database):
 
     def __init__(self, *args, **kwargs):
@@ -134,6 +134,16 @@ class Blog(Resource, Database):
         return response('Blog deleted')
 
 
+
+@api.route('/blog')
+class NewBlog(Resource, Database):
+
+    def __init__(self, *args, **kwargs):
+        Database.__init__(self)
+        Resource.__init__(self, *args, **kwargs)
+        self.secret = env_val('BLOGGER_JWT_SECRET')
+
+
     @api.doc(description='Create a new Blog', summary='heya')
     @api.expect(toBlogModel)
     @protect
@@ -142,7 +152,7 @@ class Blog(Resource, Database):
         return response('Blog created', blog)
 
 
-    
+
 
 @api.route('/hello')
 class Hello(Resource):

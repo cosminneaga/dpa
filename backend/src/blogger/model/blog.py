@@ -49,6 +49,6 @@ class BlogModel:
                 'author': fields.Nested(self.toAuthor()),
                 'category': fields.String('category'),
                 'tags': fields.List(fields.String('tags')),
-                # 'content': [],
+                'content': fields.String('<h1>Hello World</h1>'),
             }
         )

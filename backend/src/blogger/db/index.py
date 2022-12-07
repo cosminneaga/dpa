@@ -144,7 +144,7 @@ class Database(DB, Validator):
             return blog
 
         except Exception as e:
-            abort(400, str(e))
+            abort(404, str(e))
 
     def createBlog(self, userId, blogData):
         try:

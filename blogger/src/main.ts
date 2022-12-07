@@ -54,6 +54,7 @@ QuillEditor.props.globalOptions.default = () => {
         [{ font: [] }],
         [{ align: [] }],
         ["image"],
+        ["link"],
 
         ["clean"],
       ],
@@ -110,11 +111,20 @@ axios.interceptors.response.use(
   function (response: any) {
     if (response.data.status === 401) {
       toaster.error("Not Authorized.");
+    } else if (response.data.status === 404) {
+      toaster.error("Resource not found.");
     }
     return response;
   },
   function (error: any) {
-    console.warn(error.code, error.message);
+
+    if (error.response.status === 404) {
+      toaster.error("Resource not found.");
+    } else if (error.response.status === 400) {
+      toaster.error(error.response.data.message);
+    }
+
+    console.error(error.code, error.message);
   }
 );
 
