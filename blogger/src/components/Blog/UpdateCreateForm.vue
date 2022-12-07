@@ -157,7 +157,11 @@
 
             <v-col>
                 <v-container fluid>
-                    <quill-editor ref="editor"></quill-editor>
+                    <quill-editor
+                        ref="editor"
+                        @editorChange="onContentChange"
+                        content="html"
+                    ></quill-editor>
 
                     <v-btn
                         @click="handleSubmit"
@@ -215,6 +219,16 @@ export default {
 
             this.$refs.editor.setHTML(this.$props.update.content);
         }
+
+        const savedContent = localStorage.getItem("blog-create");
+        if (savedContent) {
+            this.meta = { ...JSON.parse(savedContent) };
+            this.$refs.editor.setHTML(JSON.parse(savedContent)["content"]);
+        }
+    },
+
+    unmounted() {
+        localStorage.removeItem("blog-create");
     },
 
     data: () => ({
@@ -246,16 +260,11 @@ export default {
         meta: {
             handler(value) {
                 localStorage.setItem("blog-create", JSON.stringify(value));
+
+                console.log(value);
             },
             deep: true,
         },
-    },
-
-    beforeCreate() {
-        const savedContent = localStorage.getItem("blog-create");
-
-        if (savedContent) {
-        }
     },
 
     methods: {
@@ -325,6 +334,10 @@ export default {
         removeTag(index: number) {
             this.meta.tags.splice(index, 1);
             this.tag = "";
+        },
+
+        onContentChange() {
+            this.meta.content = this.$refs.editor.getHTML();
         },
     },
 };

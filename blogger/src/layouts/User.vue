@@ -1,6 +1,9 @@
 <template>
     <div>
-        <v-app-bar :elevation="2">
+        <v-app-bar
+            :elevation="0"
+            rounded
+        >
 
             <v-app-bar-title>
                 <span>Blogger</span>
@@ -12,25 +15,18 @@
             </v-app-bar-title>
 
             <template #append>
-                <v-menu open-on-click>
-                    <template #activator="{props}">
-                        <v-btn
-                            icon="mdi-dots-vertical"
-                            v-bind="props"
-                        ></v-btn>
-                    </template>
-
-                    <v-list>
-                        <v-list-item
-                            v-for="(item, index) in items"
-                            :key="index"
-                        >
-                            <v-list-item-title>
-                                <router-link :to="item.to">{{ item.title }}</router-link>
-                            </v-list-item-title>
-                        </v-list-item>
-                    </v-list>
-                </v-menu>
+                <router-link
+                    v-for="(item, i) in links"
+                    :key="i"
+                    :to="item.to"
+                    style="text-decoration: none;"
+                    class="ml-2"
+                >
+                    <v-btn
+                        variant="outlined"
+                        color="primary"
+                    >{{item.text}}</v-btn>
+                </router-link>
             </template>
         </v-app-bar>
 
@@ -48,10 +44,10 @@
 <script lang="ts">
 export default {
     data: () => ({
-        items: [
-            { title: "Home", to: "/user/home" },
-            { title: "Create new Blog", to: "/user/blog/create" },
-            { title: "Logout", to: "/logout" },
+        links: [
+            { text: "Home", to: "/user/home" },
+            { text: "Create new Blog", to: "/user/blog/create" },
+            { text: "Logout", to: "/logout" },
         ],
         user: null,
     }),

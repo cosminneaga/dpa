@@ -27,9 +27,11 @@
 export default {
     mounted() {
         setTimeout(() => {
-            this.$cookies.set("X-Access-Token", "");
+            // this.$cookies.set("X-Access-Token", "");
+            this.$cookies.remove("X-Access-Token");
+            localStorage.removeItem("blog-create");
             this.$router.push("/");
-        }, 3000);
+        }, 2100);
     },
 };
 </script>

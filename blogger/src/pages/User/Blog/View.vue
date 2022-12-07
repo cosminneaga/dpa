@@ -11,7 +11,10 @@
                 :width="12"
             ></v-progress-circular>
         </section>
-        <v-container v-else>
+        <v-container
+            style="max-width: 1000px;"
+            v-else
+        >
 
             <v-btn
                 color="red"
@@ -23,13 +26,43 @@
             <h1>{{blog.title}}</h1>
             <h3>{{blog.description}}</h3>
 
-            {{blog.author.name}}
+            <h4>{{blog.author.name}}</h4>
 
-            {{blog.author.links}}
+            <v-container
+                class="d-flex py-1 px-0"
+                style="gap: 5px;"
+            >
+                <a
+                    v-for="(item, i) in blog.author.links"
+                    :key="i"
+                    :href="item.url"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style="text-decoration: none;"
+                >
+                    <v-chip
+                        label
+                        color="red"
+                        link
+                        size="large"
+                    >{{item.text}}</v-chip>
+                </a>
 
-            {{blog.tags}}
+            </v-container>
 
-            {{blog.category}}
+            <v-container
+                class="d-flex py-1 px-0"
+                style="gap: 5px;"
+            >
+                <v-chip
+                    v-for="(item, i) in blog.tags"
+                    :key="i"
+                    label
+                    color="primary"
+                >{{item}}</v-chip>
+            </v-container>
+
+            <h4>{{blog.category}}</h4>
 
             <div class="my-5"></div>
 

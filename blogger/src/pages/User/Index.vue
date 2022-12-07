@@ -3,7 +3,7 @@
 
         <v-container
             fluid
-            class="d-flex"
+            class="d-flex flex-row flex-wrap justify-center"
             style="gap:20px;"
         >
             <router-link
