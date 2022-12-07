@@ -4,6 +4,7 @@ import { authGuard } from "@/middleware/auth";
 import Home from "@/pages/Home.vue";
 import About from "@/pages/About.vue";
 import Login from "@/pages/Login.vue";
+import Logout from "@/pages/Logout.vue";
 import Register from "@/pages/Register.vue";
 
 import NotFound from "@/pages/NotFound.vue";
@@ -28,6 +29,10 @@ const router = createRouter({
     {
       path: "/login",
       component: Login,
+    },
+    {
+      path: "/logout",
+      component: Logout,
     },
     {
       path: "/register",

@@ -52,3 +52,6 @@ Quill
 https://vueup.github.io/vue-quill/guide/installation.html#cdn
 https://www.npmjs.com/package/quill
 https://quilljs.com/docs/quickstart/
+
+Vue Cookies
+https://github.com/cmp-cc/vue-cookies#readme
