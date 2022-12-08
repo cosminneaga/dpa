@@ -16,12 +16,24 @@
             v-else
         >
 
-            <v-btn
-                color="red"
-                size="large"
-                @click="goToEdit"
-                class="mb-4"
-            >Edit this blog</v-btn>
+            <v-container
+                class="d-flex flex-wrap"
+                style="gap:10px;"
+            >
+                <v-btn
+                    color="info"
+                    size="large"
+                    @click="goToEdit"
+                    class="mt-4"
+                >Edit this blog</v-btn>
+
+                <v-btn
+                    color="red"
+                    size="large"
+                    @click="handleDelete"
+                    class="mt-4"
+                >delete this blog</v-btn>
+            </v-container>
 
             <h1>{{blog.title}}</h1>
             <h3>{{blog.description}}</h3>
@@ -71,12 +83,24 @@
                 v-html="blog.content"
             ></div>
 
-            <v-btn
-                color="red"
-                size="large"
-                @click="goToEdit"
-                class="mt-4"
-            >Edit this blog</v-btn>
+            <v-container
+                class="d-flex flex-wrap"
+                style="gap:10px;"
+            >
+                <v-btn
+                    color="info"
+                    size="large"
+                    @click="goToEdit"
+                    class="mt-4"
+                >Edit this blog</v-btn>
+
+                <v-btn
+                    color="red"
+                    size="large"
+                    @click="handleDelete"
+                    class="mt-4"
+                >delete this blog</v-btn>
+            </v-container>
         </v-container>
     </user-layout>
 </template>
@@ -102,6 +126,16 @@ export default {
     methods: {
         goToEdit() {
             this.$router.push(`/user/blog/update/${this.$route.params.blogID}`);
+        },
+
+        async handleDelete() {
+            await this.axios.delete("/api/blog/" + this.$route.params.blogID, {
+                headers: {
+                    "x-access-token": this.$cookies.get("X-Access-Token"),
+                },
+            });
+
+            this.$router.push("/user/home");
         },
     },
 };
