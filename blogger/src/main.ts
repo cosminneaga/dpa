@@ -62,6 +62,8 @@ QuillEditor.props.globalOptions.default = () => {
   };
 };
 
+
+
 const app = createApp(App);
 
 const myCustomLightTheme = {

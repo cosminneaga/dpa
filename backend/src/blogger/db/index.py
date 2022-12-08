@@ -223,11 +223,19 @@ class Database(DB, Validator):
             return StrGenerator.generateRandomUniqueStrings(50, accessTokens)
             
         except Exception as e:
-            abort(500, str(3))
+            abort(500, str(e))
             
             
-    def getBlogsByExternalSource(self, accessToken):
-        pass
+    def getBlogsByAccessToken(self, accessToken):
+        try:
+            user = self.users.find_one({
+                'access_token': accessToken
+            })
+            
+            return self.getBlogs(str(user['_id']))
+        
+        except Exception as e:
+            abort(500, str(e))
 
 
 
