@@ -18,7 +18,14 @@
 
             <br>
             <h3>dev url</h3>
+            <br>
+            <h4>list of blogs</h4>
             <pre><code class="language-javascript">http://localhost:8080/api/blogger/external/blogs/{{user.access_token}}</code></pre>
+
+            <br>
+            <h4>single blog</h4>
+            <pre><code class="language-javascript">http://localhost:8080/api/blogger/external/blog/&lt;blogId&gt;/{{user.access_token}}</code></pre>
+
             <br>
             <h3>url</h3>
             <pre><code class="language-javascript">https://dpa.cosminneaga.dev/api/blogger/external/blogs/{{user.access_token}}</code></pre>
@@ -66,11 +73,23 @@ export default {
 
         console.log(this.user);
 
-        // testing external access
-        const externalReq = await this.axios.get(
-            "http://localhost:8080/api/blogger/external/blogs/" + req.data.data.access_token
-        );
-        console.log("EXTERNAL ", externalReq.data);
+        await this.fetchExternal(req.data.data.access_token);
+    },
+
+    methods: {
+        async fetchExternal(token) {
+            // testing external
+            // blog list
+            const externalReq = await this.axios.get("http://localhost:8080/api/blogger/external/blogs/" + token);
+            console.log("EXTERNAL ", externalReq);
+
+            //single blog
+            const externalBlogReq = await this.axios.get(
+                `http://localhost:8080/api/blogger/external/blog/${externalReq.data.data[0]["_id"]}/${token}`
+            );
+
+            console.log("EXTERNAL BLOG ", externalBlogReq);
+        },
     },
 };
 </script>

@@ -155,10 +155,7 @@ class NewBlog(Resource, Database):
 
 
 
-@api.route('/hello')
-class Hello(Resource):
-    def get(self):
-        return response('Welcome from Blogger v1.0')
+
     
 @api.route('/external/blogs/<string:accessToken>')
 class ExternalBlogs(Resource, Database):
@@ -171,3 +168,22 @@ class ExternalBlogs(Resource, Database):
     def get(self, accessToken):
         result = self.getBlogsByAccessToken(accessToken)
         return response('Blog list', result)
+    
+@api.route('/external/blog/<string:blogId>/<string:accessToken>')
+class ExternalBlog(Resource, Database):
+    
+    def __init__(self, *args, **kwargs):
+        Database.__init__(self)
+        Resource.__init__(self, *args, **kwargs)
+        
+    @api.doc(description='[EXTERNAL USE] Get a specific blog')
+    def get(self, blogId, accessToken):
+        result = self.getBlogByAccessToken(accessToken, blogId)
+        return response('Blog', result)
+    
+    
+    
+@api.route('/hello')
+class Hello(Resource):
+    def get(self):
+        return response('Welcome from Blogger v1.0')

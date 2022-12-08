@@ -236,6 +236,18 @@ class Database(DB, Validator):
         
         except Exception as e:
             abort(500, str(e))
+            
+            
+    def getBlogByAccessToken(self, accessToken, blogId):
+        try:
+            user = self.users.find_one({
+                'access_token': accessToken
+            })
+            
+            return self.getBlog(str(user['_id']), blogId)
+        
+        except Exception as e:
+            abort(500, str(e))
 
 
 
