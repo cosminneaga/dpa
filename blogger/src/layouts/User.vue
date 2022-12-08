@@ -7,11 +7,6 @@
 
             <v-app-bar-title>
                 <span>Blogger</span>
-                <br>
-                <span
-                    class="text-caption"
-                    v-if="user"
-                >Hello {{user.first_name}} {{user.last_name}}</span>
             </v-app-bar-title>
 
             <template #append>
@@ -47,18 +42,9 @@ export default {
         links: [
             { text: "Home", to: "/user/home" },
             { text: "Create new Blog", to: "/user/blog/create" },
+            { text: "Settings", to: "/user/settings" },
             { text: "Logout", to: "/logout" },
         ],
-        user: null,
     }),
-
-    async mounted() {
-        const req = await this.axios.get("/api/user/me", {
-            headers: {
-                "x-access-token": this.$cookies.get("X-Access-Token"),
-            },
-        });
-        this.user = req.data.data;
-    },
 };
 </script>

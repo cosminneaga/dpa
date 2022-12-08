@@ -14,6 +14,7 @@ import UserIndex from "@/pages/User/Index.vue";
 import UserBlogCreate from "@/pages/User/Blog/Create.vue";
 import UserBlogUpdate from "@/pages/User/Blog/Update.vue";
 import UserBlogView from "@/pages/User/Blog/View.vue";
+import UserSettings from "@/pages/User/Settings.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -58,6 +59,11 @@ const router = createRouter({
     {
       path: "/user/blog/view/:blogID",
       component: UserBlogView,
+      beforeEnter: [authGuard],
+    },
+    {
+      path: "/user/settings",
+      component: UserSettings,
       beforeEnter: [authGuard],
     },
     {

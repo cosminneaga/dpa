@@ -88,6 +88,7 @@ class User(Resource, Database):
     @protect
     @api.doc(security='api_key')
     def get(self):
+        del self.decoded['_id']
         return response('User info', self.decoded)
 
 
