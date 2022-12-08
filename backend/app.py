@@ -34,7 +34,7 @@ api = Api(
 
 
 api.add_namespace(bloggerNS, path='/api/blogger')
-api.add_namespace(exampleNS, path='/api/example')
+# api.add_namespace(exampleNS, path='/api/example')
 
 
 @api.route('/favicon.ico')
