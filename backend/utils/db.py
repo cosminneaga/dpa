@@ -18,7 +18,7 @@ class DB:
     def test_connection(self):
         try:
             self.client.server_info()
-            # console.success('Solid connection with "{}" DB! - '.format(self.name) + self.uri)
+            console.success('Solid connection with "{}" DB! - '.format(self.name) + self.host)
 
         except ServerSelectionTimeoutError:
             console.error('Server has not been connected to "{}" DB! Please restart the server! - '.format(self.name) + self.host)

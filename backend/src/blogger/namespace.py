@@ -88,23 +88,25 @@ class User(Resource, Database):
     @protect
     @api.doc(security='api_key')
     def get(self):
+        del self.decoded['_id']
         return response('User info', self.decoded)
 
 
 
-@api.route('/blogs/<string:userId>')
+@api.route('/blogs')
 class Blogs(Resource, Database):
 
     def __init__(self, *args, **kwargs):
         Database.__init__(self)
+        self.secret = env_val('BLOGGER_JWT_SECRET')
+
+    @protect
+    def get(self):
+        return response('Blogs List', self.getBlogs(self.decoded['_id']))
 
 
-    def get(self, userId):
-        return response('Blogs List', self.getBlogs(userId))
 
-
-
-@api.route('/blog/<string:userId>/<string:blogId>')
+@api.route('/blog/<string:blogId>')
 class Blog(Resource, Database):
 
     def __init__(self, *args, **kwargs):
@@ -114,43 +116,73 @@ class Blog(Resource, Database):
 
 
     @api.doc(description='Get a single bloc')
-    def get(self, userId, blogId):
-        return response('Blog', self.getBlog(userId, blogId))
+    @protect
+    def get(self, blogId):
+        return response('Blog', self.getBlog(self.decoded['_id'], blogId))
 
     @api.doc(description='Update an entire blog')
     @api.expect(toBlogModel)
     @protect
-    def put(self, userId, blogId):
-        blog = self.updateBlog(userId, blogId, api.payload)
+    def put(self, blogId):
+        blog = self.updateBlog(self.decoded['_id'], blogId, api.payload)
         return response('Blog updated', blog)
 
 
     @api.doc('Delete a blog')
     @protect
-    def delete(self, userId, blogId):
-        blog = self.deleteBlog(userId, blogId)
+    def delete(self, blogId):
+        blog = self.deleteBlog(self.decoded['_id'], blogId)
         return response('Blog deleted')
 
-    
 
 
-@api.route('/blog/<string:userId>')
-class BlogCreate(Resource, Database):
+@api.route('/blog')
+class NewBlog(Resource, Database):
 
     def __init__(self, *args, **kwargs):
         Database.__init__(self)
         Resource.__init__(self, *args, **kwargs)
         self.secret = env_val('BLOGGER_JWT_SECRET')
 
+
     @api.doc(description='Create a new Blog', summary='heya')
     @api.expect(toBlogModel)
     @protect
-    def post(self, userId):
-
-        blog = self.createBlog(userId, api.payload)
+    def post(self):
+        blog = self.createBlog(self.decoded['_id'], api.payload)
         return response('Blog created', blog)
-    
 
+
+
+
+
+    
+@api.route('/external/blogs/<string:accessToken>')
+class ExternalBlogs(Resource, Database):
+    
+    def __init__(self, *args, **kwargs):
+        Database.__init__(self)
+        Resource.__init__(self, *args, **kwargs)
+        
+    @api.doc(description='[EXTERNAL USE] Get the entire list of blogs')
+    def get(self, accessToken):
+        result = self.getBlogsByAccessToken(accessToken)
+        return response('Blog list', result)
+    
+@api.route('/external/blog/<string:blogId>/<string:accessToken>')
+class ExternalBlog(Resource, Database):
+    
+    def __init__(self, *args, **kwargs):
+        Database.__init__(self)
+        Resource.__init__(self, *args, **kwargs)
+        
+    @api.doc(description='[EXTERNAL USE] Get a specific blog')
+    def get(self, blogId, accessToken):
+        result = self.getBlogByAccessToken(accessToken, blogId)
+        return response('Blog', result)
+    
+    
+    
 @api.route('/hello')
 class Hello(Resource):
     def get(self):

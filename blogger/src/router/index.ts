@@ -1,17 +1,20 @@
 import { createRouter, createWebHistory } from "vue-router";
-import {authGuard} from '@/middleware/auth';
+import { authGuard } from "@/middleware/auth";
 
 import Home from "@/pages/Home.vue";
 import About from "@/pages/About.vue";
 import Login from "@/pages/Login.vue";
+import Logout from "@/pages/Logout.vue";
 import Register from "@/pages/Register.vue";
 
 import NotFound from "@/pages/NotFound.vue";
 import Error from "@/pages/Error.vue";
 
 import UserIndex from "@/pages/User/Index.vue";
-
-
+import UserBlogCreate from "@/pages/User/Blog/Create.vue";
+import UserBlogUpdate from "@/pages/User/Blog/Update.vue";
+import UserBlogView from "@/pages/User/Blog/View.vue";
+import UserSettings from "@/pages/User/Settings.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -20,9 +23,6 @@ const router = createRouter({
       path: "/",
       name: "home",
       component: Home,
-      meta: {
-       
-      },
     },
     {
       path: "/about",
@@ -31,24 +31,48 @@ const router = createRouter({
     },
     {
       path: "/login",
-      component: Login
+      component: Login,
+    },
+    {
+      path: "/logout",
+      component: Logout,
     },
     {
       path: "/register",
-      component: Register
+      component: Register,
     },
     {
-      path: '/user/home',
+      path: "/user/home",
       component: UserIndex,
-      beforeEnter: [authGuard]
+      beforeEnter: [authGuard],
     },
     {
-      path: '/:pathMatch(.*)*',
-      component: NotFound
+      path: "/user/blog/create",
+      component: UserBlogCreate,
+      beforeEnter: [authGuard],
     },
     {
-      path: '/error',
-      component: Error
+      path: "/user/blog/update/:blogID",
+      component: UserBlogUpdate,
+      beforeEnter: [authGuard],
+    },
+    {
+      path: "/user/blog/view/:blogID",
+      component: UserBlogView,
+      beforeEnter: [authGuard],
+    },
+    {
+      path: "/user/settings",
+      component: UserSettings,
+      beforeEnter: [authGuard],
+    },
+    {
+      path: "/:pathMatch(.*)*",
+      component: NotFound,
+    },
+    {
+      path: "/error",
+      component: Error,
     },
   ],
 });

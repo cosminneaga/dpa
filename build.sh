@@ -17,6 +17,8 @@ fi
 # echo "DELETING ./blogger/node_modules... PLEASE WAIT"
 # rm -r ./blogger/node_modules
 
+rm ./blogger/package-lock.json
+
 docker compose up -d --build
 
 cd ./blogger

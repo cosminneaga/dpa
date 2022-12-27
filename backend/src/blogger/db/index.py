@@ -1,5 +1,6 @@
 import json
 import jwt
+import datetime
 from flask import abort
 from bson.objectid import ObjectId
 from py_console import console
@@ -8,6 +9,7 @@ from utils.error import UserNotFound, ApiKeyError, UserExists, NotFound
 from utils.env import env_val
 from utils.db import DB
 from utils.valid import Validator
+from utils.generator import StrGenerator
 
 
 
@@ -98,6 +100,8 @@ class Database(DB, Validator):
             self.isUser({
                 'email': data['email']
             })
+            
+            data['access_token'] = self.generateExternalDataAccessToken()
 
             user = self.users.insert_one(data)
             return self.getUser(email=data['email'], password=data['password'])
@@ -143,7 +147,7 @@ class Database(DB, Validator):
             return blog
 
         except Exception as e:
-            abort(400, str(e))
+            abort(404, str(e))
 
     def createBlog(self, userId, blogData):
         try:
@@ -151,6 +155,10 @@ class Database(DB, Validator):
             self.isUser({
                 '_id': ObjectId(userId)
             }, 'if-exists')
+
+            blogData['created_at'] = str(datetime.datetime.utcnow())
+            blogData['updated_at'] = str(datetime.datetime.utcnow())
+
             collection = self.database['blog.'+userId]
             insert = collection.insert_one(blogData)
             _id = insert.inserted_id
@@ -170,6 +178,9 @@ class Database(DB, Validator):
             self.isUser({
                 '_id': ObjectId(userId)
             }, 'if-exists')
+
+            blogData['updated_at'] = str(datetime.datetime.utcnow())
+
             collection = self.database['blog.'+userId]
             update = collection.update_one({
                 '_id': ObjectId(blogId)
@@ -200,7 +211,43 @@ class Database(DB, Validator):
 
         except Exception as e:
             abort(400, str(e))
-
+            
+            
+    def generateExternalDataAccessToken(self):
+        try:
+            
+            accessTokens = []
+            for user in self.users.find():
+                accessTokens.append(user['access_token'])
+                
+            return StrGenerator.generateRandomUniqueStrings(50, accessTokens)
+            
+        except Exception as e:
+            abort(500, str(e))
+            
+            
+    def getBlogsByAccessToken(self, accessToken):
+        try:
+            user = self.users.find_one({
+                'access_token': accessToken
+            })
+            
+            return self.getBlogs(str(user['_id']))
+        
+        except Exception as e:
+            abort(500, str(e))
+            
+            
+    def getBlogByAccessToken(self, accessToken, blogId):
+        try:
+            user = self.users.find_one({
+                'access_token': accessToken
+            })
+            
+            return self.getBlog(str(user['_id']), blogId)
+        
+        except Exception as e:
+            abort(500, str(e))
 
 
 
@@ -209,9 +256,10 @@ class Database(DB, Validator):
 
 db = Database()
 db.test_connection()
-# db.initialise()
 
 # db.getBlog('62cee48f5856f9d3aa38be3f', '62cee48f5856f9d3aa38be40')
 # db.getBlogs('62cee48f5856f9d3aa38be3f')
 # print(db.getUser('62cdb61f0e5a20f143d933a9'))
 # print(db.getUser(None, 'user@gmail.com', 'password'))
+
+# db.generateExternalDataAccessToken()

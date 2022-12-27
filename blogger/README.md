@@ -52,3 +52,10 @@ Quill
 https://vueup.github.io/vue-quill/guide/installation.html#cdn
 https://www.npmjs.com/package/quill
 https://quilljs.com/docs/quickstart/
+
+Vue Cookies
+https://github.com/cmp-cc/vue-cookies#readme
+
+PrismJs
+https://prismjs.com/
+https://dev.to/kevin_odongo35/add-prism-js-to-a-vue-application-3e9p

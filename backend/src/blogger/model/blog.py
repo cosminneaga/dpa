@@ -26,7 +26,6 @@ class BlogModel:
         return self.__ns.model('authorLinks', {
             'text': fields.String('link display text'),
             'url': fields.String('link url'),
-            'logo': fields.String('link logo'),
             'image': fields.String('link image')
         })
 
@@ -50,8 +49,6 @@ class BlogModel:
                 'author': fields.Nested(self.toAuthor()),
                 'category': fields.String('category'),
                 'tags': fields.List(fields.String('tags')),
-                # 'content': [],
-                'created_at': fields.DateTime(),
-                'updated_at': fields.DateTime(),
+                'content': fields.String('<h1>Hello World</h1>'),
             }
         )

@@ -4,7 +4,6 @@ from utils.env import env_val
 from flask_cors import CORS
 
 from src.blogger.namespace import api as bloggerNS
-from src.blogger.pages.namespace import api as bloggerPagesNS
 from src.example.namespace import api as exampleNS
 
 
@@ -12,6 +11,8 @@ app = Flask(__name__)
 CORS(app)
 app.config['ENV'] = 'development'
 RESTX_ERROR_404_HELP=False
+
+app.config.SWAGGER_UI_DOC_EXPANSION = 'list'
 
 authorizations = {
     'api_key': {
@@ -33,8 +34,7 @@ api = Api(
 
 
 api.add_namespace(bloggerNS, path='/api/blogger')
-api.add_namespace(bloggerPagesNS, path='/blogger')
-api.add_namespace(exampleNS, path='/api/example')
+# api.add_namespace(exampleNS, path='/api/example')
 
 
 @api.route('/favicon.ico')

@@ -11,7 +11,7 @@ class UserModel:
                 'first_name': fields.String('FirstName'),
                 'last_name': fields.String('LastName'),
                 'email': fields.String('user@gmail.com'),
-                'password': fields.String('password'),
+                'password': fields.String('password')
             }
         )
 
