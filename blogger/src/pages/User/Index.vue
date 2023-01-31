@@ -46,7 +46,7 @@ export default {
             },
         });
 
-        console.log(req);
+        // console.log(req);
 
         this.blogs = req.data.data;
     },

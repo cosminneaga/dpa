@@ -1,0 +1,73 @@
+[{
+  "_id": {
+    "$oid": "63d8de38dc07de1f02672f24"
+  },
+  "title": "How to deal with a bear",
+  "description": "Consectetur irure consequat consectetur amet voluptate amet magna proident amet anim occaecat ipsum culpa.",
+  "image": {
+    "src": "https: //images.unsplash.com/photo-1657299143020-4f4bbf05174d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1167&q=80",
+    "alt": "picnic",
+    "title": "picnic"
+  },
+  "created_at": "2022-12-06 15:19:27.618524",
+  "updated_at": "2023-01-31 13:14:17.892222",
+  "author": {
+    "name": "Cosmin Neaga",
+    "links": [
+      {
+        "text": "Link text",
+        "url": "https://www.example.com",
+        "logo": "https://www.example.com/logo",
+        "image": "https://www.example.com/image"
+      }
+    ]
+  },
+  "category": "Computers",
+  "tags": [
+    "containers",
+    "docker",
+    "Google Cloud",
+    "Ubuntu Pro"
+  ],
+  "content": "<h2>No bine no lets test this now!!! This blog will not be written to local storage because it contains a blob image which exceed 40000 chars!!! Buut if you add image as link this won't affect anything and everything will work as should!!!</h2><p><br></p><div class=\"ke-component ke-image-container __ke__float-center\" contenteditable=\"false\"><figure style=\"margin: auto; width: 555px;\"><img src=\"https://images.unsplash.com/photo-1675143890402-72c446e0f530?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=734&amp;q=80\" alt=\"\" data-rotate=\"\" data-proportion=\"true\" data-size=\"555px,878px\" data-align=\"center\" data-file-name=\"photo-1675143890402-72c446e0f530?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=734&amp;q=80\" data-file-size=\"0\" data-origin=\",\" style=\"height: 878px; width: 555px; transform: rotate(0deg);\" data-index=\"0\" origin-size=\"734,1161\"><figcaption style=\"margin-top: 0px;\"><div>This is a Mobile gas station</div></figcaption></figure></div>"
+},{
+  "_id": {
+    "$oid": "63d90aae5a873403c20ac3a0"
+  },
+  "title": "",
+  "description": "",
+  "image": {
+    "src": "",
+    "alt": "",
+    "title": ""
+  },
+  "author": {
+    "name": "",
+    "links": []
+  },
+  "category": "",
+  "tags": [],
+  "content": "<div class=\"ke-component ke-video-container __ke__float-center\" contenteditable=\"false\" style=\"width: 75%; min-width: 100%;\"><figure style=\"margin: auto; width: 75%; height: 454px; padding-bottom: 454px;\"><iframe src=\"https://www.youtube.com/embed/k7SlAf9_Vbg\" data-proportion=\"true\" data-size=\"75%,454px\" data-align=\"center\" data-file-name=\"k7SlAf9_Vbg\" data-file-size=\"0\" data-origin=\"100%,75%\" data-rotate=\"\" style=\"width: 100%; height: 454px;\" data-index=\"0\"></iframe></figure></div><p><br></p><p><br></p><p>Hello World... What's up babyyy!!!</p>",
+  "created_at": "2023-01-31 12:33:50.217202",
+  "updated_at": "2023-01-31 13:08:05.997299"
+},{
+  "_id": {
+    "$oid": "63d9126c5a873403c20ac3d9"
+  },
+  "title": "Hello World",
+  "description": "A \"hello world\" blog",
+  "image": {
+    "src": "",
+    "alt": "",
+    "title": ""
+  },
+  "author": {
+    "name": "",
+    "links": []
+  },
+  "category": "",
+  "tags": [],
+  "content": "<h1 style=\"text-align: center;\">Hello World<br></h1><p><br></p><p>Welcome to my channel!</p><p>This is a test string....</p>",
+  "created_at": "2023-01-31 13:06:52.631632",
+  "updated_at": "2023-01-31 13:07:40.669462"
+}]

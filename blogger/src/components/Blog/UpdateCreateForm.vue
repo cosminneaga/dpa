@@ -15,13 +15,13 @@
                             label="Title"
                             density="comfortable"
                             variant="outlined"
-                            v-model="meta.title"
+                            v-model="blog.title"
                         ></v-text-field>
                         <v-textarea
                             label="Description"
                             density="comfortable"
                             variant="outlined"
-                            v-model="meta.description"
+                            v-model="blog.description"
                         ></v-textarea>
 
                         <!-- IMAGE -->
@@ -31,20 +31,20 @@
                                 variant="outlined"
                                 density="compact"
                                 label="alt"
-                                v-model="meta.image.alt"
+                                v-model="blog.image.alt"
                             ></v-text-field>
                             <v-text-field
                                 variant="outlined"
                                 density="compact"
                                 label="title"
-                                v-model="meta.image.title"
+                                v-model="blog.image.title"
                             ></v-text-field>
                         </section>
                         <v-text-field
                             variant="outlined"
                             density="compact"
                             label="src"
-                            v-model="meta.image.src"
+                            v-model="blog.image.src"
                         ></v-text-field>
 
                         <!-- AUTHOR -->
@@ -53,7 +53,7 @@
                             variant="outlined"
                             density="comfortable"
                             label="Full Name"
-                            v-model="meta.author.name"
+                            v-model="blog.author.name"
                         ></v-text-field>
 
                         <!-- AUTHOR LINKS -->
@@ -65,7 +65,7 @@
                                     style="gap:10px;"
                                 >
                                     <v-chip
-                                        v-for="(item, i) in meta.author.links"
+                                        v-for="(item, i) in blog.author.links"
                                         :key="i"
                                         variant="tonal"
                                         :prepend-avatar="item.imageSrc"
@@ -117,7 +117,7 @@
                             label="Category"
                             density="comfortable"
                             variant="outlined"
-                            v-model="meta.category"
+                            v-model="blog.category"
                         ></v-text-field>
 
                         <!-- TAGS -->
@@ -127,7 +127,7 @@
                                 style="gap:10px;"
                             >
                                 <v-chip
-                                    v-for="(item, i) in meta.tags"
+                                    v-for="(item, i) in blog.tags"
                                     :key="i"
                                     variant="flat"
                                     exact
@@ -164,11 +164,16 @@
                         size="large"
                     >Submit Blog</v-btn>
 
-                    <quill-editor
+                    <!-- <quill-editor
                         ref="editor"
                         @editorChange="onContentChange"
                         content="html"
-                    ></quill-editor>
+                    ></quill-editor> -->
+
+                    <kothing-editor
+                        @on-change="(content) => onContentChange(content)"
+                        :contentSet="update ? update.content : ''"
+                    />
 
                     <v-btn
                         @click="handleSubmit"
@@ -183,6 +188,8 @@
 </template>
 
 <script lang="ts">
+import KothingEditor from "../kothing-editor.vue";
+
 interface BlogMeta {
     title: string;
     description: string;
@@ -217,29 +224,11 @@ interface ComponentData {
 }
 
 export default {
+    components: { KothingEditor },
     props: ["update"],
 
-    mounted() {
-        if (this.$props.update) {
-            this.meta = { ...this.$props.update };
-            delete this.meta._id;
-
-            this.$refs.editor.setHTML(this.$props.update.content);
-        }
-
-        const savedContent = localStorage.getItem("blog-create");
-        if (savedContent) {
-            this.meta = { ...JSON.parse(savedContent) };
-            this.$refs.editor.setHTML(JSON.parse(savedContent)["content"]);
-        }
-    },
-
-    unmounted() {
-        localStorage.removeItem("blog-create");
-    },
-
     data: () => ({
-        meta: {
+        blog: {
             title: "",
             description: "",
             image: {
@@ -253,7 +242,7 @@ export default {
             },
             category: "",
             tags: [],
-            content: null,
+            content: "",
         },
         authorLink: {
             text: "",
@@ -263,12 +252,32 @@ export default {
         tag: "",
     }),
 
-    watch: {
-        meta: {
-            handler(value) {
-                localStorage.setItem("blog-create", JSON.stringify(value));
+    mounted() {
+        if (this.$props.update) {
+            this.blog = { ...this.$props.update };
+            delete this.blog._id;
 
-                console.log(value);
+            this.blog.content = this.$props.update.content;
+        }
+
+        const savedContent = localStorage.getItem("blog-data");
+        if (savedContent) {
+            this.blog = { ...JSON.parse(savedContent) };
+        }
+    },
+
+    unmounted() {
+        localStorage.removeItem("blog-data");
+    },
+
+    watch: {
+        blog: {
+            handler(data) {
+                try {
+                    localStorage.setItem("blog-data", JSON.stringify(data));
+                } catch (e) {
+                    console.error(e.message);
+                }
             },
             deep: true,
         },
@@ -276,24 +285,30 @@ export default {
 
     methods: {
         async handleSubmit() {
-            this.meta.content = this.$refs.editor.getHTML();
-
             try {
                 let req = null;
                 if (this.$props.update) {
-                    req = await this.axios.put(`/api/blog/${this.$route.params.blogID}`, this.meta, {
-                        headers: {
-                            "x-access-token": this.$cookies.get("X-Access-Token"),
-                        },
-                    });
+                    req = await this.axios.put(
+                        `/api/blog/${this.$route.params.blogID}`,
+                        { ...this.blog },
+                        {
+                            headers: {
+                                "x-access-token": this.$cookies.get("X-Access-Token"),
+                            },
+                        }
+                    );
                 } else {
-                    req = await this.axios.post("/api/blog", this.meta, {
-                        headers: {
-                            "x-access-token": this.$cookies.get("X-Access-Token"),
-                        },
-                    });
+                    req = await this.axios.post(
+                        "/api/blog",
+                        { ...this.blog },
+                        {
+                            headers: {
+                                "x-access-token": this.$cookies.get("X-Access-Token"),
+                            },
+                        }
+                    );
 
-                    this.meta = {
+                    this.blog = {
                         title: "",
                         description: "",
                         image: {
@@ -307,12 +322,9 @@ export default {
                         },
                         category: "",
                         tags: [],
-                        content: null,
+                        content: "",
                     };
-                    this.$refs.editor.setHTML("Content");
                 }
-
-                // console.log(req);
 
                 this.$toast.success(`Blog ${this.$props.update ? "updated" : "created"} successfully.`);
             } catch (error) {
@@ -321,7 +333,7 @@ export default {
         },
 
         addAuthorLink() {
-            this.meta.author.links.push(this.authorLink);
+            this.blog.author.links.push(this.authorLink);
             this.authorLink = {
                 text: "",
                 url: "",
@@ -330,25 +342,21 @@ export default {
         },
 
         removeAuthorLink(index: number) {
-            this.meta.author.links.splice(index, 1);
+            this.blog.author.links.splice(index, 1);
         },
 
         addTag() {
-            this.meta.tags.push(this.tag);
+            this.blog.tags.push(this.tag);
             this.tag = "";
         },
 
         removeTag(index: number) {
-            this.meta.tags.splice(index, 1);
+            this.blog.tags.splice(index, 1);
             this.tag = "";
         },
 
-        onContentChange() {
-            console.log("CONTENT");
-
-            console.log(this.$refs.editor.getContents());
-
-            this.meta.content = this.$refs.editor.getHTML();
+        onContentChange(content: any) {
+            this.blog.content = content;
         },
     },
 };
