@@ -52,7 +52,8 @@ export default {
                     password: this.password,
                 });
 
-                this.$cookies.set("X-Access-Token", req.data.data.token);
+                // this.$cookies.set("X-Access-Token", req.data.data.token, Infinity);
+                document.cookie = `X-Access-Token=${req.data.data.token}`;
                 // localStorage.setItem('blogger-v-1.0', JSON.stringify(req.data.data))
                 this.$router.push("/user/home");
             } catch (e) {
