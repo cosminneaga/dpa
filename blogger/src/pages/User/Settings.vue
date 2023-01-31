@@ -1,3 +1,7 @@
+<script setup lang="ts">
+const bloggerUrl = import.meta.env.VITE_BLOGGER_URL;
+</script>
+
 <template>
     <user-layout>
         <v-container>
@@ -20,18 +24,18 @@
             <h3>dev url</h3>
             <br>
             <h4>Retrieve entire list of blogs</h4>
-            <pre><code class="language-markup">http://localhost:8080/api/blogger/external/blogs/{{user.access_token}}</code></pre>
+            <pre><code class="language-markup">{{ bloggerUrl }}/external/blogs/{{user.access_token}}</code></pre>
 
             <br>
             <h3>Retrieve single blog by id</h3>
-            <pre><code class="language-javascript">http://localhost:8080/api/blogger/external/blog/&lt;blogId&gt;/{{user.access_token}}</code></pre>
+            <pre><code class="language-javascript">{{ bloggerUrl }}/api/blogger/external/blog/&lt;blogId&gt;/{{user.access_token}}</code></pre>
 
             <br>
             <h3>url</h3>
-            <pre><code class="language-javascript">https://dpa.cosminneaga.dev/api/blogger/external/blogs/{{user.access_token}}</code></pre>
+            <pre><code class="language-javascript">{{ bloggerUrl }}/api/blogger/external/blogs/{{user.access_token}}</code></pre>
             <br>
             <h3>fetch</h3>
-            <pre><code class="language-javascript">fetch('https://dpa.cosminneaga.dev/api/blogger/external/blogs/{{user.access_token}}')
+            <pre><code class="language-javascript">fetch('{{ bloggerUrl }}/api/blogger/external/blogs/{{user.access_token}}')
     .then((response) => response.json())
     .then((data) => {
         console.log('Success:', data);
