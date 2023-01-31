@@ -44,22 +44,25 @@ Checkout the [deployment documentation](https://v3.nuxtjs.org/guide/deploy/prese
 
 ## Dependencies
 
+Vuetify
+- https://next.vuetifyjs.com/en/getting-started/installation/
+
 Vue Toaster
-https://github.com/MeForma/vue-toaster
-https://meforma.github.io/vue-toaster/
+- https://github.com/MeForma/vue-toaster
+- https://meforma.github.io/vue-toaster/
 
 Quill
-https://vueup.github.io/vue-quill/guide/installation.html#cdn
-https://www.npmjs.com/package/quill
-https://quilljs.com/docs/quickstart/
+- https://vueup.github.io/vue-quill/guide/installation.html#cdn
+- https://www.npmjs.com/package/quill
+- https://quilljs.com/docs/quickstart/
 
 Vue Cookies
-https://github.com/cmp-cc/vue-cookies#readme
+- https://github.com/cmp-cc/vue-cookies#readme
 
 PrismJs
-https://prismjs.com/
-https://dev.to/kevin_odongo35/add-prism-js-to-a-vue-application-3e9p
+- https://prismjs.com/
+- https://dev.to/kevin_odongo35/add-prism-js-to-a-vue-application-3e9p
 
 Kothing
-https://github.com/kothing/kothing-Editor#install
-https://kothing.github.io/editor/html/getting-started.html
+- https://github.com/kothing/kothing-Editor#install
+- https://kothing.github.io/editor/html/getting-started.html
