@@ -28,14 +28,14 @@ const bloggerUrl = import.meta.env.VITE_BLOGGER_URL;
 
             <br>
             <h3>Retrieve single blog by id</h3>
-            <pre><code class="language-javascript">{{ bloggerUrl }}/api/blogger/external/blog/&lt;blogId&gt;/{{user.access_token}}</code></pre>
+            <pre><code class="language-javascript">{{ bloggerUrl }}/external/blog/&lt;blogId&gt;/{{user.access_token}}</code></pre>
 
             <br>
             <h3>url</h3>
-            <pre><code class="language-javascript">{{ bloggerUrl }}/api/blogger/external/blogs/{{user.access_token}}</code></pre>
+            <pre><code class="language-javascript">{{ bloggerUrl }}/external/blogs/{{user.access_token}}</code></pre>
             <br>
             <h3>fetch</h3>
-            <pre><code class="language-javascript">fetch('{{ bloggerUrl }}/api/blogger/external/blogs/{{user.access_token}}')
+            <pre><code class="language-javascript">fetch('{{ bloggerUrl }}/external/blogs/{{user.access_token}}')
     .then((response) => response.json())
     .then((data) => {
         console.log('Success:', data);
