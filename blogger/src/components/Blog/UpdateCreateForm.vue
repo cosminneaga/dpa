@@ -157,6 +157,13 @@
 
             <v-col>
                 <v-container fluid>
+                    <v-btn
+                        @click="handleSubmit"
+                        color="success"
+                        class="mb-4"
+                        size="large"
+                    >Submit Blog</v-btn>
+
                     <quill-editor
                         ref="editor"
                         @editorChange="onContentChange"
@@ -167,7 +174,7 @@
                         @click="handleSubmit"
                         color="success"
                         class="mt-4"
-                        size="x-large"
+                        size="large"
                     >Submit Blog</v-btn>
                 </v-container>
             </v-col>
@@ -305,7 +312,7 @@ export default {
                     this.$refs.editor.setHTML("Content");
                 }
 
-                console.log(req);
+                // console.log(req);
 
                 this.$toast.success(`Blog ${this.$props.update ? "updated" : "created"} successfully.`);
             } catch (error) {
@@ -337,6 +344,10 @@ export default {
         },
 
         onContentChange() {
+            console.log("CONTENT");
+
+            console.log(this.$refs.editor.getContents());
+
             this.meta.content = this.$refs.editor.getHTML();
         },
     },

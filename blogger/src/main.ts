@@ -39,7 +39,7 @@ QuillEditor.props.globalOptions.default = () => {
     modules: {
       toolbar: [
         ["bold", "italic", "underline", "strike"], // toggled buttons
-        ["blockquote", "code-block"],
+        ["blockquote", "code-block", "code"],
 
         [{ header: 1 }, { header: 2 }], // custom button values
         [{ list: "ordered" }, { list: "bullet" }],
@@ -54,6 +54,7 @@ QuillEditor.props.globalOptions.default = () => {
         [{ font: [] }],
         [{ align: [] }],
         ["image"],
+        ["video"],
         ["link"],
 
         ["clean"],

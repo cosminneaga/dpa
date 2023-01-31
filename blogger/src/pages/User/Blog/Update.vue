@@ -1,7 +1,3 @@
-<script lang="ts" setup>
-import UpdateCreateForm from "@/components/Blog/UpdateCreateForm.vue";
-</script>
-
 <template>
     <user-layout>
         <section
@@ -23,7 +19,11 @@ import UpdateCreateForm from "@/components/Blog/UpdateCreateForm.vue";
 </template>
 
 <script lang="ts">
+import UpdateCreateForm from "../../../components/Blog/UpdateCreateForm.vue";
+
 export default {
+    components: { UpdateCreateForm },
+
     data: () => ({
         dd: null,
         loading: false,
