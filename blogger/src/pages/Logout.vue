@@ -29,7 +29,7 @@ export default {
         setTimeout(() => {
             // this.$cookies.set("X-Access-Token", "");
             this.$cookies.remove("X-Access-Token");
-            localStorage.removeItem("blog-create");
+            localStorage.removeItem("blog-data");
             this.$router.push("/");
         }, 2100);
     },

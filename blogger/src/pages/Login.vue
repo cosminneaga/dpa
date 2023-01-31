@@ -47,53 +47,18 @@ export default {
     methods: {
         async login() {
             try {
-                const req = await this.axios.post('/api/login', {
-                email: this.email,
-                password: this.password
-            })
+                const req = await this.axios.post("/login", {
+                    email: this.email,
+                    password: this.password,
+                });
 
-            console.log(req);
-            // localStorage.setItem('blogger-v-1.0', JSON.stringify(req.data.data))
-            this.$router.push('/user/home')
-            } catch(e) {
-                this.$toast.error('An error has arised from ashes!')
-            }
-            
-        }
-    },
-}
-</script>
-
-<!--
-<script>
-export default {
-    data: () => ({
-        email: "user@gmail.com",
-        password: "password",
-    }),
-    methods: {
-        async login() {
-            const d = {
-                email: this.email,
-                password: this.password,
-            };
-            try {
-                const res = await $fetch(
-                    "http://localhost:8080/api/blogger/login",
-                    {
-                        method: "POST",
-                        body: d,
-                    }
-                );
-                console.log(res);
-                localStorage.setItem("blogger", JSON.stringify(res.data));
+                this.$cookies.set("X-Access-Token", req.data.data.token);
+                // localStorage.setItem('blogger-v-1.0', JSON.stringify(req.data.data))
                 this.$router.push("/user/home");
             } catch (e) {
-                console.log(e.response);
-                this.$toast.error(e.response._data.message);
+                this.$toast.error("An error has arised from ashes!");
             }
         },
     },
 };
 </script>
--->

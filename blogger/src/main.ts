@@ -1,20 +1,22 @@
+import App from "./App.vue";
+import router from "./router";
 import { createApp } from "vue";
 import { createPinia } from "pinia";
 
+// vue-toaster
 import Toaster from "@meforma/vue-toaster";
 import { createToaster } from "@meforma/vue-toaster";
 const toaster = createToaster();
+
+// vue-cookies
 import VueCookies from "vue3-cookies";
 
-import App from "./App.vue";
-import router from "./router";
-
+// css
 import "./assets/main.css";
 
-
+// axios
 import VueAxios from "vue-axios";
 import axios from "axios";
-
 
 // Layouts
 import Default from "@/layouts/Default.vue";
@@ -33,7 +35,8 @@ const app = createApp(App);
 // app.config.globalProperties.axios = axios;
 // axios.defaults.headers["x-access-token"] = "bra";
 
-const myCustomLightTheme = {
+// configure vuetify
+const vuetifyTheme = {
   dark: false,
   colors: {
     background: "#FFFFFF",
@@ -52,9 +55,9 @@ const vuetify = createVuetify({
   components,
   directives,
   theme: {
-    defaultTheme: "myCustomLightTheme",
+    defaultTheme: "vuetifyTheme",
     themes: {
-      myCustomLightTheme,
+      vuetifyTheme,
     },
   }
 });
@@ -75,9 +78,11 @@ app
     sameSite: "None",
   });
 
-
+// set layouts
 app.component("default-layout", Default).component("user-layout", User);
 
+// config axios
+axios.defaults.baseURL = 'http://localhost:8080/api/blogger'
 axios.interceptors.response.use(
   function (response: any) {
     if (response.data.status === 401) {
@@ -99,4 +104,5 @@ axios.interceptors.response.use(
   }
 );
 
+// mount app
 app.mount("#app");

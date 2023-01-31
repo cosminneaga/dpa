@@ -289,7 +289,7 @@ export default {
                 let req = null;
                 if (this.$props.update) {
                     req = await this.axios.put(
-                        `/api/blog/${this.$route.params.blogID}`,
+                        `/blog/${this.$route.params.blogID}`,
                         { ...this.blog },
                         {
                             headers: {
@@ -299,7 +299,7 @@ export default {
                     );
                 } else {
                     req = await this.axios.post(
-                        "/api/blog",
+                        "/blog",
                         { ...this.blog },
                         {
                             headers: {

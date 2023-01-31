@@ -114,7 +114,7 @@ export default {
     }),
 
     async mounted() {
-        const req = await this.axios.get(`/api/blog/${this.$route.params.blogID}`, {
+        const req = await this.axios.get(`/blog/${this.$route.params.blogID}`, {
             headers: {
                 "x-access-token": this.$cookies.get("X-Access-Token"),
             },
@@ -129,7 +129,7 @@ export default {
         },
 
         async handleDelete() {
-            await this.axios.delete("/api/blog/" + this.$route.params.blogID, {
+            await this.axios.delete("/blog/" + this.$route.params.blogID, {
                 headers: {
                     "x-access-token": this.$cookies.get("X-Access-Token"),
                 },

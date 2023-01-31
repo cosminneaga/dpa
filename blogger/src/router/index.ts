@@ -15,7 +15,6 @@ import UserBlogCreate from "@/pages/User/Blog/Create.vue";
 import UserBlogUpdate from "@/pages/User/Blog/Update.vue";
 import UserBlogView from "@/pages/User/Blog/View.vue";
 import UserSettings from "@/pages/User/Settings.vue";
-import UserTest from "@/pages/User/Test.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -65,11 +64,6 @@ const router = createRouter({
     {
       path: "/user/settings",
       component: UserSettings,
-      beforeEnter: [authGuard],
-    },
-    {
-      path: "/user/test",
-      component: UserTest,
       beforeEnter: [authGuard],
     },
     {

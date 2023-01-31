@@ -22,8 +22,8 @@ export default {
     components: { Header, Footer },
 
     async mounted() {
-        const res = await this.axios.get("/api/hello");
-        console.log(res);
+        const res = await this.axios.get("/hello");
+        console.log("HELLO ROUTE: ", res);
     },
 };
 </script>

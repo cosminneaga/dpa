@@ -30,7 +30,7 @@ export default {
     }),
 
     async mounted() {
-        const req = await this.axios.get(`/api/blog/${this.$route.params.blogID}`, {
+        const req = await this.axios.get(`/blog/${this.$route.params.blogID}`, {
             headers: {
                 "x-access-token": this.$cookies.get("X-Access-Token"),
             },

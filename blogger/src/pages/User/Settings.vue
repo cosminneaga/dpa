@@ -61,18 +61,14 @@ export default {
     }),
 
     async mounted() {
-        // console.log(Prism);
         Prism.highlightAll();
 
-        const req = await this.axios.get("/api/user/me", {
+        const req = await this.axios.get("/user/me", {
             headers: {
                 "x-access-token": this.$cookies.get("X-Access-Token"),
             },
         });
         this.user = { ...req.data.data };
-
-        console.log(this.user);
-
         await this.fetchExternal(req.data.data.access_token);
     },
 

@@ -12,29 +12,27 @@ export default defineConfig({
   server: {
     host: "0.0.0.0",
     port: 1000,
-    cors: false,
-    proxy: {
-      '/api': {
-        target: process.env.BLOGGER_URL,
-        secure: false,
-        changeOrigin: true, // If your backend API is not running on the localhost, we need to make this flag true.
-        rewrite: (path: any) => path.replace("/api", "")
-      }
-    }
+    // proxy: {
+    //   '/api': {
+    //     target: process.env.BLOGGER_URL,
+    //     secure: false,
+    //     changeOrigin: true, // If your backend API is not running on the localhost, we need to make this flag true.
+    //     rewrite: (path: any) => path.replace("/api", "")
+    //   }
+    // }
   },
 
   preview: {
     host: '0.0.0.0',
     port: 1000,
-    cors: false,
-    proxy: {
-      '/api': {
-        target: process.env.BLOGGER_URL,
-        secure: false,
-        changeOrigin: true, // If your backend API is not running on the localhost, we need to make this flag true.
-        rewrite: (path: any) => path.replace("/api", "")
-      }
-    }
+    // proxy: {
+    //   '/api': {
+    //     target: process.env.BLOGGER_URL,
+    //     secure: false,
+    //     changeOrigin: true, // If your backend API is not running on the localhost, we need to make this flag true.
+    //     rewrite: (path: any) => path.replace("/api", "")
+    //   }
+    // }
   },
 
   plugins: [vue(), vueJsx()],

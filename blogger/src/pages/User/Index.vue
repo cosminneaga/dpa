@@ -40,13 +40,11 @@ export default {
     }),
 
     async mounted() {
-        const req = await this.axios.get("/api/blogs", {
+        const req = await this.axios.get("/blogs", {
             headers: {
                 "x-access-token": this.$cookies.get("X-Access-Token"),
             },
         });
-
-        // console.log(req);
 
         this.blogs = req.data.data;
     },
