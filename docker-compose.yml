@@ -1,8 +1,10 @@
 version: '3.9'
 
+name: dpa
 services:
 
   db:
+    container_name: db
     image: mongo:6.0.3
     hostname: dpaDBServer
     environment:
@@ -14,25 +16,25 @@ services:
     networks:
       - dpa-blogger
 
-  backend:
-    build: ./backend
+  api:
+    container_name: api
+    build: ./api
     ports:
       - 8080:8080
     volumes:
-      - ./backend:/backend
+      - ./api:/api
     networks:
       - dpa-blogger
     depends_on:
       - db
 
   blogger:
+    container_name: blogger
     build: ./blogger
     ports: 
       - 81:1000
     volumes:
       - ./blogger:/vlt
-
-
 
 networks:
   dpa-blogger:
