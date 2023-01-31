@@ -18,8 +18,8 @@
                     class="ml-2"
                 >
                     <v-btn
-                        variant="outlined"
-                        color="primary"
+                        variant="text"
+                        :color="item.color ? item.color : 'primary'"
                     >{{item.text}}</v-btn>
                 </router-link>
             </template>
@@ -43,7 +43,7 @@ export default {
             { text: "Home", to: "/user/home" },
             { text: "Create new Blog", to: "/user/blog/create" },
             { text: "Settings", to: "/user/settings" },
-            { text: "Logout", to: "/logout" },
+            { text: "Logout", to: "/logout", color: "error" },
         ],
     }),
 };

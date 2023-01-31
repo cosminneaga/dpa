@@ -19,11 +19,11 @@
             <br>
             <h3>dev url</h3>
             <br>
-            <h4>list of blogs</h4>
-            <pre><code class="language-javascript">http://localhost:8080/api/blogger/external/blogs/{{user.access_token}}</code></pre>
+            <h4>Retrieve entire list of blogs</h4>
+            <pre><code class="language-markup">http://localhost:8080/api/blogger/external/blogs/{{user.access_token}}</code></pre>
 
             <br>
-            <h4>single blog</h4>
+            <h3>Retrieve single blog by id</h3>
             <pre><code class="language-javascript">http://localhost:8080/api/blogger/external/blog/&lt;blogId&gt;/{{user.access_token}}</code></pre>
 
             <br>
