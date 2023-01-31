@@ -11,10 +11,10 @@ import router from "./router";
 
 import "./assets/main.css";
 
-import axios from "axios";
-import VueAxios from "vue-axios";
 
-axios.defaults.headers["x-access-token"] = "bra";
+import VueAxios from "vue-axios";
+import axios from "axios";
+
 
 // Layouts
 import Default from "@/layouts/Default.vue";
@@ -29,6 +29,9 @@ import "@mdi/font/css/materialdesignicons.css";
 
 
 const app = createApp(App);
+
+// app.config.globalProperties.axios = axios;
+// axios.defaults.headers["x-access-token"] = "bra";
 
 const myCustomLightTheme = {
   dark: false,
@@ -57,10 +60,10 @@ const vuetify = createVuetify({
 });
 
 app
-  .use(vuetify)
   .use(createPinia())
   .use(router)
   .use(VueAxios, axios)
+  .use(vuetify)
   .use(Toaster, {
     position: "top-right",
   })
@@ -71,6 +74,8 @@ app
     secure: true,
     sameSite: "None",
   });
+
+
 app.component("default-layout", Default).component("user-layout", User);
 
 axios.interceptors.response.use(

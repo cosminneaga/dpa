@@ -1,12 +1,7 @@
-<script lang="ts" setup>
-import Header from "@/components/Navigation/Header.vue";
-import Footer from "@/components/Navigation/Footer.vue";
-</script>
-
 <template>
     <v-container style="max-width: 1400px; min-width: 600px;">
         <Header></Header>
-        
+
         <div class="my-10"></div>
 
         <v-container>
@@ -20,14 +15,17 @@ import Footer from "@/components/Navigation/Footer.vue";
 </template>
 
 <script lang="ts">
-export default {
-    async mounted() {
-        const res = await this.axios.get('/api/hello');
+import Header from "../components/Navigation/Header.vue";
+import Footer from "../components/Navigation/Footer.vue";
 
-        console.log(res);     
-                
-    }
-}
+export default {
+    components: { Header, Footer },
+
+    async mounted() {
+        const res = await this.axios.get("/api/hello");
+        console.log(res);
+    },
+};
 </script>
 
 <style lang="scss" scoped>

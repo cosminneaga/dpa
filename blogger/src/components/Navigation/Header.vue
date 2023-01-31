@@ -10,25 +10,64 @@
         <v-spacer></v-spacer>
 
         <ul class="nav-links">
-            <li><router-link to="/">Home</router-link></li>
-            <li><router-link to="/about">About</router-link></li>
-            <li><router-link to="/login">Login</router-link></li>
-            <li><router-link to="/register">Register</router-link></li>
+            <li>
+                <v-btn
+                    variant="text"
+                    color="primary"
+                    to="/"
+                >Home</v-btn>
+            </li>
+            <li>
+                <v-btn
+                    variant="text"
+                    color="primary"
+                    to="/about"
+                >About</v-btn>
+            </li>
+            <li>
+                <v-btn
+                    variant="text"
+                    color="primary"
+                    to="/login"
+                >Login</v-btn>
+            </li>
+            <li>
+                <v-btn
+                    variant="text"
+                    color="primary"
+                    to="/register"
+                >Register</v-btn>
+            </li>
         </ul>
 
-
-        <v-navigation-drawer v-model="drawer" temporary>
-            <v-list-item prepend-avatar="https://randomuser.me/api/portraits/men/78.jpg"
-                title="John Leider"></v-list-item>
+        <v-navigation-drawer
+            v-model="drawer"
+            temporary
+        >
+            <v-list-item
+                prepend-avatar="https://randomuser.me/api/portraits/men/78.jpg"
+                title="John Leider"
+            ></v-list-item>
 
             <v-divider></v-divider>
 
-            <v-list density="compact" nav>
+            <v-list
+                density="compact"
+                nav
+            >
                 <router-link to="/">
-                    <v-list-item prepend-icon="mdi-view-dashboard" title="Home" value="home"></v-list-item>
+                    <v-list-item
+                        prepend-icon="mdi-view-dashboard"
+                        title="Home"
+                        value="home"
+                    ></v-list-item>
                 </router-link>
                 <router-link to="/about">
-                    <v-list-item prepend-icon="mdi-forum" title="About" value="about"></v-list-item>
+                    <v-list-item
+                        prepend-icon="mdi-forum"
+                        title="About"
+                        value="about"
+                    ></v-list-item>
                 </router-link>
             </v-list>
         </v-navigation-drawer>
@@ -39,9 +78,9 @@
 <script lang="ts">
 export default {
     data: () => ({
-        drawer: false
+        drawer: false,
     }),
-}
+};
 </script>
 
 <style lang="scss" scoped>

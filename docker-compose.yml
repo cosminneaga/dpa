@@ -12,39 +12,36 @@ services:
     ports:
       - 8100:27017
     networks:
-      - dpaNetwork
+      - dpa-network
 
   backend:
     build: ./backend
+    environment:
+      - MONGO_INITDB_DATABASE=blogger
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=example
     ports:
-      - 8080:8080
+      - 8081:8080
     volumes:
       - ./backend:/backend
     networks:
-      - dpaNetwork
+      - dpa-network
     depends_on:
       - db
 
   blogger:
     build: ./blogger
-    user: root
     ports: 
-      - 80:3000
-    tty: true
-    environment:
-      - NODE_ENV=development
+      - 81:1000
     volumes:
       - ./blogger:/vlt
-    networks:
-      - dpaNetwork
-    depends_on:
-      - db
-      - backend
 
 
 
 networks:
-  dpaNetwork:
+  dpa-network:
+    driver: bridge
+    name: dpa-network
 
 volumes:
   npm-cache:
