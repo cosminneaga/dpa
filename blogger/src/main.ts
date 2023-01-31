@@ -82,8 +82,7 @@ app
 app.component("default-layout", Default).component("user-layout", User);
 
 // config axios
-// axios.defaults.baseURL = 'http://localhost:8080/api/blogger'
-axios.defaults.baseURL = 'http://80.208.225.17:8080/api/blogger'
+axios.defaults.baseURL = import.meta.env.VITE_BLOGGER_URL
 axios.interceptors.response.use(
   function (response: any) {
     if (response.data.status === 401) {
