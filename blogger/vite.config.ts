@@ -25,6 +25,7 @@ export default defineConfig({
   preview: {
     host: '0.0.0.0',
     port: 1000,
+    cors: true,
     // proxy: {
     //   '/api': {
     //     target: process.env.BLOGGER_URL,
