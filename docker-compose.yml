@@ -15,6 +15,7 @@ services:
       - 8100:27017
     networks:
       - dpa-blogger
+    restart: always
 
   api:
     container_name: api
@@ -27,6 +28,7 @@ services:
       - dpa-blogger
     depends_on:
       - db
+    restart: always
 
   blogger:
     container_name: blogger
@@ -35,6 +37,7 @@ services:
       - 81:1000
     volumes:
       - ./blogger:/vlt
+    restart: always
 
 networks:
   dpa-blogger:
