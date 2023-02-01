@@ -28,10 +28,27 @@ export default {
     mounted() {
         setTimeout(() => {
             // this.$cookies.set("X-Access-Token", "");
-            this.$cookies.remove("X-Access-Token");
-            localStorage.removeItem("blog-data");
+            // this.$cookies.remove("X-Access-Token");
+            this.eraseCookieFromAllPaths("X-Access-Token");
+            localStorage.clear();
             this.$router.push("/");
         }, 2100);
+    },
+
+    methods: {
+        eraseCookieFromAllPaths(name: string) {
+            // This function will attempt to remove a cookie from all paths.
+            var pathBits = location.pathname.split("/");
+            var pathCurrent = " path=";
+
+            // do a simple pathless delete first.
+            document.cookie = name + "=; expires=Thu, 01-Jan-1970 00:00:01 GMT;";
+
+            for (var i = 0; i < pathBits.length; i++) {
+                pathCurrent += (pathCurrent.substr(-1) != "/" ? "/" : "") + pathBits[i];
+                document.cookie = name + "=; expires=Thu, 01-Jan-1970 00:00:01 GMT;" + pathCurrent + ";";
+            }
+        },
     },
 };
 </script>
