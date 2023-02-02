@@ -8,6 +8,8 @@
         <h1 class="title">Blogger</h1>
 
         <v-spacer></v-spacer>
+        <span>{{ serverString }}</span>
+        <v-spacer></v-spacer>
 
         <ul class="nav-links">
             <li>
@@ -77,6 +79,8 @@
 
 <script lang="ts">
 export default {
+    props: ["serverString"],
+
     data: () => ({
         drawer: false,
     }),

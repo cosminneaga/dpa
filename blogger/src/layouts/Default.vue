@@ -1,6 +1,6 @@
 <template>
     <v-container style="max-width: 1400px; min-width: 600px;">
-        <Header></Header>
+        <Header :serverString="serverString"></Header>
 
         <div class="my-10"></div>
 
@@ -21,9 +21,17 @@ import Footer from "../components/Navigation/Footer.vue";
 export default {
     components: { Header, Footer },
 
+    data: () => ({
+        serverString: "",
+    }),
+
     async mounted() {
-        const res = await this.axios.get("/hello");
-        console.log("HELLO ROUTE: ", res);
+        try {
+            const res = await this.axios.get("/hello");
+            this.serverString = res.data.message;
+        } catch (e) {
+            console.warn(e);
+        }
     },
 };
 </script>

@@ -32,8 +32,6 @@ import "@mdi/font/css/materialdesignicons.css";
 
 const app = createApp(App);
 
-// app.config.globalProperties.axios = axios;
-// axios.defaults.headers["x-access-token"] = "bra";
 
 // configure vuetify
 const vuetifyTheme = {
@@ -82,7 +80,7 @@ app
 app.component("default-layout", Default).component("user-layout", User);
 
 // config axios
-axios.defaults.baseURL = import.meta.env.VITE_BLOGGER_URL
+axios.defaults.baseURL = import.meta.env.VITE_BLOGGER_URL;
 axios.interceptors.response.use(
   function (response: any) {
     if (response.data.status === 401) {

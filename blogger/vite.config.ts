@@ -13,11 +13,11 @@ export default defineConfig({
     host: "0.0.0.0",
     port: 1000,
     // proxy: {
-    //   '/api': {
-    //     target: process.env.BLOGGER_URL,
+    //   '/blogger': {
+    //     target: process.env.VITE_BLOGGER_URL,
     //     secure: false,
     //     changeOrigin: true, // If your backend API is not running on the localhost, we need to make this flag true.
-    //     rewrite: (path: any) => path.replace("/api", "")
+    //     rewrite: path => path.replace(/^\/blogger/, '')
     //   }
     // }
   },
@@ -27,11 +27,11 @@ export default defineConfig({
     port: 1000,
     cors: true,
     // proxy: {
-    //   '/api': {
-    //     target: process.env.BLOGGER_URL,
+    //   '/blogger': {
+    //     target: "http://120.0.0.1:8080/api/blogger",
     //     secure: false,
     //     changeOrigin: true, // If your backend API is not running on the localhost, we need to make this flag true.
-    //     rewrite: (path: any) => path.replace("/api", "")
+    //     rewrite: path => path.replace(/^\/blogger/, '')
     //   }
     // }
   },
