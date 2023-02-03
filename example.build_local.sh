@@ -7,7 +7,7 @@ echo "LOCAL BUILD FILE IS BEING RUNNED"
 # run extra commands needed after build on your local
 
 # production
-## docker system prune --all
+## docker system prune --all -f
 
 # local_pc
 ## cd ./blogger
