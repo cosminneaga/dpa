@@ -77,12 +77,12 @@ export default {
         });
         this.editor = editor;
 
-        editor.onChange = (contents) => this.onChangeHandle(contents);
-
         const savedContent = localStorage.getItem("blog-data");
         if (savedContent) {
             editor.setContents(JSON.parse(savedContent)["content"]);
         }
+
+        editor.onChange = (contents) => this.onChangeHandle(contents);
     },
 
     methods: {
