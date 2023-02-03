@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-echo "LOCAL BUILD FILE IS BEING RUNNED"
-
 bash build.sh
+
+echo "LOCAL BUILD FILE IS BEING RUNNED"
 
 # run extra commands needed after build on your local
 
