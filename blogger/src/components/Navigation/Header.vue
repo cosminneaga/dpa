@@ -5,10 +5,11 @@
             <v-icon>mdi-menu</v-icon>
         </v-btn> -->
 
-        <h1 class="title">Blogger</h1>
+        <div>
+            <h1 class="title">Blogger</h1>
+            <span>{{ serverString }}</span>
+        </div>
 
-        <v-spacer></v-spacer>
-        <span>{{ serverString }}</span>
         <v-spacer></v-spacer>
 
         <ul class="nav-links">
