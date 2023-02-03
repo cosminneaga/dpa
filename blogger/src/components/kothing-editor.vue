@@ -20,18 +20,8 @@ export default {
     props: ["contentSet"],
     data: () => ({ editor: {} }),
 
-    // watch: {
-    //     "$props.contentSet": function (content) {
-    //         this.onSetContent(content);
-    //     },
-    // },
-
     mounted() {
-        const editor = KothingEditor.init({
-            fontSize: [16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 36, 48, 72],
-        });
-
-        editor.create("kothing-editor-textarea-1", {
+        const editor = KothingEditor.create("kothing-editor-textarea-1", {
             charCounter: true,
             mode: "classic",
             lang: lang.en,
@@ -71,6 +61,7 @@ export default {
             ],
 
             font: ["Arial", "Comic Sans MS", "Courier New", "Impact", "Georgia", "tahoma", "Trebuchet MS", "Verdana"],
+            fontSize: [16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 36, 48, 72],
 
             imageWidth: "100%",
             imageHeight: "auto",
