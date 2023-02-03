@@ -49,12 +49,16 @@ export default {
             ],
             templates: [
                 {
-                    name: "Template-1",
-                    html: "<p>HTML source1</p>",
+                    name: "Blog",
+                    html: `<h1 style="text-align: center;">Title</h1>`,
                 },
                 {
-                    name: "Template-2",
-                    html: "<p>HTML source2</p>",
+                    name: "Recipe",
+                    html: `<h2>Ingredients:</h2>
+                    
+                    <h2>Galery:</h2>
+                    
+                    <h2>Preparation:</h2>`,
                 },
             ],
             charCounter: true,
