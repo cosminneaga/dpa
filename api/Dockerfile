@@ -12,7 +12,7 @@
 # CMD python3 -u app.py
 
 
-FROM python:3
+FROM python:3.8-alpine
 
 WORKDIR /api
 COPY requirements.txt .
