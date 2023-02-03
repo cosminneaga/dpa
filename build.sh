@@ -21,6 +21,6 @@ fi
 
 docker compose up -d --build
 
-# cd ./blogger
-# npm install
-# npm run dev
+cd ./blogger
+npm install
+npm run dev
