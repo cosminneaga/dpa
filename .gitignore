@@ -140,3 +140,6 @@ dmypy.json
 .env
 dist
 **/.DS_Store
+
+# files
+build_local.sh
