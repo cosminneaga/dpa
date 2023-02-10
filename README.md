@@ -1,5 +1,14 @@
 # Docker Python APIS
 
+## Links
+- https://dpa.cosminneaga.dev/docs
+- https://blogger.cosminneaga.dev/
+
+## Credentials
+- Blogger
+- - username: cosmin.neaga@gmail.com
+- - password: NobineNo29
+
 ## Install Docker
 > Check this repository to install Docker on Linux
 https://github.com/cosminneaga/helpers/tree/main/bash_scripts
