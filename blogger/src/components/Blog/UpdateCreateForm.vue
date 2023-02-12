@@ -307,24 +307,9 @@ export default {
                             },
                         }
                     );
-
-                    this.blog = {
-                        title: "",
-                        description: "",
-                        image: {
-                            src: "",
-                            alt: "",
-                            title: "",
-                        },
-                        author: {
-                            name: "",
-                            links: [],
-                        },
-                        category: "",
-                        tags: [],
-                        content: "",
-                    };
-                }
+                    
+                    this.$router.push(`/user/blog/view/${req.data.data._id}`)
+                }                
 
                 this.$toast.success(`Blog ${this.$props.update ? "updated" : "created"} successfully.`);
             } catch (error) {
