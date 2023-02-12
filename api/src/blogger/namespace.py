@@ -71,7 +71,7 @@ class Login(Resource, Database):
             'token': token,
             'user': user,
         }))
-        resp.set_cookie('X-Access-Token', token)
+        # resp.set_cookie('X-Access-Token', token)
         return resp
 
 
