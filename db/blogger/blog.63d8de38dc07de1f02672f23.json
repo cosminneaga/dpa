@@ -1,16 +1,16 @@
 [{
   "_id": {
-    "$oid": "63d8de38dc07de1f02672f24"
+    "$oid": "63d9981e1fbd282beb7b0c82"
   },
-  "title": "How to deal with a bear",
-  "description": "Consectetur irure consequat consectetur amet voluptate amet magna proident amet anim occaecat ipsum culpa.",
+  "title": "This is an example of a blog",
+  "description": "Proin eget tortor risus. Pellentesque in ipsum id orci porta dapibus. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Curabitur aliquet quam id dui posuere blandit. Proin eget tortor risus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Vivamus suscipit tortor eget felis porttitor volutpat. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus.",
   "image": {
     "src": "https: //images.unsplash.com/photo-1657299143020-4f4bbf05174d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1167&q=80",
     "alt": "picnic",
     "title": "picnic"
   },
   "created_at": "2022-12-06 15:19:27.618524",
-  "updated_at": "2023-01-31 13:14:17.892222",
+  "updated_at": "2023-02-03 09:22:57.155831",
   "author": {
     "name": "Cosmin Neaga",
     "links": [
@@ -29,12 +29,121 @@
     "Google Cloud",
     "Ubuntu Pro"
   ],
-  "content": "<h2>No bine no lets test this now!!! This blog will not be written to local storage because it contains a blob image which exceed 40000 chars!!! Buut if you add image as link this won't affect anything and everything will work as should!!!</h2><p><br></p><div class=\"ke-component ke-image-container __ke__float-center\" contenteditable=\"false\"><figure style=\"margin: auto; width: 555px;\"><img src=\"https://images.unsplash.com/photo-1675143890402-72c446e0f530?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=734&amp;q=80\" alt=\"\" data-rotate=\"\" data-proportion=\"true\" data-size=\"555px,878px\" data-align=\"center\" data-file-name=\"photo-1675143890402-72c446e0f530?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=734&amp;q=80\" data-file-size=\"0\" data-origin=\",\" style=\"height: 878px; width: 555px; transform: rotate(0deg);\" data-index=\"0\" origin-size=\"734,1161\"><figcaption style=\"margin-top: 0px;\"><div>This is a Mobile gas station</div></figcaption></figure></div>"
+  "content": "<h1 style=\"text-align: center;\">Hello World<br></h1><p><br></p><p style=\"margin-left: 50px;\"><span style=\"font-size: 16px;\"><strong>Default font-size: 16px;</strong></span><br></p><p style=\"margin-left: 50px;\"><span style=\"font-size: 16px;\"><strong>Default font-family: default;</strong></span></p><p><br></p><p><span style=\"font-size: 16px;\">​Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Nulla quis lorem ut libero malesuada feugiat. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Donec sollicitudin molestie malesuada. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sollicitudin molestie malesuada. Sed porttitor lectus nibh. Donec rutrum congue leo eget malesuada. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Pellentesque in ipsum id orci porta dapibus. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Cras ultricies ligula sed magna dictum porta. Nulla porttitor accumsan tincidunt. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Cras ultricies ligula sed magna dictum porta. Donec rutrum congue leo eget malesuada.</span></p><p><span style=\"font-size: 16px;\"><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor lectus nibh. Nulla quis lorem ut libero malesuada feugiat. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Vivamus suscipit tortor eget felis porttitor volutpat. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Donec sollicitudin molestie malesuada. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Donec rutrum congue leo eget malesuada. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Vivamus suscipit tortor eget felis porttitor volutpat. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Proin eget tortor risus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Curabitur aliquet quam id dui posuere blandit. Vivamus suscipit tortor eget felis porttitor volutpat. Proin eget tortor risus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.<br><br>Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Proin eget tortor risus. Curabitur aliquet quam id dui posuere blandit. Cras ultricies ligula sed magna dictum porta. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Curabitur aliquet quam id dui posuere blandit. Nulla porttitor accumsan tincidunt. Nulla porttitor accumsan tincidunt. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Donec sollicitudin molestie malesuada. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis lorem ut libero malesuada feugiat. Pellentesque in ipsum id orci porta dapibus. Nulla quis lorem ut libero malesuada feugiat.<br><br>Donec rutrum congue leo eget malesuada. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor lectus nibh. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Proin eget tortor risus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Proin eget tortor risus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Vivamus suscipit tortor eget felis porttitor volutpat. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Vivamus suscipit tortor eget felis porttitor volutpat. Proin eget tortor risus. Curabitur aliquet quam id dui posuere blandit. Cras ultricies ligula sed magna dictum porta. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Nulla quis lorem ut libero malesuada feugiat.<br><br>Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Donec rutrum congue leo eget malesuada. Donec rutrum congue leo eget malesuada. Donec sollicitudin molestie malesuada. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis lorem ut libero malesuada feugiat. Curabitur aliquet quam id dui posuere blandit. Vivamus suscipit tortor eget felis porttitor volutpat. Nulla quis lorem ut libero malesuada feugiat. Cras ultricies ligula sed magna dictum porta. Curabitur aliquet quam id dui posuere blandit. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Vivamus suscipit tortor eget felis porttitor volutpat. Curabitur aliquet quam id dui posuere blandit. Sed porttitor lectus nibh. Donec sollicitudin molestie malesuada.</span><br></p><p><br></p><p><br></p><p><span style=\"font-size: 16px;\"><strong>This is an image url:</strong></span><br></p><div class=\"ke-component ke-image-container __ke__float-none\" contenteditable=\"false\" style=\"width: 100%;\"><figure style=\"width: 100%; margin: 0px;\"><img src=\"https://images.unsplash.com/photo-1674786272837-1017cad0f47a?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2671&amp;q=80\" alt=\"Man &amp; Shark\" data-rotate=\"0\" data-proportion=\"true\" data-percentage=\"100%,auto\" data-size=\"100%,auto\" data-align=\"none\" data-file-name=\"photo-1674786272837-1017cad0f47a?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2671&amp;q=80\" data-file-size=\"0\" data-origin=\"100%,auto\" origin-size=\"2671,1781\" style=\"width: 100%; height: auto;\" data-index=\"0\"><figcaption style=\"margin-top: 0px;\"><div>Man &amp; Shark</div></figcaption></figure></div><p><br></p><p><br></p><p><br></p><p><span style=\"font-size: 16px;\"><strong>​Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Nulla quis lorem ut libero malesuada feugiat. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Donec sollicitudin molestie malesuada. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sollicitudin molestie malesuada. Sed porttitor lectus nibh. Donec rutrum congue leo eget malesuada. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Pellentesque in ipsum id orci porta dapibus. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Cras ultricies ligula sed magna dictum porta. Nulla porttitor accumsan tincidunt. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Cras ultricies ligula sed magna dictum porta. Donec rutrum congue leo eget malesuada.</strong><br><br><strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor lectus nibh. Nulla quis lorem ut libero malesuada feugiat. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Vivamus suscipit tortor eget felis porttitor volutpat. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Donec sollicitudin molestie malesuada. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Donec rutrum congue leo eget malesuada. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Vivamus suscipit tortor eget felis porttitor volutpat. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Proin eget tortor risus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Curabitur aliquet quam id dui posuere blandit. Vivamus suscipit tortor eget felis porttitor volutpat. Proin eget tortor risus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.</strong><br><br><strong>Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Proin eget tortor risus. Curabitur aliquet quam id dui posuere blandit. Cras ultricies ligula sed magna dictum porta. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Curabitur aliquet quam id dui posuere blandit. Nulla porttitor accumsan tincidunt. Nulla porttitor accumsan tincidunt. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Donec sollicitudin molestie malesuada. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis lorem ut libero malesuada feugiat. Pellentesque in ipsum id orci porta dapibus. Nulla quis lorem ut libero malesuada feugiat.</strong><br><br><strong>Donec rutrum congue leo eget malesuada. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor lectus nibh. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Proin eget tortor risus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Proin eget tortor risus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Vivamus suscipit tortor eget felis porttitor volutpat. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Vivamus suscipit tortor eget felis porttitor volutpat. Proin eget tortor risus. Curabitur aliquet quam id dui posuere blandit. Cras ultricies ligula sed magna dictum porta. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Nulla quis lorem ut libero malesuada feugiat.</strong><br><br><strong>Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Donec rutrum congue leo eget malesuada. Donec rutrum congue leo eget malesuada. Donec sollicitudin molestie malesuada. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis lorem ut libero malesuada feugiat. Curabitur aliquet quam id dui posuere blandit. Vivamus suscipit tortor eget felis porttitor volutpat. Nulla quis lorem ut libero malesuada feugiat. Cras ultricies ligula sed magna dictum porta. Curabitur aliquet quam id dui posuere blandit. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Vivamus suscipit tortor eget felis porttitor volutpat. Curabitur aliquet quam id dui posuere blandit. Sed porttitor lectus nibh. Donec sollicitudin molestie malesuada.</strong></span><br></p><p><br></p><p><br></p><p><br></p><p><span style=\"font-size: 16px;\"><strong>This is a video embed:</strong></span><br></p><div class=\"ke-component ke-video-container __ke__float-none\" contenteditable=\"false\" style=\"width: 100%;\"><figure style=\"width: 100%; height: 663px; padding-bottom: 663px; margin: 0px;\"><iframe src=\"https://www.youtube.com/embed/AY3HqRQahv8\" data-proportion=\"true\" data-size=\"100%,663px\" data-align=\"none\" data-file-name=\"AY3HqRQahv8\" data-file-size=\"0\" data-origin=\"100%,56.25%\" style=\"width: 100%; height: 663px;\" data-index=\"0\"></iframe></figure></div><p><br></p><p><br></p><p><br></p><p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Nulla quis lorem ut libero malesuada feugiat. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Donec sollicitudin molestie malesuada. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sollicitudin molestie malesuada. Sed porttitor lectus nibh. Donec rutrum congue leo eget malesuada. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Pellentesque in ipsum id orci porta dapibus. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Cras ultricies ligula sed magna dictum porta. Nulla porttitor accumsan tincidunt. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Cras ultricies ligula sed magna dictum porta. Donec rutrum congue leo eget malesuada.<br><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor lectus nibh. Nulla quis lorem ut libero malesuada feugiat. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Vivamus suscipit tortor eget felis porttitor volutpat. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Donec sollicitudin molestie malesuada. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Donec rutrum congue leo eget malesuada. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Vivamus suscipit tortor eget felis porttitor volutpat. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Proin eget tortor risus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Curabitur aliquet quam id dui posuere blandit. Vivamus suscipit tortor eget felis porttitor volutpat. Proin eget tortor risus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.<br><br>Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Proin eget tortor risus. Curabitur aliquet quam id dui posuere blandit. Cras ultricies ligula sed magna dictum porta. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Curabitur aliquet quam id dui posuere blandit. Nulla porttitor accumsan tincidunt. Nulla porttitor accumsan tincidunt. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Donec sollicitudin molestie malesuada. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis lorem ut libero malesuada feugiat. Pellentesque in ipsum id orci porta dapibus. Nulla quis lorem ut libero malesuada feugiat.<br><br>Donec rutrum congue leo eget malesuada. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor lectus nibh. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Proin eget tortor risus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Proin eget tortor risus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Vivamus suscipit tortor eget felis porttitor volutpat. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Vivamus suscipit tortor eget felis porttitor volutpat. Proin eget tortor risus. Curabitur aliquet quam id dui posuere blandit. Cras ultricies ligula sed magna dictum porta. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Nulla quis lorem ut libero malesuada feugiat.<br><br>Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Donec rutrum congue leo eget malesuada. Donec rutrum congue leo eget malesuada. Donec sollicitudin molestie malesuada. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis lorem ut libero malesuada feugiat. Curabitur aliquet quam id dui posuere blandit. Vivamus suscipit tortor eget felis porttitor volutpat. Nulla quis lorem ut libero malesuada feugiat. Cras ultricies ligula sed magna dictum porta. Curabitur aliquet quam id dui posuere blandit. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Vivamus suscipit tortor eget felis porttitor volutpat. Curabitur aliquet quam id dui posuere blandit. Sed porttitor lectus nibh. Donec sollicitudin molestie malesuada.<br></p>"
 },{
   "_id": {
-    "$oid": "63d90aae5a873403c20ac3a0"
+    "$oid": "63da45d4b2ec4c4379911cce"
   },
-  "title": "",
+  "title": "test",
+  "description": "test sadjad",
+  "image": {
+    "src": "",
+    "alt": "",
+    "title": ""
+  },
+  "author": {
+    "name": "",
+    "links": []
+  },
+  "category": "",
+  "tags": [],
+  "content": "<p>interesting :D</p>",
+  "created_at": "2023-02-01 10:58:28.689776",
+  "updated_at": "2023-02-01 10:58:28.689789"
+},{
+  "_id": {
+    "$oid": "63dba785692a25edc283593f"
+  },
+  "title": "How to configure nginx proxy port forwarding in Ubuntu",
+  "description": "",
+  "image": {
+    "src": "",
+    "alt": "",
+    "title": ""
+  },
+  "author": {
+    "name": "",
+    "links": []
+  },
+  "category": "Programming",
+  "tags": [
+    "NGINX",
+    "UBUNTU 20.04",
+    "CERT BOT"
+  ],
+  "content": "<p><br></p><p>​<a target=\"_blank\" href=\"https://linuxhint.com/ufw_list_rules/\" alt=\"https://linuxhint.com/ufw_list_rules/\" class=\"on\">https://linuxhint.com/ufw_list_rules/</a>​<br></p><p>​<a target=\"_blank\" href=\"https://certbot.eff.org/instructions?ws=nginx&amp;os=ubuntufocal\" alt=\"https://certbot.eff.org/instructions?ws=nginx&amp;os=ubuntufocal\">https://certbot.eff.org/instructions?ws=nginx&amp;os=ubuntufocal</a>​<br></p><p>​<a target=\"_blank\" href=\"https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-20-04\" alt=\"https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-20-04\" class=\"on\">https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-20-04</a>​<br></p><p>​<a target=\"_blank\" href=\"https://stackoverflow.com/questions/7942372/can-i-configure-a-subdomain-to-point-to-a-specific-port-on-my-server\" alt=\"https://stackoverflow.com/questions/7942372/can-i-configure-a-subdomain-to-point-to-a-specific-port-on-my-server\">https://stackoverflow.com/questions/7942372/can-i-configure-a-subdomain-to-point-to-a-specific-port-on-my-server</a></p><p><a target=\"_blank\" href=\"https://gist.github.com/cosminneaga/09dcb227ad0e41416f1f9342be3149ed\" alt=\"https://gist.github.com/cosminneaga/09dcb227ad0e41416f1f9342be3149ed\" class=\"on\">https://gist.github.com/cosminneaga/09dcb227ad0e41416f1f9342be3149ed</a>​<br></p>",
+  "created_at": "2023-02-02 12:07:33.343745",
+  "updated_at": "2023-02-02 12:29:05.255961"
+},{
+  "_id": {
+    "$oid": "63dc1e02692a25edc2835982"
+  },
+  "title": "Mancare de Peste la cuptor",
+  "description": "",
+  "image": {
+    "src": "",
+    "alt": "",
+    "title": ""
+  },
+  "author": {
+    "name": "",
+    "links": []
+  },
+  "category": "Food",
+  "tags": [
+    "Peste",
+    "Mancare"
+  ],
+  "content": "<h2>Ingrediente:</h2><p><br></p><ul><li>​​Fish&nbsp;- 1 piece<br></li><li>Ulei - 500 ml</li><li>Sare - 100 grams</li><li>Black Pepper - 20 grams</li><li>Corn Flour - 400 grams</li></ul><h2><br></h2><h2>Galerie:</h2><p><br></p><div class=\"ke-component ke-image-container __ke__float-none\" contenteditable=\"false\" style=\"width: 100%;\"><figure style=\"width: 100%; margin: 0px;\"><img src=\"https://www.mrsjoneskitchen.com/wp-content/uploads/2021/08/Lemon-Herb-Chicken-Traybake-3-720x480.jpg\" alt=\"https://www.mrsjoneskitchen.com/wp-content/uploads/2021/08/Lemon-Herb-Chicken-Traybake-3-720x480.jpg\" data-rotate=\"0\" data-proportion=\"true\" data-percentage=\"100%,auto\" data-size=\"100%,auto\" data-align=\"none\" data-index=\"2\" data-file-name=\"Lemon-Herb-Chicken-Traybake-3-720x480.jpg\" data-file-size=\"0\" data-origin=\"100%,auto\" style=\"width: 100%; height: auto;\"></figure></div><h2><br></h2><h2><br></h2><table><tbody><tr><td><div class=\"ke-component ke-image-container __ke__float-none\" contenteditable=\"false\" style=\"width: 100%;\"><figure style=\"width: 100%; margin: 0px;\"><img src=\"https://www.whiskaffair.com/wp-content/uploads/2020/08/Lemon-Garlic-Baked-Tilapia-2-1-1-1200x1800.jpg\" alt=\"https://www.whiskaffair.com/wp-content/uploads/2020/08/Lemon-Garlic-Baked-Tilapia-2-1-1-1200x1800.jpg\" data-rotate=\"0\" data-proportion=\"true\" data-percentage=\"100%,auto\" data-size=\"100%,auto\" data-align=\"none\" data-file-name=\"Lemon-Garlic-Baked-Tilapia-2-1-1-1200x1800.jpg\" data-file-size=\"0\" data-origin=\"100%,auto\" origin-size=\"1200,1800\" style=\"width: 100%; height: auto;\" data-index=\"1\"></figure></div></td><td><div style=\"text-align: center;\"><strong>Nulla quis lorem ut libero malesuada feugiat. Nulla porttitor accumsan tincidunt. Sed porttitor lectus nibh. Donec sollicitudin molestie malesuada. Pellentesque in ipsum id orci porta dapibus. Nulla porttitor accumsan tincidunt. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Cras ultricies ligula sed magna dictum porta. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</strong><br></div></td></tr></tbody></table><h2><br></h2><h2>Preparare:<br></h2><p><br></p><p>Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Donec sollicitudin molestie malesuada. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Quisque velit nisi, pretium ut lacinia in, elementum id enim.</p><p>kudhsgjyfg</p><p>Pestele se pune la cuptor cu cartofi si pofta buna.<br></p>",
+  "created_at": "2023-02-02 20:33:06.881625",
+  "updated_at": "2023-02-04 17:21:40.162272"
+},{
+  "_id": {
+    "$oid": "63dc31d3692a25edc28359a1"
+  },
+  "title": "The most delicious Alfredo recipe I've ever eaten! Simple and tasty!",
+  "description": "Reteta de creveti in sos de unt cu usturoi se prepara usor, rapid si va deveni rapid una dintre favoritele voastre.",
+  "image": {
+    "src": "",
+    "alt": "",
+    "title": ""
+  },
+  "author": {
+    "name": "",
+    "links": []
+  },
+  "category": "",
+  "tags": [],
+  "content": "<h2>Ingredients:</h2><p><br></p><ul><li>​1 tbsp of oil<br></li><li>450g prawns</li><li>Salt</li><li>Black Pepper</li><li>1 onion</li><li>Fresh Parsley</li><li>1 garlic whole</li><li>200g of wide pasta</li><li>2 tbsp of butter</li><li>80ml of white wine / 1/2 lemon juice</li><li>470ml of heavy cream</li><li>Sweet Paprika</li><li>70g or more parmesan<br></li></ul><h2><br></h2><h2>Preparation:</h2><p><br></p><ul><li>​Preheat a pan to medium/high and add 1 tbsp of oil<br></li><li>450g prawns, peeled and deveined</li><li>Season the prawns lightly with salt and black pepper</li><li>Sprinkle paprika</li><li>Cut 1 onion into small pieces</li><li>Cook separately 200g of pasta adding 1 tbsp of salt<br></li><li>Fry the prawns 1-2 minutes on each side until fully cooked</li><li>Season the prawns again lightly with salt and black pepper</li><li>Sprinkle paprika</li><li>Cut into small pieces a handful of parsley</li><li>Remove the prawns into a separate plate</li><li>In same pan add 2 tbsp of butter over medium/high heat</li><li>Add onion and cook until transparent</li><li>Add garlic as pasta and fry for another minute</li><li>Add 80ml of white wine (substitute 1/2 lemon juice)</li><li>Let it cook for 2 more minutes</li><li>Stir in 470ml of heavy cream and cook for another 2-3 minutes</li><li>Season with salt and black pepper</li><li>Add 1/4 tbsp of sweet paprika</li><li>Take the pan off the heat</li><li>Grate 70g parmesan cheese (or add to taste)</li><li>Stir until creamy and smooth</li><li>Do not boil, otherwise the cheese will separate from the cream</li><li>Drain the pasta but do not rinse (this will help the sauce stick to the pasta)</li><li>Place the sauce and pasta along with the prawns in a plate and mixed all these</li><li>Garnish with parsley</li></ul><h2>And, Bon Apetitte<br></h2><p><br></p><h1>Video:<br></h1><p><br></p><div class=\"ke-component ke-video-container __ke__float-none\" contenteditable=\"false\" style=\"width: 100%;\"><figure style=\"width: 100%; height: 467px; padding-bottom: 467px; margin: 0px;\"><iframe src=\"https://www.youtube.com/embed/kyUPvM0M5BE\" data-proportion=\"true\" data-size=\"100%,467px\" data-align=\"none\" data-file-name=\"kyUPvM0M5BE\" data-file-size=\"0\" data-origin=\"100%,450px\" style=\"width: 100%; height: 467px;\" data-index=\"0\"></iframe></figure></div>",
+  "created_at": "2023-02-02 21:57:39.741929",
+  "updated_at": "2023-02-04 17:16:36.128387"
+},{
+  "_id": {
+    "$oid": "63dc3231692a25edc28359aa"
+  },
+  "title": "Hungarian chicken recipe",
+  "description": "",
+  "image": {
+    "src": "",
+    "alt": "",
+    "title": ""
+  },
+  "author": {
+    "name": "",
+    "links": []
+  },
+  "category": "Recipe",
+  "tags": [
+    "Chicken"
+  ],
+  "content": "<p>​<a target=\"_blank\" href=\"https://www.youtube.com/watch?v=0b-9QsRTOPQ\" alt=\"https://www.youtube.com/watch?v=0b-9QsRTOPQ\" class=\"on\">https://www.youtube.com/watch?v=0b-9QsRTOPQ</a>​<br></p>",
+  "created_at": "2023-02-02 21:59:13.750944",
+  "updated_at": "2023-02-03 16:46:00.201672"
+},{
+  "_id": {
+    "$oid": "63dce1b6692a25edc2835a05"
+  },
+  "title": "Testing table in editor",
   "description": "",
   "image": {
     "src": "",
@@ -47,15 +156,15 @@
   },
   "category": "",
   "tags": [],
-  "content": "<div class=\"ke-component ke-video-container __ke__float-center\" contenteditable=\"false\" style=\"width: 75%; min-width: 100%;\"><figure style=\"margin: auto; width: 75%; height: 454px; padding-bottom: 454px;\"><iframe src=\"https://www.youtube.com/embed/k7SlAf9_Vbg\" data-proportion=\"true\" data-size=\"75%,454px\" data-align=\"center\" data-file-name=\"k7SlAf9_Vbg\" data-file-size=\"0\" data-origin=\"100%,75%\" data-rotate=\"\" style=\"width: 100%; height: 454px;\" data-index=\"0\"></iframe></figure></div><p><br></p><p><br></p><p>Hello World... What's up babyyy!!!</p>",
-  "created_at": "2023-01-31 12:33:50.217202",
-  "updated_at": "2023-01-31 13:08:05.997299"
+  "content": "<table><tbody><tr><td><div>Name<br></div></td><td><div>Quantity</div></td><td><div>Unit</div></td></tr><tr><td><div>dsasd</div></td><td><div>1</div></td><td><div>mg</div></td></tr><tr><td><div>dasda</div></td><td><div>2</div></td><td><div>g</div></td></tr></tbody></table><p><br></p><p><br></p><p>bdcfbcv</p><p><br></p><p><br></p>",
+  "created_at": "2023-02-03 10:28:06.830421",
+  "updated_at": "2023-02-03 17:11:08.766780"
 },{
   "_id": {
-    "$oid": "63d9126c5a873403c20ac3d9"
+    "$oid": "63dd31cb6cb5b43c2412209f"
   },
-  "title": "Hello World",
-  "description": "A \"hello world\" blog",
+  "title": "Linux Cron Job",
+  "description": "",
   "image": {
     "src": "",
     "alt": "",
@@ -67,7 +176,7 @@
   },
   "category": "",
   "tags": [],
-  "content": "<h1 style=\"text-align: center;\">Hello World<br></h1><p><br></p><p>Welcome to my channel!</p><p>This is a test string....</p>",
-  "created_at": "2023-01-31 13:06:52.631632",
-  "updated_at": "2023-01-31 13:07:40.669462"
+  "content": "<p>​<a target=\"_blank\" href=\"https://phoenixnap.com/kb/set-up-cron-job-linux\" alt=\"https://phoenixnap.com/kb/set-up-cron-job-linux\" class=\"on\">https://phoenixnap.com/kb/set-up-cron-job-linux</a>​<br></p>",
+  "created_at": "2023-02-03 16:09:47.270511",
+  "updated_at": "2023-02-03 17:03:10.375263"
 }]
