@@ -66,3 +66,7 @@ PrismJs
 Kothing
 - https://github.com/kothing/kothing-Editor#install
 - https://kothing.github.io/editor/html/getting-started.html
+
+Prism
+- https://prismjs.com/#supported-languages
+- https://medium.com/@alexgwebdev/beautiful-code-highlighter-as-vue-js-component-397ded532ef2

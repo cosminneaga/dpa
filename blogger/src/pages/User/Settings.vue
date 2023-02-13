@@ -5,39 +5,39 @@ const bloggerUrl = import.meta.env.VITE_BLOGGER_URL;
 <template>
     <user-layout>
 
-        <v-container v-highlight>
-            <h1>Profile</h1>
+        <v-tabs
+            v-model="tab"
+            color="deep-purple-accent-4"
+            align-tabs="center"
+        >
+            <v-tab :value="1">external use</v-tab>
+            <v-tab :value="2">profile</v-tab>
+            <v-tab :value="3">create user</v-tab>
+        </v-tabs>
 
-            <br>
+        <v-window
+            v-model="tab"
+            style="max-width: 1000px; margin-top: 50px;"
+            class="mx-auto"
+        >
 
-            <ul>
-                <li>Name: {{user.first_name}} {{user.last_name}}</li>
-                <li>Email: {{user.email}}</li>
-                <li>Access Token:
-                    <!-- <pre><code class="language-plaintext">{{user.access_token}}</code></pre> -->
-                    <pre class="language-javascript"><code>{{user.access_token}}</code></pre>
-                </li>
-            </ul>
+            <v-window-item :value="1">
+                <div v-highlight>
+                    <h2>How to use your external access token</h2>
 
-            <br>
-            <h2>How to use your external access token</h2>
+                    <br>
+                    <h3>dev url</h3>
+                    <br>
+                    <h4>Retrieve entire list of blogs</h4>
+                    <pre><code class="language-javascript">{{ bloggerUrl }}/external/blogs/{{user.access_token}}</code></pre>
 
-            <br>
-            <h3>dev url</h3>
-            <br>
-            <h4>Retrieve entire list of blogs</h4>
-            <pre><code class="language-javascript">{{ bloggerUrl }}/external/blogs/{{user.access_token}}</code></pre>
+                    <br>
+                    <h3>Retrieve single blog by id</h3>
+                    <pre><code class="language-javascript">{{ bloggerUrl }}/external/blog/&lt;blogId&gt;/{{user.access_token}}</code></pre>
 
-            <br>
-            <h3>Retrieve single blog by id</h3>
-            <pre><code class="language-javascript">{{ bloggerUrl }}/external/blog/&lt;blogId&gt;/{{user.access_token}}</code></pre>
-
-            <br>
-            <h3>url</h3>
-            <pre><code class="language-javascript">{{ bloggerUrl }}/external/blogs/{{user.access_token}}</code></pre>
-            <br>
-            <h3>fetch</h3>
-            <pre class="language-javascript"><code>fetch('{{ bloggerUrl }}/external/blogs/{{user.access_token}}')
+                    <br>
+                    <h3>fetch</h3>
+                    <pre class="language-javascript"><code>fetch('{{ bloggerUrl }}/external/blogs/{{user.access_token}}')
     .then((response) => response.json())
     .then((data) => {
         console.log('Success:', data);
@@ -46,10 +46,24 @@ const bloggerUrl = import.meta.env.VITE_BLOGGER_URL;
         console.error('Error:', error);
     });
             </code></pre>
+                </div>
+            </v-window-item>
 
-            <CreateUserForm />
+            <v-window-item :value="2">
+                <ul v-highlight>
+                    <li>Name: {{user.first_name}} {{user.last_name}}</li>
+                    <li>Email: {{user.email}}</li>
+                    <li>Access Token:
+                        <!-- <pre><code class="language-plaintext">{{user.access_token}}</code></pre> -->
+                        <pre><code class="language-javascript" data-prismjs-copy="Copy the JavaScript snippet!">{{user.access_token}}</code></pre>
+                    </li>
+                </ul>
+            </v-window-item>
 
-        </v-container>
+            <v-window-item :value="3">
+                <CreateUserForm />
+            </v-window-item>
+        </v-window>
 
     </user-layout>
 </template>
@@ -62,6 +76,7 @@ import CreateUserForm from "../../components/User/Form/Create.vue";
 export default {
     components: { CreateUserForm },
     data: () => ({
+        tab: null,
         user: {
             first_name: "",
             last_name: "",
@@ -70,8 +85,7 @@ export default {
         },
     }),
 
-    async mounted() {        
-
+    async mounted() {
         const req = await this.axios.get("/user/me", {
             headers: {
                 "x-access-token": this.$cookies.get("X-Access-Token"),
