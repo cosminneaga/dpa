@@ -4,7 +4,8 @@ const bloggerUrl = import.meta.env.VITE_BLOGGER_URL;
 
 <template>
     <user-layout>
-        <v-container>
+
+        <v-container v-highlight>
             <h1>Profile</h1>
 
             <br>
@@ -13,7 +14,8 @@ const bloggerUrl = import.meta.env.VITE_BLOGGER_URL;
                 <li>Name: {{user.first_name}} {{user.last_name}}</li>
                 <li>Email: {{user.email}}</li>
                 <li>Access Token:
-                    <pre><code class="language-markup">{{user.access_token}}</code></pre>
+                    <!-- <pre><code class="language-plaintext">{{user.access_token}}</code></pre> -->
+                    <pre class="language-javascript"><code>{{user.access_token}}</code></pre>
                 </li>
             </ul>
 
@@ -24,7 +26,7 @@ const bloggerUrl = import.meta.env.VITE_BLOGGER_URL;
             <h3>dev url</h3>
             <br>
             <h4>Retrieve entire list of blogs</h4>
-            <pre><code class="language-markup">{{ bloggerUrl }}/external/blogs/{{user.access_token}}</code></pre>
+            <pre><code class="language-javascript">{{ bloggerUrl }}/external/blogs/{{user.access_token}}</code></pre>
 
             <br>
             <h3>Retrieve single blog by id</h3>
@@ -35,7 +37,7 @@ const bloggerUrl = import.meta.env.VITE_BLOGGER_URL;
             <pre><code class="language-javascript">{{ bloggerUrl }}/external/blogs/{{user.access_token}}</code></pre>
             <br>
             <h3>fetch</h3>
-            <pre><code class="language-javascript">fetch('{{ bloggerUrl }}/external/blogs/{{user.access_token}}')
+            <pre class="language-javascript"><code>fetch('{{ bloggerUrl }}/external/blogs/{{user.access_token}}')
     .then((response) => response.json())
     .then((data) => {
         console.log('Success:', data);
@@ -45,16 +47,20 @@ const bloggerUrl = import.meta.env.VITE_BLOGGER_URL;
     });
             </code></pre>
 
+            <CreateUserForm />
+
         </v-container>
+
     </user-layout>
 </template>
 
 <script lang="ts">
-import Prism from "prismjs";
-import "prismjs/themes/prism-tomorrow.css";
+import CreateUserForm from "../../components/User/Form/Create.vue";
+// import Prism from "prismjs";
+// import "prismjs/themes/prism-tomorrow.css";
 
 export default {
-    components: { Prism },
+    components: { CreateUserForm },
     data: () => ({
         user: {
             first_name: "",
@@ -64,8 +70,7 @@ export default {
         },
     }),
 
-    async mounted() {
-        Prism.highlightAll();
+    async mounted() {        
 
         const req = await this.axios.get("/user/me", {
             headers: {

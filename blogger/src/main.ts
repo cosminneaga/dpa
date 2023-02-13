@@ -29,9 +29,11 @@ import * as components from "vuetify/components";
 import * as directives from "vuetify/directives";
 import "@mdi/font/css/materialdesignicons.css";
 
+// Syntax Highlighter
+import VueCodeHighlight from "vue-code-highlight";
+import "vue-code-highlight/themes/prism-tomorrow.css";
 
 const app = createApp(App);
-
 
 // configure vuetify
 const vuetifyTheme = {
@@ -74,7 +76,8 @@ app
     domain: "",
     secure: true,
     sameSite: "None",
-  });
+  })
+  .use(VueCodeHighlight);
 
 // set layouts
 app.component("default-layout", Default).component("user-layout", User);

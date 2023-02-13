@@ -37,10 +37,10 @@ const router = createRouter({
       path: "/logout",
       component: Logout,
     },
-    {
-      path: "/register",
-      component: Register,
-    },
+    // {
+    //   path: "/register",
+    //   component: Register,
+    // },
     {
       path: "/user/home",
       component: UserIndex,

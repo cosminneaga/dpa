@@ -34,13 +34,13 @@
                     to="/login"
                 >Login</v-btn>
             </li>
-            <li>
+            <!-- <li>
                 <v-btn
                     variant="text"
                     color="primary"
                     to="/register"
                 >Register</v-btn>
-            </li>
+            </li> -->
         </ul>
 
         <v-navigation-drawer
