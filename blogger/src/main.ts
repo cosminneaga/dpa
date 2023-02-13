@@ -4,9 +4,9 @@ import { createApp } from "vue";
 import { createPinia } from "pinia";
 
 // vue-toaster
-import Toaster from "@meforma/vue-toaster";
-import { createToaster } from "@meforma/vue-toaster";
-const toaster = createToaster();
+// import Vue3Toastify, { type ToastContainerOptions } from 'vue3-toastify';
+import "vue3-toastify/dist/index.css";
+import { toast } from 'vue3-toastify';
 
 // vue-cookies
 import VueCookies from "vue3-cookies";
@@ -40,8 +40,11 @@ const vuetifyTheme = {
   dark: false,
   colors: {
     background: "#FFFFFF",
+    // background: "#3D292C",
+
     surface: "#FFFFFF",
-    primary: "#1381d3",
+    // primary: "#1381d3",
+    primary: "#C46D5E",
     "primary-darken-1": "#3700B3",
     secondary: "#03DAC6",
     "secondary-darken-1": "#018786",
@@ -51,6 +54,7 @@ const vuetifyTheme = {
     warning: "#FB8C00",
   },
 };
+
 const vuetify = createVuetify({
   components,
   directives,
@@ -67,9 +71,6 @@ app
   .use(router)
   .use(VueAxios, axios)
   .use(vuetify)
-  .use(Toaster, {
-    position: "top-right",
-  })
   .use(VueCookies, {
     expireTimes: "30d",
     path: "/",
@@ -81,6 +82,9 @@ app
 
 // set layouts
 app.component("default-layout", Default).component("user-layout", User);
+
+// set global variables
+app.config.globalProperties.toast = toast;
 
 // config axios
 axios.defaults.baseURL = import.meta.env.VITE_BLOGGER_URL;

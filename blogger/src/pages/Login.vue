@@ -56,8 +56,8 @@ export default {
                 document.cookie = `X-Access-Token=${req.data.data.token}`;
                 // localStorage.setItem('blogger-v-1.0', JSON.stringify(req.data.data))
                 this.$router.push("/user/home");
-            } catch (e) {
-                this.$toast.error("An error has arised from ashes!");
+            } catch (e: any) {
+                this.toast.error(e.message);
             }
         },
     },

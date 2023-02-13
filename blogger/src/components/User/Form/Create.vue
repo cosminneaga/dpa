@@ -86,9 +86,9 @@ export default {
                     password: '',
                 }
 
-                this.$toast.success("User registered successfully!");
+                this.toast.success("User registered successfully!");
             } catch (e: any) {              
-                this.$toast.error(e.message);
+                this.toast.error(e.message);
             }
         },
     },

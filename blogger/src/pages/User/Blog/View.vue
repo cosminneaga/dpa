@@ -114,13 +114,17 @@ export default {
     }),
 
     async mounted() {
-        const req = await this.axios.get(`/blog/${this.$route.params.blogID}`, {
-            headers: {
-                "x-access-token": this.$cookies.get("X-Access-Token"),
-            },
-        });
+        try {
+            const req = await this.axios.get(`/blog/${this.$route.params.blogID}`, {
+                headers: {
+                    "x-access-token": this.$cookies.get("X-Access-Token"),
+                },
+            });
 
-        this.blog = { ...req.data.data };
+            this.blog = { ...req.data.data };
+        } catch (e: any) {
+            this.toast.error(e.message);
+        }
     },
 
     methods: {
@@ -129,13 +133,17 @@ export default {
         },
 
         async handleDelete() {
-            await this.axios.delete("/blog/" + this.$route.params.blogID, {
-                headers: {
-                    "x-access-token": this.$cookies.get("X-Access-Token"),
-                },
-            });
+            try {
+                await this.axios.delete("/blog/" + this.$route.params.blogID, {
+                    headers: {
+                        "x-access-token": this.$cookies.get("X-Access-Token"),
+                    },
+                });
 
-            this.$router.push("/user/home");
+                this.$router.push("/user/home");
+            } catch (e: any) {
+                this.toast.error(e.message);
+            }
         },
     },
 };

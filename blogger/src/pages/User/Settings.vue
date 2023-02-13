@@ -88,29 +88,16 @@ export default {
     }),
 
     async mounted() {
-        const req = await this.axios.get("/user/me", {
-            headers: {
-                "x-access-token": this.$cookies.get("X-Access-Token"),
-            },
-        });
-        this.user = { ...req.data.data };
-        await this.fetchExternal(req.data.data.access_token);
-    },
-
-    methods: {
-        async fetchExternal(token) {
-            // testing external
-            // blog list
-            const externalReq = await this.axios.get("http://localhost:8080/api/blogger/external/blogs/" + token);
-            console.log("EXTERNAL ", externalReq);
-
-            //single blog
-            const externalBlogReq = await this.axios.get(
-                `http://localhost:8080/api/blogger/external/blog/${externalReq.data.data[0]["_id"]}/${token}`
-            );
-
-            console.log("EXTERNAL BLOG ", externalBlogReq);
-        },
+        try {
+            const req = await this.axios.get("/user/me", {
+                headers: {
+                    "x-access-token": this.$cookies.get("X-Access-Token"),
+                },
+            });
+            this.user = { ...req.data.data };
+        } catch (e: any) {
+            this.toast.error(e.message);
+        }
     },
 };
 </script>

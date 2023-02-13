@@ -29,8 +29,8 @@ export default {
         try {
             const res = await this.axios.get("/hello");
             this.serverString = res.data.message;
-        } catch (e) {
-            console.warn(e);
+        } catch (e: any) {
+            console.warn(e.message);
         }
     },
 };

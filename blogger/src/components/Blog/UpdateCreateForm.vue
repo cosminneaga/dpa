@@ -311,9 +311,9 @@ export default {
                     this.$router.push(`/user/blog/view/${req.data.data._id}`)
                 }                
 
-                this.$toast.success(`Blog ${this.$props.update ? "updated" : "created"} successfully.`);
-            } catch (error) {
-                console.error(error);
+                this.toast.success(`Blog ${this.$props.update ? "updated" : "created"} successfully.`);
+            } catch (e: any) {
+                this.toast.error(e.message);
             }
         },
 
