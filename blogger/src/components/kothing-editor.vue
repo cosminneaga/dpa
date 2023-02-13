@@ -1,8 +1,7 @@
 <template>
     <textarea
-        ref="kothingEditorTextarea"
         id="kothing-editor-textarea-1"
-    >{{ contentSet }}</textarea>
+    ></textarea>
 </template>
 
 <script lang="ts">
@@ -18,9 +17,9 @@ import "katex/dist/katex.min.css";
 
 export default {
     props: ["contentSet"],
-    data: () => ({ editor: {} }),
 
-    mounted() {
+    mounted() {       
+
         const editor = KothingEditor.create("kothing-editor-textarea-1", {
             charCounter: true,
             mode: "classic",
@@ -75,11 +74,15 @@ export default {
 
             stickyToolbar: "100px",
         });
-        this.editor = editor;
+        // this.editor = editor;
 
         const savedContent = localStorage.getItem("blog-data");
         if (savedContent) {
             editor.setContents(JSON.parse(savedContent)["content"]);
+        } else {
+            if (this.$props.contentSet) {
+                editor.setContents(this.$props.contentSet);
+            }
         }
 
         editor.onChange = (contents) => this.onChangeHandle(contents);
@@ -92,3 +95,10 @@ export default {
     },
 };
 </script>
+
+<style lang="scss" scoped>
+    #kothing-editor-textarea-1{
+        font-family: inherit!important;
+        font-size: inherit!important;
+    }
+</style>

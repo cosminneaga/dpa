@@ -172,7 +172,7 @@
 
                     <kothing-editor
                         @on-change="(content) => onContentChange(content)"
-                        :contentSet="update ? update.content : ''"
+                        :contentSet="update ? update.content : null"
                     />
 
                     <v-btn
@@ -275,7 +275,7 @@ export default {
             handler(data) {
                 try {
                     localStorage.setItem("blog-data", JSON.stringify(data));
-                } catch (e) {
+                } catch (e: any) {
                     console.error(e.message);
                 }
             },
