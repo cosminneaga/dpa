@@ -87,21 +87,20 @@ axios.defaults.baseURL = import.meta.env.VITE_BLOGGER_URL;
 axios.interceptors.response.use(
   function (response: any) {
     if (response.data.status === 401) {
-      toaster.error("Not Authorized.");
+      throw new Error("Not Authorized.");
+      
     } else if (response.data.status === 404) {
-      toaster.error("Resource not found.");
+      throw new Error("Resource not found.");
     }
     return response;
   },
   function (error: any) {
 
     if (error.response.status === 404) {
-      toaster.error("Resource not found.");
+      throw new Error("Resource not found.");
     } else if (error.response.status === 400) {
-      toaster.error(error.response.data.message);
+      throw new Error(error.response.data.message.toString());
     }
-
-    console.error(error.code, error.message);
   }
 );
 

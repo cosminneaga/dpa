@@ -39,9 +39,11 @@ class Register(Resource, Database):
     def __init__(self, *args, **kwargs):
         Database.__init__(self)
         Resource.__init__(self, *args, **kwargs)
+        self.secret = env_val('BLOGGER_JWT_SECRET')
 
     @api.doc(description='Register route - creates a new user - returns "token"')
     @api.expect(RegisterModel)
+    @protect
     def put(self):
 
         user = self.createUser(api.payload)
