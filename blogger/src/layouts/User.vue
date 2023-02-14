@@ -1,11 +1,12 @@
 <template>
     <div>
         <v-app-bar
-            :elevation="1"
+            :elevation="4"
             rounded
             absolute
-            density="compact"
+            density="comfortable"
             style="width: 1000px; left: 50%; transform: translate(-50%, 0);"
+            class="mt-5"
         >
 
             <v-app-bar-title>
