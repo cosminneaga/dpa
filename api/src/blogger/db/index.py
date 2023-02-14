@@ -82,7 +82,7 @@ class Database(DB, Validator):
 
             return user
         except Exception as e:
-            abort(404, str(e))
+            abort(400, str(e))
 
 
     def isUser(self, obj, stage='if-no-exists'):
