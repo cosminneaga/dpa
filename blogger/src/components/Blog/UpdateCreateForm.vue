@@ -160,7 +160,7 @@
                     <v-btn
                         @click="handleSubmit"
                         color="primary"
-                        variant="tonal"
+                        variant="outlined"
                         class="mb-4"
                     >Submit Blog</v-btn>
 
@@ -178,7 +178,7 @@
                     <v-btn
                         @click="handleSubmit"
                         color="primary"
-                        variant="tonal"
+                        variant="outlined"
                         class="mt-4"
                     >Submit Blog</v-btn>
                 </v-container>

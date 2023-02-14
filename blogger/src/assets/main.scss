@@ -2,6 +2,15 @@ p, a, h1, h2, h3, h4, h5, h6, li, table {
     color: white;
 }
 
+.v-card {
+    border-width: 5px!important;
+}
+
+.v-btn {
+    border-width: 3px!important;
+    font-weight: bold!important;
+}
+
 .kothing-editor {
     p, a, h1, h2, h3, h4, h5, h6, li, table {
         color: black;

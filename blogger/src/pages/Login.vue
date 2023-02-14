@@ -4,10 +4,12 @@
             variant="outlined"
             width="500"
             class="mx-auto mt-6 pa-4"
+            color="primary"
+            @border="10"
         >
 
             <template #title>
-                <h4 class="text-h4">Login to Blogger</h4>
+                <h4 class="text-h4 mb-10">Login to Blogger</h4>
             </template>
 
             <template #text>
@@ -27,7 +29,8 @@
                     ></v-text-field>
 
                     <v-btn
-                        color="blue"
+                        color="primary"
+                        variant="tonal"
                         @click="login"
                     >Login</v-btn>
                 </v-form>
