@@ -21,17 +21,17 @@
                 style="gap:10px;"
             >
                 <v-btn
-                    color="info"
-                    size="large"
+                    color="primary"
                     @click="goToEdit"
                     class="mt-4"
+                    variant="outlined"
                 >Edit this blog</v-btn>
 
                 <v-btn
                     color="red"
-                    size="large"
                     @click="handleDelete"
                     class="mt-4"
+                    variant="outlined"
                 >delete this blog</v-btn>
             </v-container>
 
@@ -87,18 +87,19 @@
                 class="d-flex flex-wrap"
                 style="gap:10px;"
             >
+
                 <v-btn
-                    color="info"
-                    size="large"
+                    color="primary"
                     @click="goToEdit"
                     class="mt-4"
+                    variant="outlined"
                 >Edit this blog</v-btn>
 
                 <v-btn
                     color="red"
-                    size="large"
                     @click="handleDelete"
                     class="mt-4"
+                    variant="outlined"
                 >delete this blog</v-btn>
             </v-container>
         </v-container>

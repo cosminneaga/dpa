@@ -1,5 +1,5 @@
 <template>
-    <header class="elevation-6 rounded">
+    <header class="elevation-12 rounded">
 
         <!-- <v-btn icon variant="text" @click="drawer = true">
             <v-icon>mdi-menu</v-icon>

@@ -12,7 +12,7 @@ import { toast } from 'vue3-toastify';
 import VueCookies from "vue3-cookies";
 
 // css
-import "./assets/main.css";
+import "./assets/main.scss";
 
 // axios
 import VueAxios from "vue-axios";
@@ -39,12 +39,15 @@ const app = createApp(App);
 const vuetifyTheme = {
   dark: false,
   colors: {
-    background: "#FFFFFF",
-    // background: "#3D292C",
+    // background: "#FFFFFF",
+    background: "#0E101A",
 
-    surface: "#FFFFFF",
+    // surface: "#FFFFFF",
+    surface: "#000",
+
     // primary: "#1381d3",
-    primary: "#C46D5E",
+    // primary: "#C46D5E",
+    primary: '#39D055',
     "primary-darken-1": "#3700B3",
     secondary: "#03DAC6",
     "secondary-darken-1": "#018786",

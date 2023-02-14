@@ -14,12 +14,13 @@
             >
                 <v-card
                     width="400"
+                    height="475"
                     :title="item.title"
                     :subtitle="item.description"
                     ripple
                     variant="outlined"
                     link
-                    color="blue"
+                    color="primary"
                 >
                     <template v-slot:text>
                         <div
@@ -59,7 +60,7 @@ export default {
 .card-content {
     display: inline-block;
     width: 100%;
-    height: 100px;
+    height: auto;
     white-space: nowrap;
     overflow: hidden !important;
     text-overflow: ellipsis;

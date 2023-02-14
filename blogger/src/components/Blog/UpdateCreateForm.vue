@@ -159,9 +159,9 @@
                 <v-container fluid>
                     <v-btn
                         @click="handleSubmit"
-                        color="success"
+                        color="primary"
+                        variant="tonal"
                         class="mb-4"
-                        size="large"
                     >Submit Blog</v-btn>
 
                     <!-- <quill-editor
@@ -177,9 +177,9 @@
 
                     <v-btn
                         @click="handleSubmit"
-                        color="success"
+                        color="primary"
+                        variant="tonal"
                         class="mt-4"
-                        size="large"
                     >Submit Blog</v-btn>
                 </v-container>
             </v-col>
