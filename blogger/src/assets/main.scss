@@ -1,5 +1,22 @@
+$baseBackgroundColor: #0E101A;
+$basePrimaryColor: #39D055;
+$baseColor: white;
+
+.w-border {
+    border: 1px solid white;
+}
+
 p, a, h1, h2, h3, h4, h5, h6, li, table {
-    color: white;
+    color: $baseColor;
+}
+
+body {
+    background-color: #0E101A!important;
+    min-width: 360px!important;
+}
+
+.v-application__wrap {
+    min-width: 100%!important;
 }
 
 .v-card {
@@ -9,6 +26,10 @@ p, a, h1, h2, h3, h4, h5, h6, li, table {
 .v-btn {
     border-width: 3px!important;
     font-weight: bold!important;
+}
+
+.v-img__img {
+    background-color: $baseBackgroundColor!important;
 }
 
 .kothing-editor {

@@ -1,11 +1,10 @@
 <template>
     <section>
 
-        <v-row style="min-width: 1000px;">
+        <v-row>
             <v-col
                 cols="3"
                 class="pa-0"
-                style="min-width: 400px;"
             >
                 <section class="meta-blog-info bg-blue h-100 pa-3">
                     <v-form>

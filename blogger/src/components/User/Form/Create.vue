@@ -2,7 +2,7 @@
     <section>
         <v-card
             variant="outlined"
-            width="500"
+            max-width="500"
             class="mx-auto mt-6 pa-4"
         >
 

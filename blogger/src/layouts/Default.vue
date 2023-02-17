@@ -1,10 +1,12 @@
 <template>
-    <v-container style="max-width: 1400px; min-width: 600px;">
+    <v-container style="max-width: 1400px;">
+
         <Header :serverString="serverString"></Header>
 
         <div class="my-10"></div>
 
         <v-container>
+
             <slot></slot>
         </v-container>
 

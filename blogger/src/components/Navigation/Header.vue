@@ -1,14 +1,27 @@
 <template>
-    <header class="elevation-12 rounded">
+
+    <v-toolbar
+        elevation="12"
+        style="position: relative!important; max-width: 1200px;"
+        class="mx-auto"
+        theme="dark"
+    >
 
         <!-- <v-btn icon variant="text" @click="drawer = true">
             <v-icon>mdi-menu</v-icon>
         </v-btn> -->
 
-        <div>
-            <h1 class="title">Blogger</h1>
-            <span>{{ serverString }}</span>
-        </div>
+        <v-app-bar-title>
+            <v-tooltip :text="serverString" location="bottom">
+                <template v-slot:activator="{ props }">
+                    <span
+                        class="title"
+                        v-bind="props"
+                    >Blogger</span>
+                </template>
+            </v-tooltip>
+
+        </v-app-bar-title>
 
         <v-spacer></v-spacer>
 
@@ -75,7 +88,8 @@
             </v-list>
         </v-navigation-drawer>
 
-    </header>
+    </v-toolbar>
+
 </template>
 
 <script lang="ts">

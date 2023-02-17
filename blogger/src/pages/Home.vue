@@ -32,8 +32,6 @@
         pariatur eligendi nulla! Totam repellat provident nesciunt, iure libero perspiciatis ducimus similique laborum.
       </p>
 
-
-
     </v-container>
 
   </default-layout>
