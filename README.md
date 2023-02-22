@@ -2,6 +2,8 @@
 
 ## Formatters
 
+> **WARNING: Formatters must be runned everytime before uploading the code to CI!!!**
+
 > If docker command will be used to format the code no dependecies are needed to be installed on local PC, otherwise check following links
 > https://www.python.org/, https://pip.pypa.io/en/stable/installation/, https://pypi.org/project/autopep8/, https://nodejs.org/en/, https://nodejs.org/dist/v18.14.2/
 
@@ -20,7 +22,7 @@ docker compose exec blogger npm run lint
 docker compose exec blogger npm run prettier:check
 ```
 
-### Hard like fuck local way
+### Complicated like fuck local way (_not recommended_)
 #### API
 - Install Python https://www.python.org/
 - Install Pip https://pip.pypa.io/en/stable/installation/
@@ -63,8 +65,19 @@ https://github.com/cosminneaga/helpers/tree/main/bash_scripts
 
 ## Local Setup
 
-1. `bash build.sh`
-2. `cd frontend/blogger` `npm install` `npm run dev`
+**Download Docker**
+https://docs.docker.com/engine/install/
+
+```bash
+cp example.build_local.sh build_local.sh
+```
+
+**Uncomment following lines from file build_local.sh**
+![local_build.png](./local_build.png)
+
+```bash
+bash build_local.sh
+```
 
 
 | Name             | Url                                                |
