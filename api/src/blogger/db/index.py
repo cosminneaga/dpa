@@ -10,6 +10,7 @@ from utils.env import env_val
 from utils.db import DB
 from utils.valid import Validator
 from utils.generator import StrGenerator
+from utils.bcrypt import Hash
 
 
 
@@ -40,41 +41,31 @@ class Database(DB, Validator):
         self.users = self.database['users']
 
 
-    def initialise(self):
+    def initAppUser(self):
         try:
             if (self.users.count_documents({}) == 0 and env_val('APP_ENV') == 'development'):
                 f = open('src/blogger/db/default/user.json')
                 default_user = json.loads(f.read())
-                self.seed('users', default_user)
-
-                user = self.users.find_one({
-                    'email': default_user[0]['email']
-                })
-                blog = self.collection_blog_name + '.' + str(user['_id'])
-
-                if (self.database[blog].count_documents({}) == 0):
-                    f = open('src/blogger/db/default/blog.json')
-                    self.seed(blog, json.loads(f.read()))
+                self.createUser(default_user)
         except Exception as e:
             console.error(str(e))
 
 
     def getUser(self, id=None, email=None, password=None):
         try:
-            obj = None
+            user = None
             if id:
-                obj = {
+                user = self.users.find_one({
                     "_id": ObjectId(id)
-                }
+                })
             else:
-                obj = {
-                    "email": email,
-                    "password": password
-                }
+                user = self.users.find_one({
+                    "email" : email
+                })
 
-            user = self.users.find_one(obj, {
-                'password': 0
-            })
+                if not Hash().compare(password, user['password']):
+                    user = None
+
             if not user:
                 raise UserNotFound('User not found!')
 
@@ -100,7 +91,11 @@ class Database(DB, Validator):
             self.isUser({
                 'email': data['email']
             })
-            
+
+            # encrypt password
+            data['password'] = Hash().make(data['password'])
+
+            # generate external access_token
             data['access_token'] = self.generateExternalDataAccessToken()
 
             user = self.users.insert_one(data)

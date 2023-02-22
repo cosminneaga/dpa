@@ -23,4 +23,8 @@ module.exports = {
     amd: true,
     node: true,
   },
+  rules: {
+    "vue/multi-word-component-names": 0,
+    "vue/no-reserved-component-names": 0,
+  }
 };

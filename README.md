@@ -6,8 +6,8 @@
 
 ## Credentials
 - Blogger
-- - username: cosmin.neaga@gmail.com
-- - password: NobineNo29
+- - username: blogger-init-user@gmail.com
+- - password: DPAbloggerINITuser2022
 
 ## Install Docker
 > Check this repository to install Docker on Linux

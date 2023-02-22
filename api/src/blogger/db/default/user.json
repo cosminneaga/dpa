@@ -1,9 +1,6 @@
-[
-    {
-        "first_name": "Cosmin",
-        "last_name": "Neaga",
-        "email": "cosmin.neaga@gmail.com",
-        "password": "NobineNo29",
-        "access_token": "tZSYckTRKBn0c1kHYY1Lt5QbbvFK6nnAjevkGU88OVjnbbdmGP"
-    }
-]
+{
+    "first_name": "Blogger",
+    "last_name": "Init",
+    "email": "blogger-init-user@gmail.com",
+    "password": "DPAbloggerINITuser2022"
+}

@@ -6,7 +6,7 @@ import { createPinia } from "pinia";
 // vue-toaster
 // import Vue3Toastify, { type ToastContainerOptions } from 'vue3-toastify';
 import "vue3-toastify/dist/index.css";
-import { toast } from 'vue3-toastify';
+import { toast } from "vue3-toastify";
 
 // vue-cookies
 import VueCookies from "vue3-cookies";
@@ -46,7 +46,7 @@ const vuetifyTheme = {
 
     // primary: "#1381d3",
     // primary: "#C46D5E",
-    primary: '#39D055',
+    primary: "#39D055",
     "primary-darken-1": "#3700B3",
     secondary: "#03DAC6",
     "secondary-darken-1": "#018786",
@@ -65,7 +65,7 @@ const vuetify = createVuetify({
     themes: {
       vuetifyTheme,
     },
-  }
+  },
 });
 
 app

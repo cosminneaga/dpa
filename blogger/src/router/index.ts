@@ -5,7 +5,7 @@ import Home from "@/pages/Home.vue";
 import About from "@/pages/About.vue";
 import Login from "@/pages/Login.vue";
 import Logout from "@/pages/Logout.vue";
-import Register from "@/pages/Register.vue";
+// import Register from "@/pages/Register.vue";
 
 import NotFound from "@/pages/NotFound.vue";
 import Error from "@/pages/Error.vue";

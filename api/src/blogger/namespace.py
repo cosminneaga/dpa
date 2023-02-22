@@ -30,7 +30,8 @@ toBlogModel = BlogModel.toCreateBlog()
 # class Index(Resource):
 #     pass
 
-Database().initialise()
+# initialise DB when file first run
+Database().initAppUser()
 
         
 @api.route('/register')
