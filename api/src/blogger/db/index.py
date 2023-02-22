@@ -63,8 +63,9 @@ class Database(DB, Validator):
                     "email" : email
                 })
 
-                if not Hash().compare(password, user['password']):
-                    user = None
+                if user:
+                    if not Hash().compare(password, user['password']):
+                        user = None
 
             if not user:
                 raise UserNotFound('User not found!')
