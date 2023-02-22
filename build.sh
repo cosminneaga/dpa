@@ -14,13 +14,6 @@ if [ ! -f $FILE2 ]; then
     cp ./blogger/example.env $FILE2
 fi
 
-# ----------------------------- COPY DATABASE ENV ---------------------------- #
-FILE3='./db/.env'
-if [ ! -f $FILE3 ]; then
-    echo "File $FILE3 does not exist, copying 'example.env .'"
-    cp ./db/example.env $FILE3
-fi
-
 # echo "DELETING ./blogger/node_modules... PLEASE WAIT"
 # rm -r ./blogger/node_modules
 
