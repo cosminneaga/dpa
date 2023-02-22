@@ -14,10 +14,6 @@ import VueCookies from "vue3-cookies";
 // css
 import "./assets/main.scss";
 
-// axios
-import VueAxios from "vue-axios";
-import axios from "axios";
-
 // Layouts
 import Default from "@/layouts/Default.vue";
 import User from "@/layouts/User.vue";
@@ -32,6 +28,9 @@ import "@mdi/font/css/materialdesignicons.css";
 // Syntax Highlighter
 import VueCodeHighlight from "vue-code-highlight";
 import "vue-code-highlight/themes/prism-tomorrow.css";
+
+// axios handler
+import Api from "./utils/AxiosHandler";
 
 const app = createApp(App);
 
@@ -72,7 +71,6 @@ const vuetify = createVuetify({
 app
   .use(createPinia())
   .use(router)
-  .use(VueAxios, axios)
   .use(vuetify)
   .use(VueCookies, {
     expireTimes: "30d",
@@ -88,28 +86,7 @@ app.component("default-layout", Default).component("user-layout", User);
 
 // set global variables
 app.config.globalProperties.toast = toast;
-
-// config axios
-axios.defaults.baseURL = import.meta.env.VITE_BLOGGER_URL;
-axios.interceptors.response.use(
-  function (response: any) {
-    if (response.data.status === 401) {
-      throw new Error("Not Authorized.");
-      
-    } else if (response.data.status === 404) {
-      throw new Error("Resource not found.");
-    }
-    return response;
-  },
-  function (error: any) {
-
-    if (error.response.status === 404) {
-      throw new Error("Resource not found.");
-    } else if (error.response.status === 400) {
-      throw new Error(error.response.data.message.toString());
-    }
-  }
-);
+app.config.globalProperties.Api = Api;
 
 // mount app
 app.mount("#app");

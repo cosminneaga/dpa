@@ -94,16 +94,8 @@ export default {
     }),
 
     async mounted() {
-        try {
-            const req = await this.axios.get("/user/me", {
-                headers: {
-                    "x-access-token": this.$cookies.get("X-Access-Token"),
-                },
-            });
-            this.user = { ...req.data.data };
-        } catch (e: any) {
-            this.toast.error(e.message);
-        }
+        const req = await new this.Api().get("/user/me");
+        if (req) this.user = { ...req.data };
     },
 };
 </script>

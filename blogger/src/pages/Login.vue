@@ -11,7 +11,7 @@
             </template>
 
             <template #text>
-                <v-form>
+                <v-form @submit.prevent="login">
                     <v-text-field
                         label="E-Mail"
                         type="email"
@@ -26,7 +26,7 @@
                         v-model="password"
                     ></v-text-field>
 
-                    <v-btn color="primary" variant="tonal" @click="login">Login</v-btn>
+                    <v-btn color="primary" variant="tonal" type="submit">Login</v-btn>
                 </v-form>
             </template>
         </v-card>
@@ -42,18 +42,13 @@ export default {
 
     methods: {
         async login() {
-            try {
-                const req = await this.axios.post("/login", {
-                    email: this.email,
-                    password: this.password,
-                });
-
-                // this.$cookies.set("X-Access-Token", req.data.data.token, Infinity);
-                document.cookie = `X-Access-Token=${req.data.data.token}`;
-                // localStorage.setItem('blogger-v-1.0', JSON.stringify(req.data.data))
+            const req = await new this.Api().post("/login", {
+                email: this.email,
+                password: this.password,
+            });
+            if (req) {
+                document.cookie = `X-Access-Token=${req.data.token}`;
                 this.$router.push("/user/home");
-            } catch (e: any) {
-                this.toast.error(e.message);
             }
         },
     },

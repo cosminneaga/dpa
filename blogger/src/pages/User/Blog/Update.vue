@@ -1,9 +1,6 @@
 <template>
     <user-layout>
-        <section
-            v-if="!dd"
-            style="text-align: center;"
-        >
+        <section v-if="!dd" style="text-align: center">
             <v-progress-circular
                 color="primary"
                 indeterminate
@@ -11,10 +8,7 @@
                 :width="12"
             ></v-progress-circular>
         </section>
-        <UpdateCreateForm
-            v-else
-            :update="dd"
-        ></UpdateCreateForm>
+        <UpdateCreateForm v-else :update="dd"></UpdateCreateForm>
     </user-layout>
 </template>
 
@@ -30,14 +24,8 @@ export default {
     }),
 
     async mounted() {
-        const req = await this.axios.get(`/blog/${this.$route.params.blogID}`, {
-            headers: {
-                "x-access-token": this.$cookies.get("X-Access-Token"),
-            },
-        });
-        if (req) {
-            this.dd = req.data.data;
-        }
+        const req = await new this.Api().get(`/blog/${this.$route.params.blogID}`);
+        if (req) this.dd = req.data;
     },
 };
 </script>

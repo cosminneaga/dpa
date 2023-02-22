@@ -6,13 +6,12 @@
             class="mx-auto mt-6 pa-4"
             color="primary"
         >
-
             <template #title>
                 <h4 class="text-h4 text-primary">Create a new user</h4>
             </template>
 
             <template #text>
-                <v-form @submit.prevent>
+                <v-form @submit.prevent="onSubmitHandler">
                     <v-text-field
                         label="First Name"
                         variant="outlined"
@@ -42,14 +41,9 @@
                         variant="outlined"
                     ></v-text-field> -->
 
-                    <v-btn
-                        color="primary"
-                        variant="outlined"
-                        @click="onSubmitHandler"
-                    >Create</v-btn>
+                    <v-btn color="primary" variant="outlined" type="submit">Create</v-btn>
                 </v-form>
             </template>
-
         </v-card>
     </section>
 </template>
@@ -67,30 +61,17 @@ export default {
 
     methods: {
         async onSubmitHandler() {
-            try {
-                const req = await this.axios.put(
-                    "/register",
-                    { ...this.form },
-                    {
-                        headers: {
-                            "x-access-token": this.$cookies.get("X-Access-Token"),
-                        },
-                    }
-                );
+            const req = await new this.Api().put("/register", { ...this.form });
 
-                console.log(req);
-                
-
+            if (req) {
                 this.form = {
-                    firstName: '',
-                    lastName: '',
-                    email: '',
-                    password: '',
-                }
+                    firstName: "",
+                    lastName: "",
+                    email: "",
+                    password: "",
+                };
 
                 this.toast.success("User registered successfully!");
-            } catch (e: any) {              
-                this.toast.error(e.message);
             }
         },
     },

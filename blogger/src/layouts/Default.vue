@@ -27,7 +27,8 @@ export default {
 
     async mounted() {
         try {
-            const res = await this.axios.get("/hello");
+            const res = await new this.Api().get("/hello");
+            console.log(res);
             this.serverString = res.data.message;
         } catch (e: any) {
             console.warn(e.message);

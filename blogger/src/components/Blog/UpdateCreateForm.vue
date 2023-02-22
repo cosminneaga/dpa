@@ -11,7 +11,7 @@
             style="top: 0px; bottom: 0px; z-index: 9999; height: auto"
             class="pt-10"
         >
-        <h1 class="text-primary text-center text-h4">Blog Meta Information</h1>
+            <h1 class="text-primary text-center text-h4">Blog Meta Information</h1>
             <v-form class="ma-4">
                 <!-- TITLE & DESCRIPTION -->
                 <v-text-field
@@ -306,27 +306,12 @@ export default {
             try {
                 let req = null;
                 if (this.$props.update) {
-                    req = await this.axios.put(
-                        `/blog/${this.$route.params.blogID}`,
-                        { ...this.blog },
-                        {
-                            headers: {
-                                "x-access-token": this.$cookies.get("X-Access-Token"),
-                            },
-                        },
-                    );
+                    req = await new this.Api().put(`/blog/${this.$route.params.blogID}`, {
+                        ...this.blog,
+                    });
                 } else {
-                    req = await this.axios.post(
-                        "/blog",
-                        { ...this.blog },
-                        {
-                            headers: {
-                                "x-access-token": this.$cookies.get("X-Access-Token"),
-                            },
-                        },
-                    );
-
-                    this.$router.push(`/user/blog/view/${req.data.data._id}`);
+                    req = await new this.Api().post("/blog", { ...this.blog });
+                    if (req) this.$router.push(`/user/blog/view/${req.data._id}`);
                 }
 
                 this.toast.success(
