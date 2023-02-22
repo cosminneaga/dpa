@@ -1,25 +1,27 @@
+#!/usr/bin/env bash
+
 # ----------------------------- COPY BACKEND ENV ----------------------------- #
-FILE1='./api/.env'
-if [ ! -f $FILE1 ]
+ENV='./api/.env'
+if [ ! -f $ENV ]
 then
-    echo "File $FILE1 does not exist, copying 'example.env .'"
-    cp ./api/example.env $FILE1
+    echo "File $ENV does not exist, copying 'example.env .'"
+    cp ./api/example.env $ENV
 fi
 
 # ------------------------- COPY BLOGGER ENV ------------------------ #
-FILE2='./blogger/.env'
-if [ ! -f $FILE2 ]
+ENV='./blogger/.env'
+if [ ! -f $ENV ]
 then
-    echo "File $FILE2 does not exist, copying 'example.env .'"
-    cp ./blogger/example.env $FILE2
+    echo "File $ENV does not exist, copying 'example.env .'"
+    cp ./blogger/example.env $ENV
 fi
 
 # ------------------------- COPY DB ENV ------------------------ #
-FILE3='./db/.env'
-if [ ! -f $FILE3 ]
+ENV='./db/.env'
+if [ ! -f $ENV ]
 then
-    echo "File $FILE3 does not exist, copying 'example.env .'"
-    cp ./db/example.env $FILE3
+    echo "File $ENV does not exist, copying 'example.env .'"
+    cp ./db/example.env $ENV
 fi
 
 docker compose up -d --build
