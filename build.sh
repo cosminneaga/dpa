@@ -12,4 +12,11 @@ if [ ! -f $FILE2 ]; then
     cp ./blogger/example.env $FILE2
 fi
 
+# ------------------------- COPY DB ENV ------------------------ #
+FILE3='./db/.env'
+if [ ! -f $FILE3 ]; then
+    echo "File $FILE3 does not exist, copying 'example.env .'"
+    cp ./db/example.env $FILE3
+fi
+
 docker compose up -d --build
