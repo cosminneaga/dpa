@@ -1,7 +1,7 @@
 <template>
   <user-layout>
-    <v-container fluid class="d-flex flex-row flex-wrap justify-center" style="gap: 20px">
-      <section v-if="blogs.length > 0">
+    <v-container>
+      <section v-if="blogs.length > 0" fluid class="d-flex flex-row flex-wrap justify-center" style="gap: 20px">
         <router-link
           v-for="(item, i) in blogs"
           :key="i"
