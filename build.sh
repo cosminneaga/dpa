@@ -3,21 +3,21 @@
 # ----------------------------- COPY DATABASE ENV ---------------------------- #
 ENV='./db/env/.env'
 if [ ! -f $ENV ]; then
-    echo "File $ENV does not exist, copying 'example.env.'"
+    echo "File $ENV does not exist, copying 'example.env .'"
     cp ./db/env/example.env $ENV
 fi
 
 # ----------------------------- COPY BACKEND ENV ----------------------------- #
 ENV='./api/.env'
 if [ ! -f $ENV ]; then
-    echo "File $ENV does not exist, copying 'example.env.'"
+    echo "File $ENV does not exist, copying 'example.env .'"
     cp ./api/example.env $ENV
 fi
 
 # ------------------------- COPY BLOGGER ENV ------------------------ #
 ENV='./blogger/.env'
 if [ ! -f $ENV ]; then
-    echo "File $ENV does not exist, copying 'example.env.'"
+    echo "File $ENV does not exist, copying 'example.env .'"
     cp ./blogger/example.env $ENV
 fi
 
