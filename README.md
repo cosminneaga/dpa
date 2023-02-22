@@ -8,13 +8,17 @@
 
 ### Awesome Docker way
 #### API
-- ```bash
+```bash
 docker compose exec dpa-api bash formatter.sh
 ```
 
 #### Blogger
-- `docker compose exec blogger npm run lint`
-- `docker compose exec blogger npm run prettier:check`
+```bash
+docker compose exec blogger npm run lint
+```
+```bash
+docker compose exec blogger npm run prettier:check
+```
 
 ### Hard like fuck local way
 #### API
