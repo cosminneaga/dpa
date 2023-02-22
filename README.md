@@ -8,7 +8,9 @@
 
 ### Awesome Docker way
 #### API
-- `docker compose exec dpa-api bash formatter.sh`
+- ```bash
+docker compose exec dpa-api bash formatter.sh
+```
 
 #### Blogger
 - `docker compose exec blogger npm run lint`
