@@ -5,11 +5,9 @@
             max-width="500"
             class="mx-auto mt-6 pa-4"
             color="primary"
-            @border="10"
         >
-
             <template #title>
-                <h4 class="text-h4 mb-10">Login to Blogger</h4>
+                <h4 class="text-h4 text-primary mb-10">Login to Blogger</h4>
             </template>
 
             <template #text>
@@ -28,14 +26,9 @@
                         v-model="password"
                     ></v-text-field>
 
-                    <v-btn
-                        color="primary"
-                        variant="tonal"
-                        @click="login"
-                    >Login</v-btn>
+                    <v-btn color="primary" variant="tonal" @click="login">Login</v-btn>
                 </v-form>
             </template>
-
         </v-card>
     </default-layout>
 </template>

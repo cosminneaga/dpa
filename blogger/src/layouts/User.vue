@@ -1,14 +1,12 @@
 <template>
-    <div>
+    <div style="min-width: 740px">
         <v-app-bar
             :elevation="4"
             rounded
             absolute
             density="comfortable"
-            style="width: 1000px; left: 50%; transform: translate(-50%, 0);"
-            class="mt-5"
+            style="min-width: 740px; margin: auto"
         >
-
             <v-app-bar-title>
                 <span class="text-primary text-uppercase">Blogger</span>
             </v-app-bar-title>
@@ -18,21 +16,17 @@
                     v-for="(item, i) in links"
                     :key="i"
                     :to="item.to"
-                    style="text-decoration: none;"
+                    style="text-decoration: none"
                     class="ml-2"
                 >
-                    <v-btn
-                        variant="text"
-                        :color="item.color ? item.color : 'primary'"
-                    >{{item.text}}</v-btn>
+                    <v-btn variant="text" :color="item.color ? item.color : 'primary'">{{
+                        item.text
+                    }}</v-btn>
                 </router-link>
             </template>
         </v-app-bar>
 
-        <v-container
-            style="margin-top: 80px;"
-            fluid
-        >
+        <v-container style="margin-top: 80px" fluid>
             <slot></slot>
         </v-container>
 

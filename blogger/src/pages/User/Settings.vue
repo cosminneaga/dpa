@@ -4,12 +4,7 @@ const bloggerUrl = import.meta.env.VITE_BLOGGER_URL;
 
 <template>
     <user-layout>
-
-        <v-tabs
-            v-model="tab"
-            color="primary"
-            align-tabs="center"
-        >
+        <v-tabs v-model="tab" color="primary" align-tabs="center">
             <v-tab :value="1">profile</v-tab>
             <v-tab :value="2">external use</v-tab>
             <v-tab :value="3">create user</v-tab>
@@ -17,20 +12,24 @@ const bloggerUrl = import.meta.env.VITE_BLOGGER_URL;
 
         <v-window
             v-model="tab"
-            style="max-width: 1000px; margin-top: 50px;"
+            style="max-width: 1000px; margin-top: 50px"
             class="mx-auto"
         >
             <!-- PROFILE -->
             <v-window-item :value="1">
                 <ul>
                     <li>
-                        <h2 class="text-h6 text-primary">Name: {{user.first_name}} {{user.last_name}}</h2>
+                        <h2 class="text-h6 text-primary">
+                            Name: {{ user.first_name }} {{ user.last_name }}
+                        </h2>
                     </li>
                     <li>
-                        <h2 class="text-h5 text-primary">Email: {{user.email}}</h2>
+                        <h2 class="text-h5 text-primary">Email: {{ user.email }}</h2>
                     </li>
                     <li>
-                        <h2 class="text-h6 text-primary">Access Token: <i>{{user.access_token}}</i></h2>
+                        <h2 class="text-h6 text-primary">
+                            Access Token: <i>{{ user.access_token }}</i>
+                        </h2>
                     </li>
                 </ul>
             </v-window-item>
@@ -41,15 +40,15 @@ const bloggerUrl = import.meta.env.VITE_BLOGGER_URL;
                 <div v-highlight>
                     <h1 class="text-primary">How to use your external access token</h1>
 
-                    <br>
+                    <br />
                     <h3 class="text-primary">Retrieve entire list of blogs</h3>
                     <pre><code class="language-javascript">{{ bloggerUrl }}/external/blogs/{{user.access_token}}</code></pre>
 
-                    <br>
+                    <br />
                     <h3 class="text-primary">Retrieve single blog by id</h3>
                     <pre><code class="language-javascript">{{ bloggerUrl }}/external/blog/&lt;blogId&gt;/{{user.access_token}}</code></pre>
 
-                    <br>
+                    <br />
                     <h3 class="text-primary">Fetch</h3>
                     <pre><code class="language-javascript">fetch('{{ bloggerUrl }}/external/blogs/{{user.access_token}}')
     .then((response) => response.json())
@@ -69,14 +68,11 @@ const bloggerUrl = import.meta.env.VITE_BLOGGER_URL;
             </v-window-item>
         </v-window>
         <!-- CREATE USER -->
-
     </user-layout>
 </template>
 
 <script lang="ts">
 import CreateUserForm from "../../components/User/Form/Create.vue";
-// import Prism from "prismjs";
-// import "prismjs/themes/prism-tomorrow.css";
 
 export default {
     components: { CreateUserForm },
