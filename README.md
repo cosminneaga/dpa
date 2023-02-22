@@ -73,6 +73,7 @@ cp example.build_local.sh build_local.sh
 ```
 
 **Uncomment following lines from file build_local.sh**
+
 ![local_build.png](./local_build.png)
 
 ```bash
