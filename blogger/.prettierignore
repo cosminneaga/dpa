@@ -3,15 +3,3 @@ cypress/
 .vscode/
 public/
 
-vite.config.ts
-env.d.ts
-package-lock.json
-package.json
-README.md
-tsconfig.app.json
-tsconfig.config.json
-tsconfig.json
-tsconfig.vitest.json
-cypress.config.ts
-.prettierrc.json
-.eslintrc.cjs
