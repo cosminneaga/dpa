@@ -47,7 +47,7 @@ export default class Api implements ApiInterface {
                 'Content-Type': 'application/json',
                 'x-access-token': this.getCookie('X-Access-Token')
             },
-            timeout: 10 * 100,
+            timeout: 10 * 1000,
             ...config
         });
 
@@ -64,7 +64,9 @@ export default class Api implements ApiInterface {
                 return response;
             },
             function (error: any) {
-                if (error.response.status === 404) {
+                if (error.request) {
+                    throw new Error(`${error.name}\n${error.code}\n${error.message}`)
+                } else if (error.response.status === 404) {
                     throw new Error("Resource not found.");
                 } else if (error.response.status === 400) {
                     throw new Error(error.response.data.message.toString());

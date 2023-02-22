@@ -1,5 +1,12 @@
 #!/usr/bin/env bash
 
+# ----------------------------- COPY DATABASE ENV ---------------------------- #
+ENV='./db/env/.env'
+if [ ! -f $ENV ]; then
+    echo "File $ENV does not exist, copying 'example.env.'"
+    cp ./db/env/example.env $ENV
+fi
+
 # ----------------------------- COPY BACKEND ENV ----------------------------- #
 ENV='./api/.env'
 if [ ! -f $ENV ]; then

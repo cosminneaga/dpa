@@ -7,10 +7,8 @@ services:
     container_name: db
     image: mongo:6.0.3
     hostname: dpaDBServer
-    environment:
-      - MONGO_INITDB_DATABASE=blogger
-      - MONGO_INITDB_ROOT_USERNAME=root
-      - MONGO_INITDB_ROOT_PASSWORD=example
+    env_file:
+      - ./db/env/.env
     ports:
       - 8100:27017
     networks:
