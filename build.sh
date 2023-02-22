@@ -4,7 +4,7 @@
 ENV='./db/.env'
 if [ ! -f $ENV ]; then
     echo "File $ENV does not exist, copying 'example.env .'"
-    cp ./db/env/example.env $ENV
+    cp ./db/example.env $ENV
 fi
 
 # ----------------------------- COPY BACKEND ENV ----------------------------- #
