@@ -12,9 +12,4 @@ if [ ! -f $FILE2 ]; then
     cp ./blogger/example.env $FILE2
 fi
 
-# echo "DELETING ./blogger/node_modules... PLEASE WAIT"
-# rm -r ./blogger/node_modules
-
-# rm ./blogger/package-lock.json
-
 docker compose up -d --build
