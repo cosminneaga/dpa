@@ -47,9 +47,15 @@ docker compose exec blogger npm run prettier:check
 - https://blogger.cosminneaga.dev/
 
 ## Credentials
-- Blogger
-- - username: blogger-init-user@gmail.com
-- - password: DPAbloggerINITuser2022
+### Blogger
+- username:
+```bash
+blogger-init-user@gmail.com
+```
+- password:
+```bash
+DPAbloggerINITuser2022
+```
 
 ## Install Docker
 > Check this repository to install Docker on Linux
