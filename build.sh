@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 # ----------------------------- COPY DATABASE ENV ---------------------------- #
 ENV='./db/.env'
 if [ ! -f $ENV ]; then
