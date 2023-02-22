@@ -4,7 +4,7 @@
 
 > **WARNING: Formatters must be runned everytime before uploading the code to CI!!!**
 
-> If docker command will be used to format the code no dependecies are needed to be installed on local PC, otherwise check following links
+> If docker command will be used to format the code no dependencies are needed to be installed on local PC, otherwise check following links
 > https://www.python.org/, https://pip.pypa.io/en/stable/installation/, https://pypi.org/project/autopep8/, https://nodejs.org/en/, https://nodejs.org/dist/v18.14.2/
 
 
