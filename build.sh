@@ -1,24 +1,24 @@
 #!/usr/bin/env bash
 
 # ----------------------------- COPY DATABASE ENV ---------------------------- #
-ENVDB='./db/env/.env'
+ENV='./db/.env'
 if [ ! -f $ENV ]; then
     echo "File $ENV does not exist, copying 'example.env .'"
-    cp ./db/env/example.env $ENVDB
+    cp ./db/env/example.env $ENV
 fi
 
 # ----------------------------- COPY BACKEND ENV ----------------------------- #
-ENVAPI='./api/.env'
+ENV='./api/.env'
 if [ ! -f $ENV ]; then
     echo "File $ENV does not exist, copying 'example.env .'"
-    cp ./api/example.env $ENVAPI
+    cp ./api/example.env $ENV
 fi
 
 # ------------------------- COPY BLOGGER ENV ------------------------ #
-ENVBLOGGER='./blogger/.env'
+ENV='./blogger/.env'
 if [ ! -f $ENV ]; then
     echo "File $ENV does not exist, copying 'example.env .'"
-    cp ./blogger/example.env $ENVBLOGGER
+    cp ./blogger/example.env $ENV
 fi
 
 # echo "DELETING ./blogger/node_modules... PLEASE WAIT"
