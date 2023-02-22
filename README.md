@@ -59,13 +59,9 @@ blogger-init-user@gmail.com
 DPAbloggerINITuser2022
 ```
 
-## Install Docker
-> Check this repository to install Docker on Linux
-https://github.com/cosminneaga/helpers/tree/main/bash_scripts
-
 ## Local Setup
 
-**Download Docker**
+**Download & Install Docker**
 https://docs.docker.com/engine/install/
 
 ```bash
