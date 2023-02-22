@@ -1,6 +1,7 @@
 import unittest
 from utils.generator import StrGenerator
 
+
 class TestUtils(unittest.TestCase):
 
     def test_uniqueRandomString(self):
@@ -9,6 +10,7 @@ class TestUtils(unittest.TestCase):
         result = StrGenerator.generateRandomUniqueStrings(20, givenStrings)
 
         print(result)
+
 
 if __name__ == '__main__':
     unittest.main()

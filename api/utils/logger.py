@@ -1,6 +1,7 @@
 import logging
 import inspect
 
+
 class Logger():
 
     def __init__(self):
@@ -9,7 +10,6 @@ class Logger():
 
         log = logging.getLogger('werkzeug')
         log.setLevel(logging.ERROR)
-        
 
     def debug(self, message):
         self.__handler(logging.DEBUG, 'debug.log', message)
@@ -26,18 +26,17 @@ class Logger():
     def critical(self, message):
         self.__handler(logging.CRITICAL, 'critical.log', message)
 
-
     def __handler(self, type=logging.INFO, fileToStore='info.log', message=''):
 
         if type != logging.INFO:
             logging.disable(logging.INFO)
-            
+
         logging.basicConfig(
-                filename=f'logs/{fileToStore}', 
-                level=type, 
-                format=self.formatter,
-                force=True
-            )
+            filename=f'logs/{fileToStore}',
+            level=type,
+            format=self.formatter,
+            force=True
+        )
 
         if type == logging.DEBUG:
             logging.debug(f'[{self.fileTriggerInfo}] - [{message}]')
@@ -49,6 +48,5 @@ class Logger():
             logging.critical(f'[{self.fileTriggerInfo}] - [{message}]')
         else:
             logging.info(f'[{self.fileTriggerInfo}] - [{message}]')
-
 
         logging.FileHandler(f'logs/{fileToStore}').close()

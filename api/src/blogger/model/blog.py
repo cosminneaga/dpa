@@ -9,10 +9,10 @@ class BlogModel:
     # IMAGE
     def toBlogImage(self):
         return self.__ns.model('BlogImage', {
-                'src': fields.String('image-src'),
-                'alt': fields.String('image-alt-attribute'),
-                'title': fields.String('image-title-attribute')
-            }
+            'src': fields.String('image-src'),
+            'alt': fields.String('image-alt-attribute'),
+            'title': fields.String('image-title-attribute')
+        }
         )
 
     # AUTHOR
@@ -38,7 +38,7 @@ class BlogModel:
     #         "insert": fields.String('sample insert text'),
     #         "attributes": fields.Nested(fields.String('sample'))
     #     })
-    
+
     # MODEL
     def toCreateBlog(self):
         return self.__ns.model(

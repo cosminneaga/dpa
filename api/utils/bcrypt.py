@@ -1,5 +1,6 @@
 import bcrypt
 
+
 class Hash:
 
     def make(self, password):

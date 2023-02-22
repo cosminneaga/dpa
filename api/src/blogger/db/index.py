@@ -13,7 +13,6 @@ from utils.generator import StrGenerator
 from utils.bcrypt import Hash
 
 
-
 class Database(DB, Validator):
 
     def __init__(self):
@@ -25,31 +24,35 @@ class Database(DB, Validator):
 
         if env_val('APP_ENV') == 'development':
             # self.uri=env_val('BLOGGER_MONGO_URI_DEV')
-            self.dbPort=env_val('BLOGGER_MONGO_PORT_DEV')
-            self.dbHost=env_val('BLOGGER_MONGO_HOST_DEV')
-            self.username=env_val('BLOGGER_MONGO_DB_USERNAME')
-            self.password=env_val('BLOGGER_MONGO_DB_PASSWORD')
+            self.dbPort = env_val('BLOGGER_MONGO_PORT_DEV')
+            self.dbHost = env_val('BLOGGER_MONGO_HOST_DEV')
+            self.username = env_val('BLOGGER_MONGO_DB_USERNAME')
+            self.password = env_val('BLOGGER_MONGO_DB_PASSWORD')
         else:
-            self.uri=env_val('BLOGGER_MONGO_URI_PROD')
-            self.dbPort=env_val('BLOGGER_MONGO_PORT_PROD')
-            self.dbHost=env_val('BLOGGER_MONGO_HOST_PROD')
-            
-        DB.__init__(self, self.dbHost, self.db_name, self.username, self.password)
+            self.uri = env_val('BLOGGER_MONGO_URI_PROD')
+            self.dbPort = env_val('BLOGGER_MONGO_PORT_PROD')
+            self.dbHost = env_val('BLOGGER_MONGO_HOST_PROD')
+
+        DB.__init__(
+            self,
+            self.dbHost,
+            self.db_name,
+            self.username,
+            self.password)
         Validator.__init__(self)
 
         self.database = self.client[self.db_name]
         self.users = self.database['users']
 
-
     def initAppUser(self):
         try:
-            if (self.users.count_documents({}) == 0 and env_val('APP_ENV') == 'development'):
+            if (self.users.count_documents({}) ==
+                    0 and env_val('APP_ENV') == 'development'):
                 f = open('src/blogger/db/default/user.json')
                 default_user = json.loads(f.read())
                 self.createUser(default_user)
         except Exception as e:
             console.error(str(e))
-
 
     def getUser(self, id=None, email=None, password=None):
         try:
@@ -60,7 +63,7 @@ class Database(DB, Validator):
                 })
             else:
                 user = self.users.find_one({
-                    "email" : email
+                    "email": email
                 })
 
                 if user:
@@ -76,18 +79,18 @@ class Database(DB, Validator):
         except Exception as e:
             abort(400, str(e))
 
-
     def isUser(self, obj, stage='if-no-exists'):
         user = self.users.find_one(obj)
 
         if user and stage == 'if-no-exists':
-            raise UserExists('Email address already in use! Hence user has not been created...')
+            raise UserExists(
+                'Email address already in use! Hence user has not been created...')
         elif not user and stage == 'if-exists':
             raise UserNotFound('User has not been found!')
 
     def createUser(self, data):
         try:
-            
+
             self.validate_email(data['email'])
             self.isUser({
                 'email': data['email']
@@ -106,7 +109,6 @@ class Database(DB, Validator):
             abort(400, str(e))
             # raise UserNotFound(400, str(e))
 
-
     def getBlogs(self, userId):
         try:
 
@@ -114,7 +116,7 @@ class Database(DB, Validator):
                 '_id': ObjectId(userId)
             }, 'if-exists')
             data = []
-            collection = self.database['blog.'+userId]
+            collection = self.database['blog.' + userId]
             blogs = collection.find()
             for blog in blogs:
                 blog['_id'] = str(blog['_id'])
@@ -125,14 +127,13 @@ class Database(DB, Validator):
         except Exception as e:
             abort(400, str(e))
 
-
     def getBlog(self, userId, blogId):
         try:
 
             self.isUser({
                 '_id': ObjectId(userId)
             }, 'if-exists')
-            collection = self.database['blog.'+userId]
+            collection = self.database['blog.' + userId]
             blog = collection.find_one({
                 '_id': ObjectId(blogId)
             })
@@ -147,7 +148,7 @@ class Database(DB, Validator):
 
     def createBlog(self, userId, blogData):
         try:
-            
+
             self.isUser({
                 '_id': ObjectId(userId)
             }, 'if-exists')
@@ -155,7 +156,7 @@ class Database(DB, Validator):
             blogData['created_at'] = str(datetime.datetime.utcnow())
             blogData['updated_at'] = str(datetime.datetime.utcnow())
 
-            collection = self.database['blog.'+userId]
+            collection = self.database['blog.' + userId]
             insert = collection.insert_one(blogData)
             _id = insert.inserted_id
             extract = collection.find_one({
@@ -167,7 +168,6 @@ class Database(DB, Validator):
         except Exception as e:
             abort(400, str(e))
 
-
     def updateBlog(self, userId, blogId, blogData):
         try:
 
@@ -177,7 +177,7 @@ class Database(DB, Validator):
 
             blogData['updated_at'] = str(datetime.datetime.utcnow())
 
-            collection = self.database['blog.'+userId]
+            collection = self.database['blog.' + userId]
             update = collection.update_one({
                 '_id': ObjectId(blogId)
             }, {
@@ -192,14 +192,13 @@ class Database(DB, Validator):
         except Exception as e:
             abort(400, str(e))
 
-
     def deleteBlog(self, userId, blogId):
         try:
 
             self.isUser({
                 '_id': ObjectId(userId)
             }, 'if-exists')
-            collection = self.database['blog.'+userId]
+            collection = self.database['blog.' + userId]
             collection.delete_one({
                 '_id': ObjectId(blogId)
             })
@@ -207,47 +206,40 @@ class Database(DB, Validator):
 
         except Exception as e:
             abort(400, str(e))
-            
-            
+
     def generateExternalDataAccessToken(self):
         try:
-            
+
             accessTokens = []
             for user in self.users.find():
                 accessTokens.append(user['access_token'])
-                
+
             return StrGenerator.generateRandomUniqueStrings(50, accessTokens)
-            
+
         except Exception as e:
             abort(500, str(e))
-            
-            
+
     def getBlogsByAccessToken(self, accessToken):
         try:
             user = self.users.find_one({
                 'access_token': accessToken
             })
-            
+
             return self.getBlogs(str(user['_id']))
-        
+
         except Exception as e:
             abort(500, str(e))
-            
-            
+
     def getBlogByAccessToken(self, accessToken, blogId):
         try:
             user = self.users.find_one({
                 'access_token': accessToken
             })
-            
+
             return self.getBlog(str(user['_id']), blogId)
-        
+
         except Exception as e:
             abort(500, str(e))
-
-
-
-
 
 
 db = Database()

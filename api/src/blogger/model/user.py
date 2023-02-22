@@ -1,5 +1,6 @@
 from flask_restx import fields
 
+
 class UserModel:
 
     def __init__(self, ns):
