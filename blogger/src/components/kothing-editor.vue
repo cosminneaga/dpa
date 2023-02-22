@@ -28,7 +28,7 @@ export default {
             katex: katex,
 
             width: "100%",
-            height: "60vh",
+            height: "80vh",
 
             toolbarItem: [
                 ["undo", "redo"],
@@ -72,7 +72,7 @@ export default {
             videoResizing: true,
             videoFileInput: false,
 
-            stickyToolbar: "100px",
+            stickyToolbar: "0",
         });
         // this.editor = editor;
 

@@ -10,7 +10,7 @@
         >
 
             <v-app-bar-title>
-                <span>Blogger</span>
+                <span class="text-primary text-uppercase">Blogger</span>
             </v-app-bar-title>
 
             <template #append>

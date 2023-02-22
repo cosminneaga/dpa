@@ -43,8 +43,8 @@
 <script lang="ts">
 export default {
     data: () => ({
-        email: "user@gmail.com",
-        password: "password",
+        email: "",
+        password: "",
     }),
 
     methods: {

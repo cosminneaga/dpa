@@ -37,3 +37,10 @@ body {
         color: black;
     }
 }
+
+.v-theme--primary {
+    color: $basePrimaryColor;
+    border-color: $basePrimaryColor;
+    outline-color: $basePrimaryColor;
+    background-color: $baseBackgroundColor;
+}
