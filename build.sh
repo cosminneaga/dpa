@@ -1,9 +1,5 @@
-# ----------------------------- COPY DATABASE ENV ---------------------------- #
-ENV='./db/.env'
-if [ ! -f $ENV ]; then
-    echo "File $ENV does not exist, copying 'example.env .'"
-    cp ./db/example.env $ENV
-fi
+#!/usr/bin/env bash
+
 
 # ----------------------------- COPY BACKEND ENV ----------------------------- #
 ENV='./api/.env'
@@ -17,6 +13,13 @@ ENV='./blogger/.env'
 if [ ! -f $ENV ]; then
     echo "File $ENV does not exist, copying 'example.env .'"
     cp ./blogger/example.env $ENV
+fi
+
+# ----------------------------- COPY DATABASE ENV ---------------------------- #
+ENV='./db/.env'
+if [ ! -f $ENV ]; then
+    echo "File $ENV does not exist, copying 'example.env .'"
+    cp ./db/example.env $ENV
 fi
 
 # echo "DELETING ./blogger/node_modules... PLEASE WAIT"
