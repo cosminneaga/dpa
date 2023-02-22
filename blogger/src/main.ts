@@ -32,54 +32,56 @@ import "vue-code-highlight/themes/prism-tomorrow.css";
 // axios handler
 import Api from "./utils/AxiosHandler";
 
+// global data object
+import { global } from "./utils/GlobalDataObject";
+
 const app = createApp(App);
 
 // configure vuetify
 const vuetifyTheme = {
-  dark: false,
-  colors: {
-    // background: "#FFFFFF",
-    background: "#0E101A",
+    dark: false,
+    colors: {
+        // background: "#FFFFFF",
+        background: "#0E101A",
 
-    // surface: "#FFFFFF",
-    surface: "#000",
+        // surface: "#FFFFFF",
+        surface: "#000",
 
-    // primary: "#1381d3",
-    // primary: "#C46D5E",
-    primary: "#39D055",
-    "primary-darken-1": "#3700B3",
-    secondary: "#03DAC6",
-    "secondary-darken-1": "#018786",
-    error: "#B00020",
-    info: "#2196F3",
-    success: "#4CAF50",
-    warning: "#FB8C00",
-  },
+        // primary: "#1381d3",
+        // primary: "#C46D5E",
+        primary: "#39D055",
+        "primary-darken-1": "#3700B3",
+        secondary: "#03DAC6",
+        "secondary-darken-1": "#018786",
+        error: "#B00020",
+        info: "#2196F3",
+        success: "#4CAF50",
+        warning: "#FB8C00",
+    },
 };
 
 const vuetify = createVuetify({
-  components,
-  directives,
-  theme: {
-    defaultTheme: "vuetifyTheme",
-    themes: {
-      vuetifyTheme,
+    components,
+    directives,
+    theme: {
+        defaultTheme: "vuetifyTheme",
+        themes: {
+            vuetifyTheme,
+        },
     },
-  },
 });
 
-app
-  .use(createPinia())
-  .use(router)
-  .use(vuetify)
-  .use(VueCookies, {
-    expireTimes: "30d",
-    path: "/",
-    domain: "",
-    secure: true,
-    sameSite: "None",
-  })
-  .use(VueCodeHighlight);
+app.use(createPinia())
+    .use(router)
+    .use(vuetify)
+    .use(VueCookies, {
+        expireTimes: "30d",
+        path: "/",
+        domain: "",
+        secure: true,
+        sameSite: "None",
+    })
+    .use(VueCodeHighlight);
 
 // set layouts
 app.component("default-layout", Default).component("user-layout", User);
@@ -87,6 +89,7 @@ app.component("default-layout", Default).component("user-layout", User);
 // set global variables
 app.config.globalProperties.toast = toast;
 app.config.globalProperties.Api = Api;
+app.config.globalProperties.globalData = global;
 
 // mount app
 app.mount("#app");

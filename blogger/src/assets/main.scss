@@ -3,7 +3,7 @@ $basePrimaryColor: #39d055;
 $baseColor: white;
 
 .w-border {
-  border: 1px solid white;
+    border: 1px solid white;
 }
 
 p,
@@ -16,49 +16,49 @@ h5,
 h6,
 li,
 table {
-  color: $baseColor;
+    color: $baseColor;
 }
 
 body {
-  background-color: #0e101a !important;
-  min-width: 360px !important;
+    background-color: #0e101a !important;
+    min-width: 360px !important;
 }
 
 .v-application__wrap {
-  min-width: 100% !important;
+    min-width: 100% !important;
 }
 
 .v-card {
-  border-width: 5px !important;
+    border-width: 5px !important;
 }
 
 .v-btn {
-  border-width: 3px !important;
-  font-weight: bold !important;
+    border-width: 3px !important;
+    font-weight: bold !important;
 }
 
 .v-img__img {
-  background-color: $baseBackgroundColor !important;
+    background-color: $baseBackgroundColor !important;
 }
 
 .kothing-editor {
-  p,
-  a,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  li,
-  table {
-    color: black;
-  }
+    p,
+    a,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    li,
+    table {
+        color: black;
+    }
 }
 
 .v-theme--primary {
-  color: $basePrimaryColor;
-  border-color: $basePrimaryColor;
-  outline-color: $basePrimaryColor;
-  background-color: $baseBackgroundColor;
+    color: $basePrimaryColor;
+    border-color: $basePrimaryColor;
+    outline-color: $basePrimaryColor;
+    background-color: $baseBackgroundColor;
 }
