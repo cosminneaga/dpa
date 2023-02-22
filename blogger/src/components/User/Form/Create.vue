@@ -4,10 +4,11 @@
             variant="outlined"
             max-width="500"
             class="mx-auto mt-6 pa-4"
+            color="primary"
         >
 
             <template #title>
-                <h4 class="text-h4">Register with Blogger</h4>
+                <h4 class="text-h4 text-primary">Create a new user</h4>
             </template>
 
             <template #text>
@@ -42,9 +43,10 @@
                     ></v-text-field> -->
 
                     <v-btn
-                        color="blue"
+                        color="primary"
+                        variant="outlined"
                         @click="onSubmitHandler"
-                    >Register</v-btn>
+                    >Create</v-btn>
                 </v-form>
             </template>
 

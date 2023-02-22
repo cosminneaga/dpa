@@ -7,7 +7,7 @@ const bloggerUrl = import.meta.env.VITE_BLOGGER_URL;
 
         <v-tabs
             v-model="tab"
-            color="deep-purple-accent-4"
+            color="primary"
             align-tabs="center"
         >
             <v-tab :value="1">profile</v-tab>
@@ -22,12 +22,15 @@ const bloggerUrl = import.meta.env.VITE_BLOGGER_URL;
         >
             <!-- PROFILE -->
             <v-window-item :value="1">
-                <ul v-highlight>
-                    <li>Name: {{user.first_name}} {{user.last_name}}</li>
-                    <li>Email: {{user.email}}</li>
-                    <li>Access Token:
-                        <!-- <pre><code class="language-plaintext">{{user.access_token}}</code></pre> -->
-                        <pre><code class="language-javascript" data-prismjs-copy="Copy the JavaScript snippet!">{{user.access_token}}</code></pre>
+                <ul>
+                    <li>
+                        <h2 class="text-h6 text-primary">Name: {{user.first_name}} {{user.last_name}}</h2>
+                    </li>
+                    <li>
+                        <h2 class="text-h5 text-primary">Email: {{user.email}}</h2>
+                    </li>
+                    <li>
+                        <h2 class="text-h6 text-primary">Access Token: <i>{{user.access_token}}</i></h2>
                     </li>
                 </ul>
             </v-window-item>
@@ -36,19 +39,19 @@ const bloggerUrl = import.meta.env.VITE_BLOGGER_URL;
             <!-- EXTERNAL USE -->
             <v-window-item :value="2">
                 <div v-highlight>
-                    <h1>How to use your external access token</h1>
+                    <h1 class="text-primary">How to use your external access token</h1>
 
                     <br>
-                    <h3>Retrieve entire list of blogs</h3>
+                    <h3 class="text-primary">Retrieve entire list of blogs</h3>
                     <pre><code class="language-javascript">{{ bloggerUrl }}/external/blogs/{{user.access_token}}</code></pre>
 
                     <br>
-                    <h3>Retrieve single blog by id</h3>
+                    <h3 class="text-primary">Retrieve single blog by id</h3>
                     <pre><code class="language-javascript">{{ bloggerUrl }}/external/blog/&lt;blogId&gt;/{{user.access_token}}</code></pre>
 
                     <br>
-                    <h3>Fetch</h3>
-                    <pre class="language-javascript"><code>fetch('{{ bloggerUrl }}/external/blogs/{{user.access_token}}')
+                    <h3 class="text-primary">Fetch</h3>
+                    <pre><code class="language-javascript">fetch('{{ bloggerUrl }}/external/blogs/{{user.access_token}}')
     .then((response) => response.json())
     .then((data) => {
         console.log('Success:', data);
