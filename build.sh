@@ -1,5 +1,3 @@
-#! /bin/bash
-
 # ----------------------------- COPY BACKEND ENV ----------------------------- #
 FILE1='./api/.env'
 if [ ! -f $FILE1 ]; then
