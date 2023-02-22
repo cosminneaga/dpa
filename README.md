@@ -30,7 +30,7 @@ docker compose exec blogger npm run prettier:check
     - Copy code from https://bootstrap.pypa.io/get-pip.py and create a file in your PC
     - Run the file `python <file-name.py>`
 - Install Autopep8 with the command `pip install autopep8`
-  - Change Directory to Api root's folder `cd blogger`
+  - Change Directory to Api root's folder `cd api`
   - Manual
     - Run the formatter `find -type f -name '*.py' ! -path '*/migrations/*' -exec autopep8 --in-place --aggressive --aggressive '{}' \;`
     - Run pycodestyle `find -type f -name '*.py' ! -path '*/migrations/*' -exec pycodestyle --first '{}' \;`
