@@ -47,9 +47,8 @@ Checkout the [deployment documentation](https://v3.nuxtjs.org/guide/deploy/prese
 Vuetify
 - https://next.vuetifyjs.com/en/getting-started/installation/
 
-Vue Toaster
-- https://github.com/MeForma/vue-toaster
-- https://meforma.github.io/vue-toaster/
+Vue3 Toastify
+- https://github.com/jerrywu001/vue3-toastify
 
 Quill
 - https://vueup.github.io/vue-quill/guide/installation.html#cdn

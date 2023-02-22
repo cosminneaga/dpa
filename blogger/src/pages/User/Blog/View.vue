@@ -80,8 +80,11 @@ export default {
 
         async handleDelete() {
             try {
+                let conf = confirm("Are you sure you want to delete this blog?");
+                if (!conf) throw new Error("Blog hasn't been deleted");
                 await new this.Api().delete("/blog/" + this.$route.params.blogID);
                 this.$router.push("/user/home");
+                this.toast.success("Blog has been deleted successfully.");
             } catch (e: any) {
                 this.toast.error(e.message);
             }

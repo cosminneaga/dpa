@@ -172,6 +172,7 @@
                         >Add Tag</v-btn
                     >
                 </section>
+                <!-- TAGS -->
 
                 <v-divider color="primary"></v-divider>
             </v-form>
@@ -336,7 +337,7 @@ export default {
         },
 
         addTag() {
-            this.blog.tags.push(this.tag);
+            this.blog.tags.push(this.tag.toUpperCase());
             this.tag = "";
         },
 
