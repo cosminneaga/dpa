@@ -4,7 +4,13 @@ const bloggerUrl = import.meta.env.VITE_BLOGGER_URL;
 
 <template>
     <user-layout>
-        <v-tabs v-model="tab" color="primary" align-tabs="center">
+        <v-tabs
+            v-model="tab"
+            color="primary"
+            align-tabs="center"
+            density="comfortable"
+            direction="horizontal"
+        >
             <v-tab :value="1">profile</v-tab>
             <v-tab :value="2">external use</v-tab>
             <v-tab :value="3">create user</v-tab>
@@ -14,6 +20,7 @@ const bloggerUrl = import.meta.env.VITE_BLOGGER_URL;
             v-model="tab"
             style="max-width: 1000px; margin-top: 50px"
             class="mx-auto"
+            disabled
         >
             <!-- PROFILE -->
             <v-window-item :value="1">
