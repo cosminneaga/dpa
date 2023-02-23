@@ -32,7 +32,7 @@ blogger-init-user@gmail.com
 ```
 - password:
 ```bash
-DPAbloggerINITuser2022
+DPA1blogger@INIT#user/2022
 ```
 
 ## Local Setup
