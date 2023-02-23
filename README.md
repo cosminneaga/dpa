@@ -61,6 +61,9 @@ DPAbloggerINITuser2022
 
 ## Local Setup
 
+**Install NodeJs ^v18**
+https://nodejs.org/en/, https://nodejs.org/dist/v18.14.2/
+
 **Download & Install Docker**
 https://docs.docker.com/engine/install/
 
@@ -80,5 +83,5 @@ bash build_local.sh
 | Name             | Url                                                |
 | ---------------- | -------------------------------------------------- |
 | Database         | Compass<br>`mongodb://root:example@localhost:8100` |
-| Backend          | `localhost:8080/hello`                             |
-| Frontend Blogger | preview: `localhost`<br> dev: `localhost:3000`     |
+| Backend          | `localhost:8080/docs`                              |
+| Frontend Blogger | preview: `localhost:81`<br> dev: `localhost:1000`  |
