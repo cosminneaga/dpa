@@ -47,8 +47,7 @@ class Database(DB, Validator):
 
     def initAppUser(self):
         try:
-            if (self.users.count_documents({}) ==
-                    0 and env_val('APP_ENV') == 'development'):
+            if self.users.count_documents({}) == 0:
                 f = open('src/blogger/db/default/user.json')
                 default_user = json.loads(f.read())
                 self.createUser(default_user)
