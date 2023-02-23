@@ -29,13 +29,11 @@ services:
       - dpa-db
     restart: always
 
-  blogger:
-    container_name: blogger
+  dpa-blogger:
+    container_name: dpa-blogger
     build: ./blogger
     ports:
       - 81:1000
-    volumes:
-      - ./blogger:/vlt
     restart: always
 
 networks:
