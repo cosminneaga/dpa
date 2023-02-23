@@ -14,10 +14,10 @@ docker compose exec dpa-api bash formatter.sh
 
 ### Blogger
 ```bash
-docker compose exec blogger npm run lint:fix
+docker compose exec dpa-blogger npm run lint:fix
 ```
 ```bash
-docker compose exec blogger npm run prettier:fix
+docker compose exec dpa-blogger npm run prettier:fix
 ```
 
 ## Links
