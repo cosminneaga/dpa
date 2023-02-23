@@ -17,6 +17,8 @@ services:
   dpa-api:
     container_name: dpa-api
     build: ./api
+    env_file:
+      - ./api/.env
     ports:
       - 8080:8080
     volumes:

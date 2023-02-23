@@ -22,12 +22,13 @@ class Database(DB, Validator):
         self.col_users = 'users'
         self.collection_blog_name = 'blog'
 
+        self.username = env_val('BLOGGER_MONGO_DB_USERNAME')
+        self.password = env_val('BLOGGER_MONGO_DB_PASSWORD')
+
         if env_val('APP_ENV') == 'development':
             # self.uri=env_val('BLOGGER_MONGO_URI_DEV')
             self.dbPort = env_val('BLOGGER_MONGO_PORT_DEV')
             self.dbHost = env_val('BLOGGER_MONGO_HOST_DEV')
-            self.username = env_val('BLOGGER_MONGO_DB_USERNAME')
-            self.password = env_val('BLOGGER_MONGO_DB_PASSWORD')
         else:
             self.uri = env_val('BLOGGER_MONGO_URI_PROD')
             self.dbPort = env_val('BLOGGER_MONGO_PORT_PROD')

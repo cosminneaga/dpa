@@ -4,12 +4,12 @@ from utils.env import env_val
 from flask_cors import CORS
 
 from src.blogger.namespace import api as bloggerNS
-from src.example.namespace import api as exampleNS
+# from src.example.namespace import api as exampleNS
 
 
 app = Flask(__name__)
 CORS(app)
-app.config['ENV'] = 'development'
+app.config['ENV'] = env_val('APP_ENV')
 RESTX_ERROR_404_HELP = False
 
 app.config.SWAGGER_UI_DOC_EXPANSION = 'list'
@@ -29,6 +29,7 @@ api = Api(
     title='Array of Python APIs',
     description='This is an array of Python APIs',
     doc='/docs' if app.config['ENV'] == 'development' else False,
+    # doc='/docs',
     ordered=True,
 )
 
@@ -51,5 +52,3 @@ class Home(Resource):
 
 if __name__ == '__main__' and app.config['ENV'] == 'development':
     app.run(host='0.0.0.0', port=8080, debug=True)
-else:
-    app.run(host='0.0.0.0', port=8080, debug=False)
