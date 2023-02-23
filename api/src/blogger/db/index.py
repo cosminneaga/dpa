@@ -72,7 +72,7 @@ class Database(DB, Validator):
                         user = None
 
             if not user:
-                raise UserNotFound('User not found!')
+                raise UserNotFound('User could not be found!')
 
             user['_id'] = str(user['_id'])
 
@@ -87,7 +87,7 @@ class Database(DB, Validator):
             raise UserExists(
                 'Email address already in use! Hence user has not been created...')
         elif not user and stage == 'if-exists':
-            raise UserNotFound('User has not been found!')
+            raise UserNotFound('User could not be found!')
 
     def createUser(self, data):
         try:
@@ -104,7 +104,7 @@ class Database(DB, Validator):
             data['access_token'] = self.generateExternalDataAccessToken()
 
             user = self.users.insert_one(data)
-            return self.getUser(email=data['email'], password=data['password'])
+            return self.getUser(user.inserted_id)
 
         except Exception as e:
             abort(400, str(e))
