@@ -61,3 +61,100 @@ bash build_local.sh
 | Database         | Compass<br>`mongodb://root:example@localhost:8100` |
 | Backend          | `localhost:8080/docs`                              |
 | Frontend Blogger | preview: `localhost:81`<br> dev: `localhost:1000`  |
+
+
+# Dependecies Docs
+
+## API
+
+BCrypt -- encrypt passwords
+- https://pypi.org/project/bcrypt/
+
+BeatifulSoup4 & Soupieve -- web scrapers, HTML/CSS renderer
+- https://pypi.org/project/beautifulsoup4/
+- https://pypi.org/project/soupsieve/
+
+Colorama -- colorful print
+- https://pypi.org/project/colorama/
+
+Flask -- development server
+- https://flask.palletsprojects.com/en/2.2.x/
+
+Flask-Restx -- Api Docs
+- https://flask-restx.readthedocs.io/en/latest/
+
+Gunicorn -- production server
+- https://gunicorn.org/
+
+Jinja2 -- Python in HTML
+- https://pypi.org/project/Jinja2/
+
+JsonSchema
+- https://pypi.org/project/jsonschema/
+
+py-console -- Colorful console print
+- https://pypi.org/project/py-console/
+
+PyJWT -- Json Web Token
+- https://pypi.org/project/PyJWT/
+- https://pyjwt.readthedocs.io/en/latest/
+
+pymongo -- mongoDb
+- https://pymongo.readthedocs.io/en/stable/
+
+Python-DotENV -- env
+- https://pypi.org/project/python-dotenv/
+
+PyTZ -- datetime
+- https://pypi.org/project/pytz/
+
+TomLi
+> I don't know waht use this library has and I don't care but will keep
+- https://pypi.org/project/tomli/
+
+Zipp
+> I don't know waht use this library has and I don't care but will keep
+- https://pypi.org/project/zipp/
+
+## Blogger
+
+Vuetify
+-   https://next.vuetifyjs.com/en/getting-started/installation/
+
+Vue3 Toastify
+-   https://github.com/jerrywu001/vue3-toastify
+
+Quill
+-   https://vueup.github.io/vue-quill/guide/installation.html#cdn
+-   https://www.npmjs.com/package/quill
+-   https://quilljs.com/docs/quickstart/
+
+Vue Cookies
+-   https://github.com/cmp-cc/vue-cookies#readme
+
+PrismJs
+-   https://prismjs.com/
+-   https://dev.to/kevin_odongo35/add-prism-js-to-a-vue-application-3e9p
+
+Kothing
+-   https://github.com/kothing/kothing-Editor#install
+-   https://kothing.github.io/editor/html/getting-started.html
+
+Prism
+-   https://prismjs.com/#supported-languages
+-   https://medium.com/@alexgwebdev/beautiful-code-highlighter-as-vue-js-component-397ded532ef2
+
+Axios
+- https://axios-http.com/docs/intro
+
+Pinia
+- https://pinia.vuejs.org/
+
+MDI Icons
+- https://www.npmjs.com/package/@mdi/font
+
+TypeScript
+- https://www.typescriptlang.org/
+
+Not used yet but nice to be included VueUse
+- https://vueuse.org/
