@@ -7,7 +7,7 @@
         <v-app-bar-title>
             <v-tooltip :text="serverString" location="bottom">
                 <template v-slot:activator="{ props }">
-                    <span class="title" v-bind="props">Blogger</span>
+                    <span class="title" v-bind="props">Bloggerr</span>
                 </template>
             </v-tooltip>
         </v-app-bar-title>
