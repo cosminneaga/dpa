@@ -63,7 +63,7 @@ bash build_local.sh
 | Frontend Blogger | preview: `localhost:81`<br> dev: `localhost:1000`  |
 
 
-# Dependecies Docs
+# Dependencies Docs
 
 ## API
 
@@ -109,11 +109,11 @@ PyTZ -- datetime
 - https://pypi.org/project/pytz/
 
 TomLi
-> I don't know waht use this library has and I don't care but will keep
+> I don't know what use this library has and I don't care but will keep
 - https://pypi.org/project/tomli/
 
 Zipp
-> I don't know waht use this library has and I don't care but will keep
+> I don't know what use this library has and I don't care but will keep
 - https://pypi.org/project/zipp/
 
 ## Blogger

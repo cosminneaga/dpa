@@ -48,11 +48,11 @@ PyTZ -- datetime
 - https://pypi.org/project/pytz/
 
 TomLi
-> I don't know waht use this library has and I don't care but will keep
+> I don't know what use this library has and I don't care but will keep
 - https://pypi.org/project/tomli/
 
 Zipp
-> I don't know waht use this library has and I don't care but will keep
+> I don't know what use this library has and I don't care but will keep
 - https://pypi.org/project/zipp/
 
 
