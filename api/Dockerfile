@@ -1,22 +1,7 @@
-# FROM ubuntu:20.04
-
-# ADD . /backend
-# WORKDIR /backend
-
-# RUN apt-get update && apt-get install -y \
-#   nano \
-#   python3.6 \
-#   python3-pip
-
-# RUN pip3 install -r requirements.txt 
-# CMD python3 -u app.py
-
 FROM python:3.8-alpine
 
 RUN apk update && apk upgrade
 RUN apk add bash
-# install bcrypt dependencies
-# RUN apk add --update musl-dev gcc cargo
 
 WORKDIR /api
 COPY requirements.txt .
@@ -26,6 +11,4 @@ COPY . .
 
 EXPOSE 8080
 
-# CMD python app.py
-# CMD gunicorn --bind 0.0.0.0:8080 app:app
 CMD if [ "$APP_ENV" = "production" ] ; then gunicorn --bind 0.0.0.0:8080 app:app ; else python app.py ; fi
