@@ -21,7 +21,6 @@ docker compose exec dpa-blogger npm run prettier:fix
 ```
 
 ## Links
-- https://dpa.cosminneaga.dev/docs
 - https://blogger.cosminneaga.dev/
 
 ## Credentials
