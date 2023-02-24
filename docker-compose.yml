@@ -10,6 +10,8 @@ services:
       - ./db/.env
     ports:
       - 8100:27017
+    volumes:
+      - dpa-db-volume:/data/db
     networks:
       - dpa-blogger
     restart: always
@@ -43,3 +45,4 @@ networks:
 
 volumes:
   npm-cache:
+  dpa-db-volume:
