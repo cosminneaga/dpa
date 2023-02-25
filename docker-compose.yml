@@ -33,11 +33,11 @@ services:
       - dpa-db
     restart: always
 
-  dpa-proccessor:
-    container_name: dpa-proccessor
-    build: ./proccessor
+  dpa-processor:
+    container_name: dpa-processor
+    build: ./processor
     env_file:
-      - ./proccessor/.env
+      - ./processor/.env
     ports:
       - 9000:80
     networks:
