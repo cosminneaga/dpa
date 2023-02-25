@@ -1,8 +1,7 @@
 <template>
     <main id="sample">
         <Editor
-        v-model="EditorContent"
-            api-key="no-api-key"
+            v-model="EditorContent"
             :init="{
                 plugins: [
                     'lists',
@@ -30,8 +29,7 @@
                 ],
                 toolbar: [
                     'undo redo styles bold italic underline strikethrough alignleft aligncenter alignright alignjustify | hr | bullist numlist outdent indent | table image link',
-                    'emoticons fullscreen insertdatetime media pagebreak save cancel',
-                    'searchreplace template visualblocks',
+                    'emoticons fullscreen insertdatetime media pagebreak save cancel | searchreplace template visualblocks',
                 ],
                 width: '100%',
                 height: '80vh',
@@ -62,13 +60,13 @@ export default {
     props: ["contentSet"],
 
     data: () => ({
-        EditorContent: '',
+        EditorContent: "",
     }),
 
     watch: {
         EditorContent: function (value) {
-            this.$emit('on-change', value)
-        }
+            this.$emit("on-change", value);
+        },
     },
 
     beforeMount() {
@@ -135,28 +133,26 @@ export default {
         },
 
         filePickerHandler2(callback: any, value: any, meta: any) {
-
             console.log(value);
-            
 
             // Provide file and text for the link dialog
             if (meta.filetype == "file") {
-                console.log('File upload');
+                console.log("File upload");
 
                 callback("mypage.html", { text: "My text" });
             }
 
             // Provide image and alt text for the image dialog
             if (meta.filetype == "image") {
-                console.log('Image upload');
+                console.log("Image upload");
 
                 callback("myimage.jpg", { alt: "My alt text" });
             }
 
             // Provide alternative source and posted for the media dialog
             if (meta.filetype == "media") {
-                console.log('Video upload');
-                
+                console.log("Video upload");
+
                 callback("movie.mp4", { source2: "alt.ogg", poster: "image.jpg" });
             }
         },
