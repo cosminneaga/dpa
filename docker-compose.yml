@@ -13,6 +13,7 @@ services:
     volumes:
       - dpa-db-volume:/data/db
     networks:
+      - dpa-network
       - dpa-blogger
     restart: always
 
@@ -26,9 +27,21 @@ services:
     volumes:
       - ./api:/api
     networks:
+      - dpa-network
       - dpa-blogger
     depends_on:
       - dpa-db
+    restart: always
+
+  dpa-proccessor:
+    container_name: dpa-proccessor
+    build: ./proccessor
+    env_file:
+      - ./proccessor/.env
+    ports:
+      - 9000:80
+    networks:
+      - dpa-network
     restart: always
 
   dpa-blogger:
@@ -39,6 +52,9 @@ services:
     restart: always
 
 networks:
+  dpa-network:
+    driver: bridge
+    name: dpa-network
   dpa-blogger:
     driver: bridge
     name: dpa-blogger
