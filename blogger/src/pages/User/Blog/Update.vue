@@ -20,7 +20,11 @@ export default {
 
     async mounted() {
         const req = await new this.Api().get(`/blog/${this.$route.params.blogID}`);
-        if (req) this.dd = req.data;
+        if (req) {
+            this.dd = req.data;
+            delete req.data._id;
+            localStorage.setItem("blog-data", JSON.stringify(req.data))
+        }
     },
 };
 </script>

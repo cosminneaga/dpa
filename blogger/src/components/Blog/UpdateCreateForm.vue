@@ -149,6 +149,7 @@
                     variant="outlined"
                     :items="globalData.categories"
                     color="primary"
+                    v-model="blog.category"
                 ></v-select>
 
                 <v-divider color="primary"></v-divider>
@@ -225,14 +226,7 @@ export default {
         tag: "",
     }),
 
-    mounted() {
-        if (this.$props.update) {
-            this.blog = { ...this.$props.update };
-            delete this.blog._id;
-
-            this.blog.content = this.$props.update.content;
-        }
-
+    beforeMount() {
         const savedContent = localStorage.getItem("blog-data");
         if (savedContent) {
             this.blog = { ...JSON.parse(savedContent) };
