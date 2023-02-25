@@ -21,11 +21,11 @@ if [ ! -f $ENV ]; then
     cp ./db/example.env ./db/.env
 fi
 
-# ------------------------- COPY PROCCESSOR ENV ------------------------ #
-ENV='./proccessor/.env'
+# ------------------------- COPY PROCESSOR ENV ------------------------ #
+ENV='./processor/.env'
 if [ ! -f $ENV ]; then
     echo "File $ENV does not exist, copying 'example.env .'"
-    cp ./proccessor/example.env ./proccessor/.env
+    cp ./processor/example.env ./processor/.env
 fi
 
 docker compose up -d --build
