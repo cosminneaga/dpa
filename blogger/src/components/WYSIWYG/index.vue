@@ -32,7 +32,7 @@
                     'emoticons fullscreen insertdatetime media pagebreak save cancel | searchreplace template visualblocks',
                 ],
                 width: '100%',
-                height: '80vh',
+                height: '83vh',
 
                 image_title: true,
                 images_file_types: 'jpeg,jpg,jpe,jfi,jif,jfif,png,gif,bmp,webp',

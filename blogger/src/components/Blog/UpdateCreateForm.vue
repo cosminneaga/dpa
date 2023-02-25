@@ -181,7 +181,7 @@
         <!-- META-INFO DRAWER -->
 
         <!-- WYSIWYG EDITOR -->
-        <v-container fluid>
+        <v-container style="max-width: 1600px;">
             <v-btn @click="drawer = !drawer" color="secondary" variant="outlined" class="mb-4">Meta Info</v-btn>
             <v-btn @click="handleSubmit" color="primary" variant="outlined" class="mb-4 ml-2">Submit Blog</v-btn>
 
