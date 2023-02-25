@@ -184,24 +184,23 @@
             <v-btn @click="drawer = !drawer" color="secondary" variant="outlined" class="mb-4">Meta Info</v-btn>
             <v-btn @click="handleSubmit" color="primary" variant="outlined" class="mb-4 ml-2">Submit Blog</v-btn>
 
-            <kothing-editor
+            <Editor
                 @on-change="(content) => onContentChange(content)"
-                :contentSet="update ? update.content : null"
-            />
+                :contentSet="update ? update.content : null"></Editor>
         </v-container>
         <!-- WYSIWYG EDITOR -->
     </section>
 </template>
 
 <script lang="ts">
-import KothingEditor from "../kothing-editor.vue";
+import Editor from "../WYSIWYG/index.vue";
 
 export default {
-    components: { KothingEditor },
+    components: { Editor },
     props: ["update"],
 
     data: () => ({
-        drawer: true,
+        drawer: false,
         blog: {
             title: "",
             description: "",
@@ -299,7 +298,7 @@ export default {
             this.tag = "";
         },
 
-        onContentChange(content: any) {
+        onContentChange(content: any) {            
             this.blog.content = content;
         },
     },

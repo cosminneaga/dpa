@@ -2,11 +2,20 @@
     <user-layout>
         <v-container>
             <section v-if="loading" style="text-align: center">
-                <v-progress-circular color="primary" indeterminate :size="128" :width="12"></v-progress-circular>
+                <v-progress-circular
+                    color="primary"
+                    indeterminate
+                    :size="128"
+                    :width="12"
+                ></v-progress-circular>
             </section>
 
             <section v-else fluid>
-                <section v-if="blogs.length > 0" class="d-flex flex-row flex-wrap justify-center" style="gap: 20px">
+                <section
+                    v-if="blogs.length > 0"
+                    class="d-flex flex-row flex-wrap justify-center"
+                    style="gap: 20px"
+                >
                     <router-link
                         v-for="(item, i) in blogs"
                         :key="i"
@@ -33,17 +42,21 @@
                 <section v-else>
                     <h3 class="text-h5 text-center">
                         Seems like you have no blogs created... Go ahead and
-                        <router-link to="/user/blog/create" class="text-primary">create one</router-link>
+                        <router-link to="/user/blog/create" class="text-primary"
+                            >create one</router-link
+                        >
                         &#128515;
                     </h3>
                 </section>
             </section>
         </v-container>
+
     </user-layout>
 </template>
 
 <script lang="ts">
 export default {
+
     data: () => ({
         loading: false,
         blogs: [],
