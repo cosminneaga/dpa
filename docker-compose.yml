@@ -40,6 +40,8 @@ services:
       - ./processor/.env
     ports:
       - 9000:80
+    volumes:
+      - ./processor:/processor
     networks:
       - dpa-network
     restart: always

@@ -4,7 +4,6 @@ RUN apt-get install bash
 
 WORKDIR /processor
 COPY requirements.txt .
-# RUN pip install 'Flask==2.1.2'
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
