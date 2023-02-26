@@ -1,7 +1,6 @@
-FROM python:3.8-alpine
+FROM python:3.8.16-slim
 
-RUN apk update && apk upgrade
-RUN apk add bash
+RUN apt-get install bash
 
 WORKDIR /api
 COPY requirements.txt .
