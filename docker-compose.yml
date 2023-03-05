@@ -15,7 +15,7 @@ services:
     networks:
       - dpa-network
       - dpa-blogger
-    restart: always
+    restart: unless-stopped
 
   dpa-api:
     container_name: dpa-api
@@ -31,7 +31,7 @@ services:
       - dpa-blogger
     depends_on:
       - dpa-db
-    restart: always
+    restart: unless-stopped
 
   dpa-processor:
     container_name: dpa-processor
@@ -44,14 +44,14 @@ services:
       - ./processor:/processor
     networks:
       - dpa-network
-    restart: always
+    restart: unless-stopped
 
   dpa-blogger:
     container_name: dpa-blogger
     build: ./blogger
     ports:
       - 81:1000
-    restart: always
+    restart: unless-stopped
 
 networks:
   dpa-network:
